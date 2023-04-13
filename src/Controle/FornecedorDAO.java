@@ -19,7 +19,10 @@ public class FornecedorDAO {
 	}
 
 	public Boolean Inserir(Fornecedor f) {
-		listaFornecedores.add(f);
+		if(f!=null) {
+			listaFornecedores.add(f);
+			return true;
+		}
 		return false;
 	}
 

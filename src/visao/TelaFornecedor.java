@@ -5,10 +5,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.table.DefaultTableModel;
+
+import Controle.FornecedorDAO;
+import Modelo.Fornecedor;
 
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
@@ -34,7 +38,7 @@ public class TelaFornecedor extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaInicial frame = new TelaInicial();
+					TelaFornecedor frame = new TelaFornecedor();
 					frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -101,6 +105,18 @@ public class TelaFornecedor extends JFrame {
 		btnCadastrar.setBackground(new Color(230, 224, 0));
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Fornecedor fornecedor = new Fornecedor();
+				FornecedorDAO fornecedorDao = FornecedorDAO.getinstancia();
+				fornecedor.setNomeEmpressa(txtNomeEmpresa.getText());
+				fornecedor.setCnpj(Long.valueOf(txtCNPJ.getText()));
+				fornecedor.setCpf(Long.valueOf(txtCPF.getText()));
+				fornecedor.setTelefone(Long.valueOf(txtTelefone.getText()));
+				if(fornecedorDao.Inserir(fornecedor)==true) {
+					JOptionPane.showMessageDialog(btnCadastrar, "Boa");
+				}else {
+					JOptionPane.showMessageDialog(btnCadastrar, "Deu não");
+				}
+				
 			}
 		});
 		contentPane.add(btnCadastrar, "cell 7 4,growx,aligny top");
@@ -123,14 +139,6 @@ public class TelaFornecedor extends JFrame {
 		panel.setLayout(new MigLayout("", "[145.00px,grow]", "[82.00px,grow]"));
 
 		table = new JTable();
-		DefaultTableModel modelo = new DefaultTableModel(new Object[][] {},
-		new String[] { "Nome da Empresa", "CNPJ", "CPF", "Telefone" });
-		table.setModel(new DefaultTableModel(new Object[][] {},
-		new String[] { "Nome da Empresa", "CNPJ", "CPF", "Telefone" }));
-		panel.add(table, "cell 0 0,grow");
-
-		JButton btnListar = new JButton("Listar");
-		btnListar.setBackground(new Color(230, 224, 0));
-		contentPane.add(btnListar, "cell 7 10,growx,aligny top");
+		panel.add(table);
 	}
 }
