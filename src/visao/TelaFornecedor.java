@@ -19,6 +19,7 @@ import javax.swing.JTextPane;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import net.miginfocom.swing.MigLayout;
 
@@ -141,4 +142,16 @@ public class TelaFornecedor extends JFrame {
 		table = new JTable();
 		panel.add(table);
 	}
+	
+	public void atualizarTabela(ArrayList<Fornecedor> Usuario) {
+	    // Limpa o modelo da tabela
+//		table.setRowCount(0);
+	    
+	    // Adiciona as pessoas como novas linhas da tabela
+		for (Fornecedor fornecedor : Usuario) {
+	        Object[] linha = {fornecedor.getCnpj(), fornecedor.getCpf(), fornecedor.getNomeEmpressa(), fornecedor.getTelefone()};
+//	        table.addRow(linha);
+		}
+	}
+
 }
