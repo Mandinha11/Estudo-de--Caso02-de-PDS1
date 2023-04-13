@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import net.miginfocom.swing.MigLayout;
 
 public class TelaInicial extends JFrame {
 
@@ -49,27 +50,23 @@ public class TelaInicial extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		contentPane.setLayout(new MigLayout("", "[grow][53px][221px][grow]", "[grow][24px][24px][23px,grow]"));
 
 		JLabel txtLog = new JLabel("Login:");
-		txtLog.setBounds(430, 170, 51, 24);
 		txtLog.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		contentPane.add(txtLog);
+		contentPane.add(txtLog, "cell 1 1,alignx left,aligny top");
 
 		JLabel txtSe = new JLabel("Senha:");
-		txtSe.setBounds(430, 281, 53, 24);
 		txtSe.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		contentPane.add(txtSe);
+		contentPane.add(txtSe, "cell 1 2,alignx left,aligny top");
 
 		textLogin = new JTextField();
-		textLogin.setBounds(549, 170, 221, 20);
-		contentPane.add(textLogin);
+		contentPane.add(textLogin, "cell 2 1,growx,aligny top");
 		textLogin.setColumns(10);
 
 		textSenha = new JTextField();
-		textSenha.setBounds(549, 285, 221, 20);
 		textSenha.setColumns(10);
-		contentPane.add(textSenha);
+		contentPane.add(textSenha, "cell 2 2,growx,aligny bottom");
 
 		JButton btnEntrar = new JButton("Logar");
 		btnEntrar.addActionListener(new ActionListener() {
@@ -78,7 +75,6 @@ public class TelaInicial extends JFrame {
 				
 			}
 		});
-		btnEntrar.setBounds(549, 446, 221, 23);
-		contentPane.add(btnEntrar);
+		contentPane.add(btnEntrar, "cell 2 3,growx,aligny top");
 	}
 }

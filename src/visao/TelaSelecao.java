@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 
-public class Selecao extends JFrame {
+public class TelaSelecao extends JFrame {
 
 	private JPanel contentPane;
 
@@ -21,7 +21,7 @@ public class Selecao extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Selecao frame = new Selecao();
+					TelaSelecao frame = new TelaSelecao();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +33,7 @@ public class Selecao extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Selecao() {
+	public TelaSelecao() {
 		setTitle("Seleção");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1050, 703);
