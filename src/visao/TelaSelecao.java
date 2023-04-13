@@ -21,7 +21,8 @@ public class TelaSelecao extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaSelecao frame = new TelaSelecao();
+					TelaInicial frame = new TelaInicial();
+					frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
