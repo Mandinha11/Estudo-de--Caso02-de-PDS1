@@ -6,11 +6,14 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import net.miginfocom.swing.MigLayout;
@@ -20,6 +23,7 @@ public class TelaInicial extends JFrame {
 	private JPanel contentPane;
 	private JTextField textLogin;
 	private JTextField textSenha;
+	private JLabel lblLogoPinkmanKart;
 
 	/**
 	 * Launch the application.
@@ -51,6 +55,11 @@ public class TelaInicial extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(new MigLayout("", "[grow][53px][221px][grow]", "[grow][24px][24px][23px,grow]"));
+		
+		Icon logoPinkmanKart = new ImageIcon("imgs/PinkmanKartLogo.png");
+		JLabel lblLogoPinkmanKart = new JLabel("");
+		lblLogoPinkmanKart.setIcon(logoPinkmanKart);
+		contentPane.add(lblLogoPinkmanKart, "cell 2 0");
 
 		JLabel txtLog = new JLabel("Login:");
 		txtLog.setFont(new Font("Times New Roman", Font.PLAIN, 20));
