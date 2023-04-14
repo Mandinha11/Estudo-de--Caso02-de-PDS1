@@ -46,7 +46,7 @@ public class TelaInicial extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1056, 705);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.PINK);
+		contentPane.setBackground(new Color(218, 73, 73));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -72,6 +72,11 @@ public class TelaInicial extends JFrame {
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				dispose();
+				TelaSelecao ts = new TelaSelecao();
+				ts.setVisible(true);
+		
+			//	ArrayList<String>  = new ArrayList<>();
 				
 			}
 		});

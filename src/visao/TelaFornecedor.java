@@ -58,13 +58,25 @@ public class TelaFornecedor extends JFrame {
 		setBounds(100, 100, 1049, 715);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(255, 255, 255));
-		contentPane.setBackground(new Color(159, 0, 0));
+		contentPane.setBackground(new Color(218, 73, 73));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane
 				.setLayout(new MigLayout("", "[84.00px,grow][148px][250px][83px][250px][150px,grow][11.00][148.00px]",
 						"[][28px][31px][][23px][25px][23px][23px][23px][25px][][334px,grow]"));
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				dispose();
+				TelaSelecao ts = new TelaSelecao();
+				ts.setVisible(true);
+		
+			}
+		});
+		contentPane.add(btnVoltar, "cell 0 0");
 
 		JLabel lblNomeEmpresa = new JLabel("Nome da empresa:");
 		lblNomeEmpresa.setForeground(new Color(255, 255, 255));
@@ -103,7 +115,7 @@ public class TelaFornecedor extends JFrame {
 		contentPane.add(txtTelefone, "cell 4 2,growx,aligny center");
 
 		JButton btnCadastrar = new JButton("Cadastrar");
-		btnCadastrar.setBackground(new Color(230, 224, 0));
+		btnCadastrar.setBackground(new Color(255, 255, 255));
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Fornecedor fornecedor = new Fornecedor();
@@ -123,7 +135,7 @@ public class TelaFornecedor extends JFrame {
 		contentPane.add(btnCadastrar, "cell 7 4,growx,aligny top");
 
 		JButton btnAtualizar = new JButton("Atualizar");
-		btnAtualizar.setBackground(new Color(230, 224, 0));
+		btnAtualizar.setBackground(new Color(255, 255, 255));
 		btnAtualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -131,7 +143,7 @@ public class TelaFornecedor extends JFrame {
 		contentPane.add(btnAtualizar, "cell 7 6,growx,aligny top");
 
 		JButton btnExcluir = new JButton("Excluir");
-		btnExcluir.setBackground(new Color(230, 224, 0));
+		btnExcluir.setBackground(new Color(255, 255, 255));
 		contentPane.add(btnExcluir, "cell 7 8,growx,aligny top");
 
 		JPanel panel = new JPanel();
