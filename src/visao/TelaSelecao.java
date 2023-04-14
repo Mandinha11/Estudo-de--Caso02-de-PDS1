@@ -71,9 +71,10 @@ public class TelaSelecao extends JFrame {
 		btnCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				//dispose();
-				//TelaCliente tc = new TelaCliente();
-			//	tc.setVisible(true);
+				dispose();
+				TelaCliente tc = new TelaCliente();
+				tc.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				tc.setVisible(true);
 			}
 		});
 		btnCliente.setFont(new Font("Tahoma", Font.PLAIN, 14));

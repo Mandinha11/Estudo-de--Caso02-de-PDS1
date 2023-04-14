@@ -11,6 +11,8 @@ import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaCliente extends JFrame {
 
@@ -119,6 +121,14 @@ public class TelaCliente extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Voltar");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				dispose();
+				TelaSelecao ts = new TelaSelecao();
+				ts.setVisible(true);	
+			}
+		});
 		btnNewButton_2.setBounds(4, 9, 89, 23);
 		contentPane.add(btnNewButton_2);
 		
