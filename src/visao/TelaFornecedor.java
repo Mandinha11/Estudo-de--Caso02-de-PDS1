@@ -42,6 +42,7 @@ public class TelaFornecedor extends JFrame {
 					TelaFornecedor frame = new TelaFornecedor();
 					frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
