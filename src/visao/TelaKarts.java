@@ -51,9 +51,9 @@ public class TelaKarts extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setBounds(10, 11, 89, 23);
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -61,13 +61,13 @@ public class TelaKarts extends JFrame {
 				ts.setVisible(true);
 			}
 		});
-		btnVoltar.setBounds(10, 11, 89, 23);
+		contentPane.setLayout(null);
 		contentPane.add(btnVoltar);
 		
 		JLabel lblBuscarKarts = new JLabel("Buscar:");
+		lblBuscarKarts.setBounds(99, 43, 67, 30);
 		lblBuscarKarts.setForeground(new Color(255, 255, 255));
 		lblBuscarKarts.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		lblBuscarKarts.setBounds(99, 43, 67, 30);
 		contentPane.add(lblBuscarKarts);
 		
 		textBuscarKarts = new JTextField();
@@ -76,42 +76,43 @@ public class TelaKarts extends JFrame {
 		textBuscarKarts.setColumns(10);
 		
 		JLabel lblMarcaKarts = new JLabel("Marca:");
+		lblMarcaKarts.setBounds(99, 84, 67, 30);
 		lblMarcaKarts.setForeground(new Color(255, 255, 255));
 		lblMarcaKarts.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		lblMarcaKarts.setBounds(99, 84, 67, 30);
 		contentPane.add(lblMarcaKarts);
 		
 		textMarcaKart = new JTextField();
-		textMarcaKart.setColumns(10);
 		textMarcaKart.setBounds(176, 87, 187, 30);
+		textMarcaKart.setColumns(10);
 		contentPane.add(textMarcaKart);
 		
 		JLabel lblAno = new JLabel("Ano:");
+		lblAno.setBounds(424, 43, 67, 30);
 		lblAno.setForeground(Color.WHITE);
 		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		lblAno.setBounds(424, 43, 67, 30);
 		contentPane.add(lblAno);
 		
 		textAno = new JTextField();
-		textAno.setColumns(10);
 		textAno.setBounds(501, 43, 187, 30);
+		textAno.setColumns(10);
 		contentPane.add(textAno);
 		
 		textPreco = new JTextField();
-		textPreco.setColumns(10);
 		textPreco.setBounds(501, 84, 187, 30);
+		textPreco.setColumns(10);
 		contentPane.add(textPreco);
 		
 		JLabel lblPreo = new JLabel("Preço:");
+		lblPreo.setBounds(424, 84, 67, 30);
 		lblPreo.setForeground(Color.WHITE);
 		lblPreo.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		lblPreo.setBounds(424, 84, 67, 30);
 		contentPane.add(lblPreo);
 		
 		Panel panel = new Panel();
+		panel.setBounds(99, 120, 589, 389);
 		panel.setBackground(new Color(255, 255, 255));
 		panel.setForeground(new Color(255, 255, 255));
-		panel.setBounds(99, 120, 589, 389);
 		contentPane.add(panel);
+		panel.setLayout(null);
 	}
 }
