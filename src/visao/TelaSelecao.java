@@ -23,9 +23,10 @@ public class TelaSelecao extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaSelecao frame = new TelaSelecao();
-					frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-					frame.setVisible(true);
+					TelaSelecao max = new TelaSelecao();
+					max.setExtendedState(JFrame.MAXIMIZED_BOTH);
+					max.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -58,6 +59,7 @@ public class TelaSelecao extends JFrame {
 				
 				dispose();
 				TelaFornecedor tf = new TelaFornecedor();
+				tf.setExtendedState(JFrame.MAXIMIZED_BOTH);
 				tf.setVisible(true);
 			}
 		});

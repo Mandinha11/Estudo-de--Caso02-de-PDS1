@@ -1,18 +1,18 @@
 package visao;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import javax.swing.JLabel;
+import java.awt.EventQueue;
 import java.awt.Font;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import java.awt.FlowLayout;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
 import net.miginfocom.swing.MigLayout;
 
 public class TelaInicial extends JFrame {
@@ -74,6 +74,7 @@ public class TelaInicial extends JFrame {
 				
 				dispose();
 				TelaSelecao ts = new TelaSelecao();
+				ts.setExtendedState(JFrame.MAXIMIZED_BOTH);
 				ts.setVisible(true);
 		
 			//	ArrayList<String>  = new ArrayList<>();
