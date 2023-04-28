@@ -33,6 +33,7 @@ public class TelaKarts extends JFrame {
 					TelaKarts frame = new TelaKarts();
 					frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

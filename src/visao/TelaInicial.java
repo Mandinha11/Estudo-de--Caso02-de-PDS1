@@ -17,6 +17,9 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import net.miginfocom.swing.MigLayout;
+import java.awt.SystemColor;
+import javax.swing.JToolBar;
+import javax.swing.UIManager;
 
 public class TelaInicial extends JFrame {
 
@@ -50,34 +53,42 @@ public class TelaInicial extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1056, 705);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(218, 73, 73));
+		contentPane.setBackground(new Color(51, 153, 153));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[grow][53px][221px][grow]", "[grow][24px][24px][23px,grow]"));
+		contentPane.setLayout(new MigLayout("", "[grow][53px][221px][grow]", "[grow][grow][24px][24px][23px,grow]"));
 		
 		Icon logoPinkmanKart = new ImageIcon("imgs/PinkmanKartLogo.png");
 		JLabel lblLogoPinkmanKart = new JLabel("");
 		lblLogoPinkmanKart.setIcon(logoPinkmanKart);
-		contentPane.add(lblLogoPinkmanKart, "cell 2 0");
+		contentPane.add(lblLogoPinkmanKart, "cell 2 1");
 
 		JLabel txtLog = new JLabel("Login:");
-		txtLog.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		contentPane.add(txtLog, "cell 1 1,alignx left,aligny top");
+		txtLog.setForeground(Color.WHITE);
+		txtLog.setFont(new Font("Segoe UI Semibold", Font.BOLD, 20));
+		contentPane.add(txtLog, "cell 1 2,alignx left,aligny top");
 
 		JLabel txtSe = new JLabel("Senha:");
-		txtSe.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		contentPane.add(txtSe, "cell 1 2,alignx left,aligny top");
+		txtSe.setForeground(Color.WHITE);
+		txtSe.setFont(new Font("Segoe UI Semibold", Font.BOLD, 20));
+		contentPane.add(txtSe, "flowy,cell 1 3,alignx left,aligny top");
 
 		textLogin = new JTextField();
-		contentPane.add(textLogin, "cell 2 1,growx,aligny top");
+		textLogin.setForeground(new Color(0, 0, 0));
+		textLogin.setBackground(new Color(230, 242, 242));
+		contentPane.add(textLogin, "cell 2 2,growx,aligny top");
 		textLogin.setColumns(10);
 
 		textSenha = new JTextField();
+		textSenha.setBackground(new Color(230, 242, 242));
 		textSenha.setColumns(10);
-		contentPane.add(textSenha, "cell 2 2,growx,aligny bottom");
+		contentPane.add(textSenha, "cell 2 3,growx,aligny bottom");
 
 		JButton btnEntrar = new JButton("Logar");
+		btnEntrar.setForeground(new Color(0, 0, 0));
+		btnEntrar.setFont(new Font("Segoe UI Semibold", Font.BOLD, 16));
+		btnEntrar.setBackground(UIManager.getColor("Button.background"));
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -90,6 +101,6 @@ public class TelaInicial extends JFrame {
 				
 			}
 		});
-		contentPane.add(btnEntrar, "cell 2 3,growx,aligny top");
+		contentPane.add(btnEntrar, "cell 2 4,growx,aligny top");
 	}
 }

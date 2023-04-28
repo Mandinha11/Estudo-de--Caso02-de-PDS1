@@ -119,12 +119,14 @@ public class TelaFornecedor extends JFrame {
 		btnCadastrar.setBackground(new Color(255, 255, 255));
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				Fornecedor fornecedor = new Fornecedor();
 				FornecedorDAO fornecedorDao = FornecedorDAO.getinstancia();
 				fornecedor.setNomeEmpressa(txtNomeEmpresa.getText());
 				fornecedor.setCnpj(Long.valueOf(txtCNPJ.getText()));
 				fornecedor.setCpf(Long.valueOf(txtCPF.getText()));
 				fornecedor.setTelefone(Long.valueOf(txtTelefone.getText()));
+				
 				if(fornecedorDao.Inserir(fornecedor)==true) {
 					JOptionPane.showMessageDialog(btnCadastrar, "Boa");
 				}else {
