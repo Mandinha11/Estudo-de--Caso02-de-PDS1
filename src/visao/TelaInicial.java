@@ -77,7 +77,7 @@ public class TelaInicial extends JFrame {
 		textLogin = new JTextField();
 		textLogin.setForeground(new Color(0, 0, 0));
 		textLogin.setBackground(new Color(230, 242, 242));
-		contentPane.add(textLogin, "cell 2 2,growx,aligny top");
+		contentPane.add(textLogin, "cell 2 2,growx,aligny bottom");
 		textLogin.setColumns(10);
 
 		textSenha = new JTextField();

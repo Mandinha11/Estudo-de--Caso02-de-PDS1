@@ -59,7 +59,7 @@ public class TelaFornecedor extends JFrame {
 		setBounds(100, 100, 1049, 715);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(255, 255, 255));
-		contentPane.setBackground(new Color(218, 73, 73));
+		contentPane.setBackground(new Color(0, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -73,6 +73,7 @@ public class TelaFornecedor extends JFrame {
 				
 				dispose();
 				TelaSelecao ts = new TelaSelecao();
+				ts.setExtendedState(JFrame.MAXIMIZED_BOTH);
 				ts.setVisible(true);
 		
 			}
