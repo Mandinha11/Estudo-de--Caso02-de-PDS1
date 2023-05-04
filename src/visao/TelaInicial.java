@@ -11,11 +11,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import Modelo.Fornecedor;
 import net.miginfocom.swing.MigLayout;
 import java.awt.SystemColor;
 import javax.swing.JToolBar;
@@ -23,6 +25,8 @@ import javax.swing.UIManager;
 
 public class TelaInicial extends JFrame {
 
+	protected static final JTextField String = null;
+	protected static final JTextField Empty = null;
 	private JPanel contentPane;
 	private JTextField textLogin;
 	private JTextField textSenha;
@@ -53,7 +57,7 @@ public class TelaInicial extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1056, 705);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(51, 153, 153));
+		contentPane.setBackground(new Color(0, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -92,13 +96,30 @@ public class TelaInicial extends JFrame {
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				dispose();
-				TelaSelecao ts = new TelaSelecao();
-				ts.setExtendedState(JFrame.MAXIMIZED_BOTH);
-				ts.setVisible(true);
+				
+				
+			
+				
+				if (checkLogin(textLogin.getText(), new String(textSenha.getText()))) {
+					JOptionPane.showMessageDialog(null, "Voce entrou no sistema");
+					
+					dispose();
+					TelaSelecao ts = new TelaSelecao();
+					ts.setExtendedState(JFrame.MAXIMIZED_BOTH);
+					ts.setVisible(true);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Dados não informados");
+				}
+				
+				
 		
 			//	ArrayList<String>  = new ArrayList<>();
 				
+			}
+			
+			public boolean checkLogin(String login, String senha) {
+				return login.equals("usuario") && senha.equals("123");
 			}
 		});
 		contentPane.add(btnEntrar, "cell 2 4,growx,aligny top");

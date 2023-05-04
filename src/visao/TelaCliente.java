@@ -46,9 +46,9 @@ public class TelaCliente extends JFrame {
 	public TelaCliente() {
 		setTitle("Cliente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1700, 957);
+		setBounds(100, 100, 1634, 920);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(51, 153, 153));
+		contentPane.setBackground(new Color(0, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
