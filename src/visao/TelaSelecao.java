@@ -29,10 +29,9 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
 import javax.swing.SpringLayout;
+import java.awt.Panel;
+import java.awt.Label;
 
 public class TelaSelecao extends JFrame {
 
@@ -61,14 +60,14 @@ public class TelaSelecao extends JFrame {
 	 */
 	public TelaSelecao() {
 		
-		//Icon logoPinkmanKart = new ImageIcon("imgs/PinkmanKartLogo.png");
-		//JLabel lblLogoPinkmanKart = new JLabel("");
-		//lblLogoPinkmanKart.setIcon(FundoDeTela);
-	//	contentPane.add(lblFundoDeTela, "cell 2 1");
+		//Icon FundoDeTela = new ImageIcon("imgs/FundoDeTela.jpg");
+		//JLabel lblFundoDeTela = new JLabel("");
+		//lblFundoDeTela.setIcon(FundoDeTela);
+		//contentPane.add(lblFundoDeTela, "cell 2 1");
 		
 		setTitle("Seleção");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1940, 1075);
+		setBounds(100, 100, 1940, 1102);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -76,6 +75,7 @@ public class TelaSelecao extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton btnFornecedor = new JButton("Fornecedor");
+		btnFornecedor.setBounds(561, 432, 491, 35);
 		btnFornecedor.setBackground(UIManager.getColor("Button.background"));
 		btnFornecedor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -89,6 +89,7 @@ public class TelaSelecao extends JFrame {
 		btnFornecedor.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
 		JButton btnKarts = new JButton("Karts");
+		btnKarts.setBounds(561, 314, 491, 35);
 		btnKarts.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -102,6 +103,7 @@ public class TelaSelecao extends JFrame {
 		btnKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
 		JButton btnVendas = new JButton("Vendas");
+		btnVendas.setBounds(561, 493, 491, 35);
 		btnVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -113,6 +115,7 @@ public class TelaSelecao extends JFrame {
 		btnVendas.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
 		JButton btnCliente = new JButton("Cliente");
+		btnCliente.setBounds(561, 372, 491, 35);
 		btnCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -123,23 +126,15 @@ public class TelaSelecao extends JFrame {
 			}
 		});
 		btnCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
-		SpringLayout sl_contentPane = new SpringLayout();
-		sl_contentPane.putConstraint(SpringLayout.NORTH, btnKarts, 309, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.WEST, btnKarts, 556, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnKarts, 1047, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.NORTH, btnCliente, 367, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.WEST, btnCliente, 556, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnCliente, 1047, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.NORTH, btnFornecedor, 427, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.WEST, btnFornecedor, 556, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnFornecedor, 1047, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.NORTH, btnVendas, 488, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.WEST, btnVendas, 556, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnVendas, 1047, SpringLayout.WEST, contentPane);
-		contentPane.setLayout(sl_contentPane);
+		contentPane.setLayout(null);
 		contentPane.add(btnVendas);
 		contentPane.add(btnFornecedor);
 		contentPane.add(btnCliente);
 		contentPane.add(btnKarts);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblNewLabel.setBounds(0, 0, 1924, 1061);
+		contentPane.add(lblNewLabel);
 	}
 }
