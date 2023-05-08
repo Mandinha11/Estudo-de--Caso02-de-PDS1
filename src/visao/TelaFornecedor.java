@@ -133,8 +133,16 @@ public class TelaFornecedor extends JFrame {
 				}else {
 					JOptionPane.showMessageDialog(btnCadastrar, "Deu não");
 				}
+				 if (txtNomeEmpresa.getText().trim().length() == 0) {
+					 JOptionPane.showMessageDialog(btnCadastrar, "Campo de texto não cadastrado!!");
+					 return;
+			        }
+				
 				
 			}
+			
+
+			
 		});
 		contentPane.add(btnCadastrar, "cell 7 4,growx,aligny top");
 
