@@ -67,7 +67,7 @@ public class TelaSelecao extends JFrame {
 		
 		setTitle("Seleção");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1940, 1102);
+		setBounds(100, 100, 2217, 1100);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -75,7 +75,7 @@ public class TelaSelecao extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton btnFornecedor = new JButton("Fornecedor");
-		btnFornecedor.setBounds(561, 432, 491, 35);
+		btnFornecedor.setBounds(707, 502, 491, 35);
 		btnFornecedor.setBackground(UIManager.getColor("Button.background"));
 		btnFornecedor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -89,7 +89,7 @@ public class TelaSelecao extends JFrame {
 		btnFornecedor.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
 		JButton btnKarts = new JButton("Karts");
-		btnKarts.setBounds(561, 314, 491, 35);
+		btnKarts.setBounds(707, 389, 491, 35);
 		btnKarts.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -103,7 +103,7 @@ public class TelaSelecao extends JFrame {
 		btnKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
 		JButton btnVendas = new JButton("Vendas");
-		btnVendas.setBounds(561, 493, 491, 35);
+		btnVendas.setBounds(707, 559, 491, 35);
 		btnVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -115,7 +115,7 @@ public class TelaSelecao extends JFrame {
 		btnVendas.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
 		JButton btnCliente = new JButton("Cliente");
-		btnCliente.setBounds(561, 372, 491, 35);
+		btnCliente.setBounds(707, 446, 491, 35);
 		btnCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -132,9 +132,9 @@ public class TelaSelecao extends JFrame {
 		contentPane.add(btnCliente);
 		contentPane.add(btnKarts);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblNewLabel.setBounds(0, 0, 1924, 1061);
-		contentPane.add(lblNewLabel);
+		JLabel lblFundoDeTela = new JLabel("");
+		lblFundoDeTela.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblFundoDeTela.setBounds(0, 0, 1924, 1061);
+		contentPane.add(lblFundoDeTela);
 	}
 }

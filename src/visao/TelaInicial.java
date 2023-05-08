@@ -65,7 +65,7 @@ public class TelaInicial extends JFrame {
 		
 		Icon logoPinkmanKart = new ImageIcon("imgs/PinkmanKartLogo.png");
 		JLabel lblLogoPinkmanKart = new JLabel("");
-		lblLogoPinkmanKart.setIcon(logoPinkmanKart);
+		lblLogoPinkmanKart.setIcon(new ImageIcon(TelaInicial.class.getResource("/imgs/PinkmanKartLogo.png")));
 		contentPane.add(lblLogoPinkmanKart, "cell 2 1");
 
 		JLabel txtLog = new JLabel("Login:");

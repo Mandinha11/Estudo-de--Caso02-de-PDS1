@@ -22,6 +22,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.ImageIcon;
 
 public class TelaFornecedor extends JFrame {
 
@@ -56,18 +57,16 @@ public class TelaFornecedor extends JFrame {
 	public TelaFornecedor() {
 		setTitle("Fornecedor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1049, 715);
+		setBounds(100, 100, 1940, 1162);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(255, 255, 255));
 		contentPane.setBackground(new Color(0, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane
-				.setLayout(new MigLayout("", "[84.00px,grow][148px][250px][83px][250px][150px,grow][11.00][148.00px]",
-						"[][28px][31px][][23px][25px][23px][23px][23px][25px][][334px,grow]"));
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setBounds(12, 12, 127, 28);
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -78,45 +77,55 @@ public class TelaFornecedor extends JFrame {
 		
 			}
 		});
-		contentPane.add(btnVoltar, "cell 0 0");
+		contentPane.setLayout(null);
+		contentPane.add(btnVoltar);
 
 		JLabel lblNomeEmpresa = new JLabel("Nome da empresa:");
-		lblNomeEmpresa.setForeground(new Color(255, 255, 255));
+		lblNomeEmpresa.setBounds(518, 39, 141, 28);
+		lblNomeEmpresa.setForeground(new Color(0, 0, 0));
 		lblNomeEmpresa.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		contentPane.add(lblNomeEmpresa, "cell 1 1,alignx right,growy");
+		contentPane.add(lblNomeEmpresa);
 
 		JLabel lblCpf = new JLabel("CPF:");
-		lblCpf.setForeground(new Color(255, 255, 255));
+		lblCpf.setBounds(1126, 39, 34, 28);
+		lblCpf.setForeground(new Color(0, 0, 0));
 		lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		contentPane.add(lblCpf, "cell 3 1,alignx right,growy");
+		contentPane.add(lblCpf);
 
 		txtNomeEmpresa = new JTextField();
-		contentPane.add(txtNomeEmpresa, "cell 2 1,growx,aligny center");
+		txtNomeEmpresa.setBounds(669, 88, 335, 28);
+		contentPane.add(txtNomeEmpresa);
 		txtNomeEmpresa.setColumns(10);
 
 		txtCPF = new JTextField();
+		txtCPF.setBounds(1170, 89, 335, 27);
 		txtCPF.setColumns(10);
-		contentPane.add(txtCPF, "cell 4 1,growx,aligny center");
+		contentPane.add(txtCPF);
 
 		JLabel lblCnpj = new JLabel("CNPJ:");
-		lblCnpj.setForeground(new Color(255, 255, 255));
+		lblCnpj.setBounds(618, 84, 43, 31);
+		lblCnpj.setForeground(new Color(0, 0, 0));
 		lblCnpj.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		contentPane.add(lblCnpj, "cell 1 2,alignx right,growy");
+		contentPane.add(lblCnpj);
 
 		txtCNPJ = new JTextField();
+		txtCNPJ.setBounds(669, 42, 335, 28);
 		txtCNPJ.setColumns(10);
-		contentPane.add(txtCNPJ, "cell 2 2,growx,aligny center");
+		contentPane.add(txtCNPJ);
 
 		JLabel lblTelefone = new JLabel("Telefone:");
-		lblTelefone.setForeground(new Color(255, 255, 255));
+		lblTelefone.setBounds(1090, 84, 70, 31);
+		lblTelefone.setForeground(new Color(0, 0, 0));
 		lblTelefone.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		contentPane.add(lblTelefone, "cell 3 2,alignx right,growy");
+		contentPane.add(lblTelefone);
 
 		txtTelefone = new JTextField();
+		txtTelefone.setBounds(1170, 42, 335, 28);
 		txtTelefone.setColumns(10);
-		contentPane.add(txtTelefone, "cell 4 2,growx,aligny center");
+		contentPane.add(txtTelefone);
 
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.setBounds(1687, 273, 210, 42);
 		btnCadastrar.setBackground(new Color(255, 255, 255));
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -144,27 +153,35 @@ public class TelaFornecedor extends JFrame {
 
 			
 		});
-		contentPane.add(btnCadastrar, "cell 7 4,growx,aligny top");
+		contentPane.add(btnCadastrar);
 
 		JButton btnAtualizar = new JButton("Atualizar");
+		btnAtualizar.setBounds(1687, 135, 210, 42);
 		btnAtualizar.setBackground(new Color(255, 255, 255));
 		btnAtualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		contentPane.add(btnAtualizar, "cell 7 6,growx,aligny top");
+		contentPane.add(btnAtualizar);
 
 		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setBounds(1687, 204, 208, 42);
 		btnExcluir.setBackground(new Color(255, 255, 255));
-		contentPane.add(btnExcluir, "cell 7 8,growx,aligny top");
+		contentPane.add(btnExcluir);
 
 		JPanel panel = new JPanel();
+		panel.setBounds(25, 135, 1616, 855);
 		panel.setBackground(new Color(255, 255, 255));
-		contentPane.add(panel, "cell 0 4 6 8,grow");
+		contentPane.add(panel);
 		panel.setLayout(new MigLayout("", "[145.00px,grow]", "[82.00px,grow]"));
 
 		table = new JTable();
 		panel.add(table);
+		
+		JLabel lblTelaDeFundo = new JLabel("New label");
+		lblTelaDeFundo.setIcon(new ImageIcon(TelaFornecedor.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblTelaDeFundo.setBounds(0, 0, 1924, 1061);
+		contentPane.add(lblTelaDeFundo);
 	}
 	
 	public void atualizarTabela(ArrayList<Fornecedor> Usuario) {

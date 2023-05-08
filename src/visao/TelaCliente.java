@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
+import javax.swing.ImageIcon;
 
 public class TelaCliente extends JFrame {
 
@@ -46,29 +47,30 @@ public class TelaCliente extends JFrame {
 	public TelaCliente() {
 		setTitle("Cliente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1634, 920);
+		setBounds(100, 100, 2216, 1104);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Cadastrar");
+		btnNewButton.setBounds(61, 272, 242, 39);
 		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(61, 272, 242, 39);
+		contentPane.setLayout(null);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Listar");
-		btnNewButton_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		btnNewButton_1.setBounds(61, 335, 242, 39);
+		btnNewButton_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Voltar");
+		btnNewButton_2.setBounds(4, 9, 89, 23);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -78,13 +80,12 @@ public class TelaCliente extends JFrame {
 				ts.setVisible(true);	
 			}
 		});
-		btnNewButton_2.setBounds(4, 9, 89, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JPanel panel = new JPanel();
+		panel.setBounds(380, 35, 506, 45);
 		panel.setBackground(new Color(211, 211, 211));
 		panel.setToolTipText("");
-		panel.setBounds(380, 35, 506, 45);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -120,10 +121,10 @@ public class TelaCliente extends JFrame {
 		textField_1.setColumns(10);
 		
 		JPanel panel_2 = new JPanel();
+		panel_2.setBounds(380, 107, 506, 45);
 		panel_2.setLayout(null);
 		panel_2.setToolTipText("");
 		panel_2.setBackground(new Color(211, 211, 211));
-		panel_2.setBounds(380, 107, 506, 45);
 		contentPane.add(panel_2);
 		
 		JLabel lblNewLabel_2 = new JLabel("Data De Nascimento:");
@@ -164,10 +165,10 @@ public class TelaCliente extends JFrame {
 		lblNewLabel_4.setForeground(new Color(0, 128, 128));
 		
 		JPanel panel_1_1 = new JPanel();
+		panel_1_1.setBounds(1048, 107, 506, 45);
 		panel_1_1.setLayout(null);
 		panel_1_1.setToolTipText("");
 		panel_1_1.setBackground(new Color(211, 211, 211));
-		panel_1_1.setBounds(1048, 107, 506, 45);
 		contentPane.add(panel_1_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("Numero de Telefone:");
@@ -184,5 +185,10 @@ public class TelaCliente extends JFrame {
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(380, 218, 1174, 672);
 		contentPane.add(panel_3);
+		
+		JLabel lblFundoDeTela = new JLabel("New label");
+		lblFundoDeTela.setIcon(new ImageIcon(TelaCliente.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblFundoDeTela.setBounds(0, 0, 1924, 1061);
+		contentPane.add(lblFundoDeTela);
 	}
 }

@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import java.awt.Panel;
+import javax.swing.ImageIcon;
 
 public class TelaKarts extends JFrame {
 
@@ -48,7 +49,7 @@ public class TelaKarts extends JFrame {
 	public TelaKarts() {
 		setTitle("Karts");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1742, 1004);
+		setBounds(100, 100, 2218, 1126);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -56,7 +57,7 @@ public class TelaKarts extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(10, 11, 89, 23);
+		btnVoltar.setBounds(10, 11, 126, 30);
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -68,34 +69,34 @@ public class TelaKarts extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.add(btnVoltar);
 		
-		JLabel lblBuscarKarts = new JLabel("Cor:");
-		lblBuscarKarts.setBounds(355, 63, 67, 30);
-		lblBuscarKarts.setForeground(new Color(0, 0, 0));
-		lblBuscarKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		contentPane.add(lblBuscarKarts);
-		
 		Panel panel = new Panel();
-		panel.setBounds(318, 247, 1325, 610);
+		panel.setBounds(318, 247, 1536, 749);
 		panel.setBackground(new Color(255, 255, 255));
 		panel.setForeground(new Color(255, 255, 255));
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(318, 52, 424, 54);
 		panel_1.setBackground(new Color(192, 192, 192));
-		panel_1.setBounds(318, 52, 391, 54);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
 		textMarcaKart = new JTextField();
-		textMarcaKart.setBounds(130, 11, 239, 30);
+		textMarcaKart.setBounds(130, 11, 262, 30);
 		panel_1.add(textMarcaKart);
 		textMarcaKart.setColumns(10);
 		
+		JLabel lblBuscarKarts = new JLabel("Cor:");
+		lblBuscarKarts.setBounds(35, 11, 67, 30);
+		panel_1.add(lblBuscarKarts);
+		lblBuscarKarts.setForeground(new Color(0, 0, 0));
+		lblBuscarKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		
 		JPanel panel_1_1 = new JPanel();
+		panel_1_1.setBounds(318, 138, 424, 54);
 		panel_1_1.setLayout(null);
 		panel_1_1.setBackground(Color.LIGHT_GRAY);
-		panel_1_1.setBounds(318, 117, 391, 54);
 		contentPane.add(panel_1_1);
 		
 		JLabel lblQuantidade = new JLabel("Quantidade:");
@@ -105,14 +106,14 @@ public class TelaKarts extends JFrame {
 		lblQuantidade.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
 		textField = new JTextField();
-		textField.setBounds(134, 11, 234, 30);
+		textField.setBounds(134, 11, 260, 30);
 		panel_1_1.add(textField);
 		textField.setColumns(10);
 		
 		JPanel panel_1_1_1 = new JPanel();
+		panel_1_1_1.setBounds(863, 52, 424, 54);
 		panel_1_1_1.setLayout(null);
 		panel_1_1_1.setBackground(Color.LIGHT_GRAY);
-		panel_1_1_1.setBounds(784, 52, 391, 54);
 		contentPane.add(panel_1_1_1);
 		
 		JLabel lblAno = new JLabel("Ano:");
@@ -122,31 +123,31 @@ public class TelaKarts extends JFrame {
 		lblAno.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
 		textPreco = new JTextField();
-		textPreco.setBounds(130, 13, 234, 30);
+		textPreco.setBounds(130, 13, 261, 30);
 		panel_1_1_1.add(textPreco);
 		textPreco.setColumns(10);
 		
 		JPanel panel_1_1_2 = new JPanel();
+		panel_1_1_2.setBounds(863, 138, 424, 54);
 		panel_1_1_2.setLayout(null);
 		panel_1_1_2.setBackground(Color.LIGHT_GRAY);
-		panel_1_1_2.setBounds(784, 117, 391, 54);
 		contentPane.add(panel_1_1_2);
 		
 		textBuscarKarts = new JTextField();
-		textBuscarKarts.setBounds(131, 11, 234, 30);
+		textBuscarKarts.setBounds(131, 11, 261, 30);
 		panel_1_1_2.add(textBuscarKarts);
 		textBuscarKarts.setColumns(10);
 		
 		JLabel lblPreo = new JLabel("Preço:");
-		lblPreo.setBounds(34, 8, 67, 30);
+		lblPreo.setBounds(35, 8, 67, 30);
 		panel_1_1_2.add(lblPreo);
 		lblPreo.setForeground(new Color(0, 0, 0));
 		lblPreo.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
 		JPanel panel_1_1_3 = new JPanel();
+		panel_1_1_3.setBounds(1370, 138, 424, 54);
 		panel_1_1_3.setLayout(null);
 		panel_1_1_3.setBackground(Color.LIGHT_GRAY);
-		panel_1_1_3.setBounds(1252, 117, 391, 54);
 		contentPane.add(panel_1_1_3);
 		
 		JLabel lblMarcaKarts = new JLabel("Marca:");
@@ -156,24 +157,28 @@ public class TelaKarts extends JFrame {
 		lblMarcaKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
 		textAno = new JTextField();
-		textAno.setBounds(135, 14, 234, 30);
+		textAno.setBounds(135, 14, 259, 30);
 		panel_1_1_3.add(textAno);
 		textAno.setColumns(10);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnCadastrar.setBounds(45, 322, 227, 41);
 		btnCadastrar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		btnCadastrar.setBounds(48, 333, 199, 41);
 		contentPane.add(btnCadastrar);
 		
 		JButton btnListar = new JButton("Listar");
+		btnListar.setBounds(45, 247, 227, 41);
 		btnListar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		btnListar.setBounds(48, 281, 199, 41);
 		contentPane.add(btnListar);
 		
 		JPanel panel_1_1_3_1 = new JPanel();
+		panel_1_1_3_1.setBounds(1370, 52, 424, 54);
 		panel_1_1_3_1.setLayout(null);
 		panel_1_1_3_1.setBackground(Color.LIGHT_GRAY);
-		panel_1_1_3_1.setBounds(1252, 52, 391, 54);
 		contentPane.add(panel_1_1_3_1);
 		
 		JLabel lblModelo = new JLabel("Modelo:");
@@ -184,7 +189,12 @@ public class TelaKarts extends JFrame {
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(135, 14, 234, 30);
+		textField_1.setBounds(135, 14, 260, 30);
 		panel_1_1_3_1.add(textField_1);
+		
+		JLabel lblTelaDoFundo = new JLabel("New label");
+		lblTelaDoFundo.setIcon(new ImageIcon(TelaKarts.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblTelaDoFundo.setBounds(0, 0, 1924, 1061);
+		contentPane.add(lblTelaDoFundo);
 	}
 }
