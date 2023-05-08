@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 
 import Controle.FornecedorDAO;
 import Modelo.Fornecedor;
@@ -14,6 +15,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.GridLayout;
+
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.JButton;
@@ -32,6 +35,9 @@ public class TelaFornecedor extends JFrame {
 	private JTextField txtCNPJ;
 	private JTextField txtTelefone;
 	private JTable table;
+	private JTable table_1;
+	private FornecedorDAO dao;
+	private DefaultTableModel modelo;
 
 	/**
 	 * Launch the application.
@@ -55,6 +61,7 @@ public class TelaFornecedor extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaFornecedor() {
+		dao = FornecedorDAO.getinstancia();
 		setTitle("Fornecedor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1940, 1162);
@@ -134,29 +141,7 @@ public class TelaFornecedor extends JFrame {
 				
 				FornecedorDAO fornecedorDao = FornecedorDAO.getinstancia();
 				
-				 if (txtNomeEmpresa.getText().trim().length() == 0) {
-					 JOptionPane.showMessageDialog(null, "Nome da Empresa não preenchido!!");
-					 return;
-			        }
-				 else {
-					 fornecedor.setNomeEmpressa(txtNomeEmpresa.getText());
-			        }
-				 
-				 if (txtCNPJ.getText().trim().length() == 0) {
-					 JOptionPane.showMessageDialog(null, "CNPJ não preenchido!!");
-					 return;
-			        }
-				 else {
-					 fornecedor.setCnpj(Long.valueOf(txtCNPJ.getText()));
-				 }
-				 
-				 if (txtCPF.getText().trim().length() == 0) {
-					 JOptionPane.showMessageDialog(null, "CPF não preenchido!!");
-					 return;
-			        }
-				 else {
-					 fornecedor.setCpf(Long.valueOf(txtCPF.getText()));
-				 }
+				
 				 
 				 if (txtTelefone.getText().trim().length() == 0) {
 					 JOptionPane.showMessageDialog(null, "Telefone não preenchido!!");
@@ -167,11 +152,12 @@ public class TelaFornecedor extends JFrame {
 				
 			}
 				
-				if(fornecedorDao.Inserir(fornecedor)==true) {
-					JOptionPane.showMessageDialog(null, "Boa");
-				}else {
-					JOptionPane.showMessageDialog(null, "Deu não");
-				}
+				 if(dao.Inserir(fornecedor)==true) {
+						JOptionPane.showMessageDialog(btnCadastrar, "Boa");
+						atualizarTabela();
+					}else {
+						JOptionPane.showMessageDialog(btnCadastrar, "Deu não");
+					}
 				
 				
 				
@@ -187,6 +173,7 @@ public class TelaFornecedor extends JFrame {
 		btnAtualizar.setBackground(new Color(255, 255, 255));
 		btnAtualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				atualizarTabela();
 			}
 		});
 		contentPane.add(btnAtualizar);
@@ -200,26 +187,51 @@ public class TelaFornecedor extends JFrame {
 		panel.setBounds(25, 135, 1616, 855);
 		panel.setBackground(new Color(255, 255, 255));
 		contentPane.add(panel);
-		panel.setLayout(new MigLayout("", "[145.00px,grow]", "[82.00px,grow]"));
+		panel.setLayout(new GridLayout(0, 1, 0, 0));
 
-		table = new JTable();
-		panel.add(table);
 		
 		JLabel lblTelaDeFundo = new JLabel("New label");
 		lblTelaDeFundo.setIcon(new ImageIcon(TelaFornecedor.class.getResource("/imgs/FundoDeTela.jpg")));
 		lblTelaDeFundo.setBounds(0, 0, 1924, 1061);
 		contentPane.add(lblTelaDeFundo);
+		
+		table = new JTable();
+		panel.setBackground(new Color(255, 255, 255));
+		contentPane.add(panel, "cell 0 4 6 8,grow");
+		panel.add(table);
+		
+		Object[] columns = {"Nome da Empresa", "CNPJ", "CPF", "Telefone"};
+
+		modelo = new javax.swing.table.DefaultTableModel(columns, 0);
+		panel.setLayout(new GridLayout(0, 1, 0, 0));
+		table_1 = new JTable(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"Nome da Empresa", "CNPJ", "CPF", "Telefone"
+			}
+		));
+		table_1.setToolTipText("");
+		table_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		table_1.setBackground(new Color(255, 255, 255));
+		panel.add(table_1);
+		atualizarTabela();
 	}
 	
-	public void atualizarTabela(ArrayList<Fornecedor> Usuario) {
+	public void atualizarTabela() {
+		JOptionPane.showMessageDialog(null, "Atualizando tabela");
+		ArrayList<Fornecedor> fornecedores = dao.Listar();
+		Object[] columns = {"Nome da Empresa", "CNPJ", "CPF", "Telefone"};
+		modelo.setColumnIdentifiers(columns);
 	    // Limpa o modelo da tabela
-//		table.setRowCount(0);
+		modelo.setRowCount(0);
 	    
 	    // Adiciona as pessoas como novas linhas da tabela
-		for (Fornecedor fornecedor : Usuario) {
-	        Object[] linha = {fornecedor.getCnpj(), fornecedor.getCpf(), fornecedor.getNomeEmpressa(), fornecedor.getTelefone()};
-//	        table.addRow(linha);
+		for (Fornecedor fornecedor : fornecedores) {
+	        Object[] linha = {fornecedor.getNomeEmpressa(), fornecedor.getCnpj(), fornecedor.getCpf(),  fornecedor.getTelefone()};
+	        modelo.addRow(linha);
+		}
 		}
 	}
 
-}
+
