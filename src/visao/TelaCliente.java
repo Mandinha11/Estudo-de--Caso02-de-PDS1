@@ -5,7 +5,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Controle.ClienteDAO;
+import Controle.FornecedorDAO;
+import Modelo.Cliente;
+import Modelo.Fornecedor;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import java.awt.Color;
@@ -19,9 +26,9 @@ import javax.swing.ImageIcon;
 public class TelaCliente extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField textNomeCompleto;
+	private JTextField textCPF;
+	private JTextField textTelefone;
 
 	/**
 	 * Launch the application.
@@ -59,6 +66,43 @@ public class TelaCliente extends JFrame {
 		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				Cliente cliente = new Cliente();
+				
+				
+				ClienteDAO clienteDao = ClienteDAO.getinstancia();
+				
+				 if (textNomeCompleto.getText().trim().length() == 0) {
+					 JOptionPane.showMessageDialog(null, "Nome não preenchido!!");
+					 return;
+			        }
+				 else {
+					 cliente.setNomeEmpressa(textNomeCompleto.getText());
+				 }
+				
+				 if (textCPF.getText().trim().length() == 0) {
+					 JOptionPane.showMessageDialog(null, "CPF não preenchido!!");
+					 return;
+				 }
+				 else {
+				cliente.setCpf(Long.valueOf(textCPF.getText()));
+				 }
+				 
+				 if (textTelefone.getText().trim().length() == 0) {
+					 JOptionPane.showMessageDialog(null, "Telefone não preenchido!!");
+					 return;
+				 }
+				 else {
+				cliente.setTelefone(Long.valueOf(textTelefone.getText()));
+				 }
+				
+				
+				if(clienteDao.Inserir(cliente)==true) {
+					JOptionPane.showMessageDialog(null, "Boa");
+				}else {
+					JOptionPane.showMessageDialog(null, "Deu não");
+				}
+				
 			}
 		});
 		contentPane.setLayout(null);
@@ -96,10 +140,10 @@ public class TelaCliente extends JFrame {
 		lblNewLabel.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		lblNewLabel.setForeground(new Color(0, 0, 0));
 		
-		textField = new JTextField();
-		textField.setBounds(177, 11, 319, 23);
-		panel.add(textField);
-		textField.setColumns(10);
+		textNomeCompleto = new JTextField();
+		textNomeCompleto.setBounds(177, 11, 319, 23);
+		panel.add(textNomeCompleto);
+		textNomeCompleto.setColumns(10);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(1048, 35, 506, 45);
@@ -115,10 +159,10 @@ public class TelaCliente extends JFrame {
 		lblCpf.setBounds(75, 6, 64, 25);
 		panel_1.add(lblCpf);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(179, 9, 317, 25);
-		panel_1.add(textField_1);
-		textField_1.setColumns(10);
+		textCPF = new JTextField();
+		textCPF.setBounds(179, 9, 317, 25);
+		panel_1.add(textCPF);
+		textCPF.setColumns(10);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBounds(380, 107, 506, 45);
@@ -177,10 +221,10 @@ public class TelaCliente extends JFrame {
 		lblNewLabel_3.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		lblNewLabel_3.setForeground(new Color(0, 0, 0));
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(179, 11, 317, 23);
-		panel_1_1.add(textField_2);
-		textField_2.setColumns(10);
+		textTelefone = new JTextField();
+		textTelefone.setBounds(179, 11, 317, 23);
+		panel_1_1.add(textTelefone);
+		textTelefone.setColumns(10);
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(380, 218, 1174, 672);

@@ -131,21 +131,48 @@ public class TelaFornecedor extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				Fornecedor fornecedor = new Fornecedor();
-				FornecedorDAO fornecedorDao = FornecedorDAO.getinstancia();
-				fornecedor.setNomeEmpressa(txtNomeEmpresa.getText());
-				fornecedor.setCnpj(Long.valueOf(txtCNPJ.getText()));
-				fornecedor.setCpf(Long.valueOf(txtCPF.getText()));
-				fornecedor.setTelefone(Long.valueOf(txtTelefone.getText()));
 				
-				if(fornecedorDao.Inserir(fornecedor)==true) {
-					JOptionPane.showMessageDialog(btnCadastrar, "Boa");
-				}else {
-					JOptionPane.showMessageDialog(btnCadastrar, "Deu não");
-				}
+				FornecedorDAO fornecedorDao = FornecedorDAO.getinstancia();
+				
 				 if (txtNomeEmpresa.getText().trim().length() == 0) {
-					 JOptionPane.showMessageDialog(btnCadastrar, "Campo de texto não cadastrado!!");
+					 JOptionPane.showMessageDialog(null, "Nome da Empresa não preenchido!!");
 					 return;
 			        }
+				 else {
+					 fornecedor.setNomeEmpressa(txtNomeEmpresa.getText());
+			        }
+				 
+				 if (txtCNPJ.getText().trim().length() == 0) {
+					 JOptionPane.showMessageDialog(null, "CNPJ não preenchido!!");
+					 return;
+			        }
+				 else {
+					 fornecedor.setCnpj(Long.valueOf(txtCNPJ.getText()));
+				 }
+				 
+				 if (txtCPF.getText().trim().length() == 0) {
+					 JOptionPane.showMessageDialog(null, "CPF não preenchido!!");
+					 return;
+			        }
+				 else {
+					 fornecedor.setCpf(Long.valueOf(txtCPF.getText()));
+				 }
+				 
+				 if (txtTelefone.getText().trim().length() == 0) {
+					 JOptionPane.showMessageDialog(null, "Telefone não preenchido!!");
+					 return;
+			        }
+				 else {
+				fornecedor.setTelefone(Long.valueOf(txtTelefone.getText()));
+				
+			}
+				
+				if(fornecedorDao.Inserir(fornecedor)==true) {
+					JOptionPane.showMessageDialog(null, "Boa");
+				}else {
+					JOptionPane.showMessageDialog(null, "Deu não");
+				}
+				
 				
 				
 			}
