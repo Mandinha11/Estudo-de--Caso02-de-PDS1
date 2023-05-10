@@ -2,7 +2,7 @@ package Modelo;
 
 public class Fornecedor {
 	
-	private String nomeEmpressa;
+	private String NomeEmpresa;
 	private Long cnpj;
 	private Long cpf;
 	private Long telefone;
@@ -11,11 +11,11 @@ public class Fornecedor {
 		
 	}
 	
-	public String getNomeEmpressa() {
-		return nomeEmpressa;
+	public String getNomeEmpresa() {
+		return NomeEmpresa;
 	}
-	public void setNomeEmpressa(String nomeEmpressa) {
-		this.nomeEmpressa = nomeEmpressa;
+	public void setNomeEmpresa(String NomeEmpresa) {
+		this.NomeEmpresa = NomeEmpresa;
 	}
 	public Long getCnpj() {
 		return cnpj;

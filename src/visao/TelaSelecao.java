@@ -108,8 +108,13 @@ public class TelaSelecao extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				dispose();
-				//TelaVendas tv = new TelaVendas();
-				//tv.setVisible(true);
+				TelaVendas tv = new TelaVendas();
+				tv.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				tv.setVisible(true);
+				
+	
+				
+				
 			}
 		});
 		btnVendas.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
@@ -132,9 +137,21 @@ public class TelaSelecao extends JFrame {
 		contentPane.add(btnCliente);
 		contentPane.add(btnKarts);
 		
-		JLabel lblFundoDeTela = new JLabel("");
-		lblFundoDeTela.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblFundoDeTela.setBounds(0, 0, 1924, 1061);
-		contentPane.add(lblFundoDeTela);
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				TelaInicial ti = new TelaInicial();
+				ti.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				ti.setVisible(true);
+			}
+		});
+		btnVoltar.setBounds(30, 36, 89, 23);
+		contentPane.add(btnVoltar);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblNewLabel.setBounds(0, 0, 1924, 1061);
+		contentPane.add(lblNewLabel);
 	}
 }

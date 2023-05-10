@@ -29,6 +29,7 @@ public class TelaCliente extends JFrame {
 	private JTextField textNomeCompleto;
 	private JTextField textCPF;
 	private JTextField textTelefone;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -229,6 +230,9 @@ public class TelaCliente extends JFrame {
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(380, 218, 1174, 672);
 		contentPane.add(panel_3);
+		
+		table = new JTable();
+		panel_3.add(table);
 		
 		JLabel lblFundoDeTela = new JLabel("New label");
 		lblFundoDeTela.setIcon(new ImageIcon(TelaCliente.class.getResource("/imgs/FundoDeTela.jpg")));

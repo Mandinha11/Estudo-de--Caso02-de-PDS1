@@ -30,12 +30,11 @@ import javax.swing.ImageIcon;
 public class TelaFornecedor extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtNomeEmpresa;
-	private JTextField txtCPF;
 	private JTextField txtCNPJ;
 	private JTextField txtTelefone;
+	private JTextField txtNomeEmpresa;
+	private JTextField txtCPF;
 	private JTable table;
-	private JTable table_1;
 	private FornecedorDAO dao;
 	private DefaultTableModel modelo;
 
@@ -87,50 +86,6 @@ public class TelaFornecedor extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.add(btnVoltar);
 
-		JLabel lblNomeEmpresa = new JLabel("Nome da empresa:");
-		lblNomeEmpresa.setBounds(518, 39, 141, 28);
-		lblNomeEmpresa.setForeground(new Color(0, 0, 0));
-		lblNomeEmpresa.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		contentPane.add(lblNomeEmpresa);
-
-		JLabel lblCpf = new JLabel("CPF:");
-		lblCpf.setBounds(1126, 39, 34, 28);
-		lblCpf.setForeground(new Color(0, 0, 0));
-		lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		contentPane.add(lblCpf);
-
-		txtNomeEmpresa = new JTextField();
-		txtNomeEmpresa.setBounds(669, 88, 335, 28);
-		contentPane.add(txtNomeEmpresa);
-		txtNomeEmpresa.setColumns(10);
-
-		txtCPF = new JTextField();
-		txtCPF.setBounds(1170, 89, 335, 27);
-		txtCPF.setColumns(10);
-		contentPane.add(txtCPF);
-
-		JLabel lblCnpj = new JLabel("CNPJ:");
-		lblCnpj.setBounds(618, 84, 43, 31);
-		lblCnpj.setForeground(new Color(0, 0, 0));
-		lblCnpj.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		contentPane.add(lblCnpj);
-
-		txtCNPJ = new JTextField();
-		txtCNPJ.setBounds(669, 42, 335, 28);
-		txtCNPJ.setColumns(10);
-		contentPane.add(txtCNPJ);
-
-		JLabel lblTelefone = new JLabel("Telefone:");
-		lblTelefone.setBounds(1090, 84, 70, 31);
-		lblTelefone.setForeground(new Color(0, 0, 0));
-		lblTelefone.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		contentPane.add(lblTelefone);
-
-		txtTelefone = new JTextField();
-		txtTelefone.setBounds(1170, 42, 335, 28);
-		txtTelefone.setColumns(10);
-		contentPane.add(txtTelefone);
-
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.setBounds(1687, 273, 210, 42);
 		btnCadastrar.setBackground(new Color(255, 255, 255));
@@ -143,6 +98,14 @@ public class TelaFornecedor extends JFrame {
 				
 				
 				 
+				 if (txtCPF.getText().trim().length() == 0) {
+					 JOptionPane.showMessageDialog(null, "CPF não preenchido!!");
+					 return;
+			        }
+				 else {
+				fornecedor.setTelefone(Long.valueOf(txtCPF.getText()));
+				
+			}
 				 if (txtTelefone.getText().trim().length() == 0) {
 					 JOptionPane.showMessageDialog(null, "Telefone não preenchido!!");
 					 return;
@@ -150,8 +113,27 @@ public class TelaFornecedor extends JFrame {
 				 else {
 				fornecedor.setTelefone(Long.valueOf(txtTelefone.getText()));
 				
-			}
+			}	
+				 
+				 if (txtCNPJ.getText().trim().length() == 0) {
+					 JOptionPane.showMessageDialog(null, "CNPJ não preenchido!!");
+					 return;
+			        }
+				 else {
+				fornecedor.setTelefone(Long.valueOf(txtCNPJ.getText()));
 				
+			}
+				 
+				 if (txtNomeEmpresa.getText().trim().length() == 0) {
+					 JOptionPane.showMessageDialog(null, "Nome da Empresa não preenchido!!");
+					 return;
+			        }
+				 else {
+					 fornecedor.setNomeEmpresa(txtNomeEmpresa.getText());
+				 }
+				 
+				 
+				 
 				 if(dao.Inserir(fornecedor)==true) {
 						JOptionPane.showMessageDialog(btnCadastrar, "Boa");
 						atualizarTabela();
@@ -185,15 +167,9 @@ public class TelaFornecedor extends JFrame {
 
 		JPanel panel = new JPanel();
 		panel.setBounds(25, 135, 1616, 855);
-		panel.setBackground(new Color(255, 255, 255));
+		panel.setBackground(new Color(0, 0, 0));
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
-
-		
-		JLabel lblTelaDeFundo = new JLabel("New label");
-		lblTelaDeFundo.setIcon(new ImageIcon(TelaFornecedor.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblTelaDeFundo.setBounds(0, 0, 1924, 1061);
-		contentPane.add(lblTelaDeFundo);
 		
 		table = new JTable();
 		panel.setBackground(new Color(255, 255, 255));
@@ -204,22 +180,84 @@ public class TelaFornecedor extends JFrame {
 
 		modelo = new javax.swing.table.DefaultTableModel(columns, 0);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
-		table_1 = new JTable(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Nome da Empresa", "CNPJ", "CPF", "Telefone"
-			}
-		));
-		table_1.setToolTipText("");
-		table_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		table_1.setBackground(new Color(255, 255, 255));
-		panel.add(table_1);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(211, 211, 211));
+		panel_1.setBounds(513, 12, 513, 46);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+				txtNomeEmpresa = new JTextField();
+				txtNomeEmpresa.setBounds(156, 11, 335, 28);
+				panel_1.add(txtNomeEmpresa);
+				txtNomeEmpresa.setColumns(10);
+				
+						JLabel lblNomeEmpresa = new JLabel("Nome da empresa:");
+						lblNomeEmpresa.setBounds(5, 11, 141, 28);
+						panel_1.add(lblNomeEmpresa);
+						lblNomeEmpresa.setForeground(new Color(0, 0, 0));
+						lblNomeEmpresa.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		
+		JPanel panel_1_1 = new JPanel();
+		panel_1_1.setLayout(null);
+		panel_1_1.setBackground(new Color(211, 211, 211));
+		panel_1_1.setBounds(513, 78, 513, 46);
+		contentPane.add(panel_1_1);
+		
+				txtCNPJ = new JTextField();
+				txtCNPJ.setBounds(168, 11, 335, 28);
+				panel_1_1.add(txtCNPJ);
+				txtCNPJ.setColumns(10);
+				
+						JLabel lblCnpj = new JLabel("CNPJ:");
+						lblCnpj.setBounds(10, 7, 43, 31);
+						panel_1_1.add(lblCnpj);
+						lblCnpj.setForeground(new Color(0, 0, 0));
+						lblCnpj.setFont(new Font("Tahoma", Font.PLAIN, 17));
+						
+						JPanel panel_1_1_1 = new JPanel();
+						panel_1_1_1.setLayout(null);
+						panel_1_1_1.setBackground(new Color(211, 211, 211));
+						panel_1_1_1.setBounds(1092, 12, 513, 46);
+						contentPane.add(panel_1_1_1);
+						
+								txtCPF = new JTextField();
+								txtCPF.setBounds(148, 11, 335, 28);
+								panel_1_1_1.add(txtCPF);
+								txtCPF.setColumns(10);
+								
+										JLabel lblCpf = new JLabel("CPF:");
+										lblCpf.setBounds(10, 11, 34, 28);
+										panel_1_1_1.add(lblCpf);
+										lblCpf.setForeground(new Color(0, 0, 0));
+										lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 17));
+										
+										JPanel panel_1_1_1_1 = new JPanel();
+										panel_1_1_1_1.setLayout(null);
+										panel_1_1_1_1.setBackground(new Color(211, 211, 211));
+										panel_1_1_1_1.setBounds(1090, 78, 513, 46);
+										contentPane.add(panel_1_1_1_1);
+										
+												txtTelefone = new JTextField();
+												txtTelefone.setBounds(148, 11, 335, 27);
+												panel_1_1_1_1.add(txtTelefone);
+												txtTelefone.setColumns(10);
+												
+														JLabel lblTelefone = new JLabel("Telefone:");
+														lblTelefone.setBounds(10, 6, 70, 31);
+														panel_1_1_1_1.add(lblTelefone);
+														lblTelefone.setForeground(new Color(0, 0, 0));
+														lblTelefone.setFont(new Font("Tahoma", Font.PLAIN, 17));
+														
+														JLabel lblNewLabel = new JLabel("New label");
+														lblNewLabel.setIcon(new ImageIcon(TelaFornecedor.class.getResource("/imgs/FundoDeTela.jpg")));
+														lblNewLabel.setBounds(-17, -23, 1941, 1094);
+														contentPane.add(lblNewLabel);
 		atualizarTabela();
 	}
 	
 	public void atualizarTabela() {
-		JOptionPane.showMessageDialog(null, "Atualizando tabela");
+		//JOptionPane.showMessageDialog(null, "Atualizando tabela");
 		ArrayList<Fornecedor> fornecedores = dao.Listar();
 		Object[] columns = {"Nome da Empresa", "CNPJ", "CPF", "Telefone"};
 		modelo.setColumnIdentifiers(columns);
@@ -228,7 +266,7 @@ public class TelaFornecedor extends JFrame {
 	    
 	    // Adiciona as pessoas como novas linhas da tabela
 		for (Fornecedor fornecedor : fornecedores) {
-	        Object[] linha = {fornecedor.getNomeEmpressa(), fornecedor.getCnpj(), fornecedor.getCpf(),  fornecedor.getTelefone()};
+	        Object[] linha = {fornecedor.getNomeEmpresa(), fornecedor.getCnpj(), fornecedor.getCpf(),  fornecedor.getTelefone()};
 	        modelo.addRow(linha);
 		}
 		}
