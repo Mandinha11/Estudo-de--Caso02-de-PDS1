@@ -205,7 +205,7 @@ public class TelaFornecedor extends JFrame {
 		contentPane.add(panel_1_1);
 		
 				txtCNPJ = new JTextField();
-				txtCNPJ.setBounds(168, 11, 335, 28);
+				txtCNPJ.setBounds(157, 11, 335, 28);
 				panel_1_1.add(txtCNPJ);
 				txtCNPJ.setColumns(10);
 				

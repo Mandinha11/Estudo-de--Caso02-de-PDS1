@@ -181,10 +181,54 @@ public class TelaCliente extends JFrame {
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setBounds(198, 11, 62, 25);
 		panel_2.add(comboBox_1);
+		comboBox_1.addItem("01");
+		comboBox_1.addItem("02");
+		comboBox_1.addItem("03");
+		comboBox_1.addItem("04");
+		comboBox_1.addItem("05");
+		comboBox_1.addItem("06");
+		comboBox_1.addItem("07");
+		comboBox_1.addItem("08");
+		comboBox_1.addItem("09");
+		comboBox_1.addItem("10");
+		comboBox_1.addItem("11");
+		comboBox_1.addItem("12");
+		comboBox_1.addItem("13");
+		comboBox_1.addItem("14");
+		comboBox_1.addItem("15");
+		comboBox_1.addItem("16");
+		comboBox_1.addItem("17");
+		comboBox_1.addItem("18");
+		comboBox_1.addItem("19");
+		comboBox_1.addItem("20");
+		comboBox_1.addItem("21");
+		comboBox_1.addItem("22");
+		comboBox_1.addItem("23");
+		comboBox_1.addItem("24");
+		comboBox_1.addItem("25");
+		comboBox_1.addItem("26");
+		comboBox_1.addItem("27");
+		comboBox_1.addItem("28");
+		comboBox_1.addItem("29");
+		comboBox_1.addItem("30");
+		comboBox_1.addItem("31");
 		
-		JComboBox comboBox_1_1 = new JComboBox();
-		comboBox_1_1.setBounds(309, 11, 59, 25);
-		panel_2.add(comboBox_1_1);
+		JComboBox cbMes = new JComboBox();
+		cbMes.setBounds(309, 11, 59, 25);
+		panel_2.add(cbMes);
+		cbMes.addItem("01");
+		cbMes.addItem("02");
+		cbMes.addItem("03");
+		cbMes.addItem("04");
+		cbMes.addItem("05");
+		cbMes.addItem("06");
+		cbMes.addItem("07");
+		cbMes.addItem("08");
+		cbMes.addItem("09");
+		cbMes.addItem("10");
+		cbMes.addItem("11");
+		cbMes.addItem("12");
+		
 		
 		JLabel lblNewLabel_5 = new JLabel("Mês");
 		lblNewLabel_5.setBounds(270, 8, 47, 27);
@@ -198,9 +242,33 @@ public class TelaCliente extends JFrame {
 		lblNewLabel_6.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		lblNewLabel_6.setForeground(new Color(0, 128, 128));
 		
-		JComboBox comboBox_1_2 = new JComboBox();
-		comboBox_1_2.setBounds(415, 11, 81, 25);
-		panel_2.add(comboBox_1_2);
+		JComboBox cbAno = new JComboBox();
+		cbAno.setBounds(415, 11, 81, 25);
+		panel_2.add(cbAno);
+		cbAno.addItem("2000");
+		cbAno.addItem("2001");
+		cbAno.addItem("2002");
+		cbAno.addItem("2003");
+		cbAno.addItem("2004");
+		cbAno.addItem("2005");
+		cbAno.addItem("2006");
+		cbAno.addItem("2007");
+		cbAno.addItem("2008");
+		cbAno.addItem("2009");
+		cbAno.addItem("2010");
+		cbAno.addItem("2011");
+		cbAno.addItem("2012");
+		cbAno.addItem("2013");
+		cbAno.addItem("2014");
+		cbAno.addItem("2015");
+		cbAno.addItem("2016");
+		cbAno.addItem("2017");
+		cbAno.addItem("2018");
+		cbAno.addItem("2019");
+		cbAno.addItem("2020");
+		cbAno.addItem("2021");
+		cbAno.addItem("2022");
+		cbAno.addItem("2023");
 		
 		
 		JLabel lblNewLabel_4 = new JLabel("Dia");
@@ -228,7 +296,7 @@ public class TelaCliente extends JFrame {
 		textTelefone.setColumns(10);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(380, 218, 1174, 672);
+		panel_3.setBounds(380, 218, 1461, 772);
 		contentPane.add(panel_3);
 		
 		table = new JTable();

@@ -200,9 +200,9 @@ public class TelaVendas extends JFrame {
 		panel_1_2_1.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon(TelaVendas.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblNewLabel_1.setBounds(0, -4, 1952, 1057);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblFundoDeTela = new JLabel("");
+		lblFundoDeTela.setIcon(new ImageIcon(TelaVendas.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblFundoDeTela.setBounds(0, 0, 1924, 1053);
+		contentPane.add(lblFundoDeTela);
 	}
 }
