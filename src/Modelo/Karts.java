@@ -8,6 +8,10 @@ public class Karts {
 	private Long ano;
 	private Long quantidade;
 	private String cor;
+	private Long dataEntrada;
+	private Long Id;
+	private String motor;
+	private Long forneCNPJ;
 	
 	public Karts(){
 		
@@ -57,8 +61,33 @@ public class Karts {
 	public void setcor(String cor) {
 		this.cor = cor;
 	}
-
 	
+	public String getmotor() {
+		return motor;
+	}
+	public void setmotor(String motor) {
+		this.motor = motor;
+	}
+	
+	public Long getdataEntrada() {
+		return dataEntrada;
+	}
+	public void setdataEntrada(Long dataEntrada) {
+		this.dataEntrada = dataEntrada;
+	}
+	
+	public Long getId() {
+		return Id;
+	}
+	public void setId(Long Id) {
+		this.Id = Id;
+	}
+	public Long getforneCNPJ() {
+		return forneCNPJ;
+	}
+	public void setforneCNPJ(Long forneCNPJ) {
+		this.forneCNPJ = forneCNPJ;
+	}
 	
 
 }

@@ -33,6 +33,7 @@ public class TelaVendas extends JFrame {
 	private JTextField txtCliente;
 	private JTextField txtPreco;
 	private JTable table;
+	private JTextField txtMatricula;
 
 	/**
 	 * Launch the application.
@@ -116,6 +117,14 @@ public class TelaVendas extends JFrame {
 				 else {
 					 vendas.setkarts(txtKart.getText());
 				 }
+				 
+				 if (txtMatricula.getText().trim().length() == 0) {
+					 JOptionPane.showMessageDialog(null, "Matricula do Funcionario não preenchido!!");
+					 return;
+				 }
+				 else {
+				vendas.setmatricula(Long.valueOf(txtMatricula.getText()));
+				 }
 				
 				 
 			}
@@ -138,7 +147,7 @@ public class TelaVendas extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(211, 211, 211));
-		panel_1.setBounds(409, 31, 483, 55);
+		panel_1.setBounds(281, 31, 483, 55);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -155,7 +164,7 @@ public class TelaVendas extends JFrame {
 		JPanel panel_1_1 = new JPanel();
 		panel_1_1.setLayout(null);
 		panel_1_1.setBackground(new Color(211, 211, 211));
-		panel_1_1.setBounds(409, 104, 483, 55);
+		panel_1_1.setBounds(281, 104, 483, 55);
 		contentPane.add(panel_1_1);
 		
 		txtKart = new JTextField();
@@ -163,7 +172,7 @@ public class TelaVendas extends JFrame {
 		txtKart.setBounds(153, 16, 304, 28);
 		panel_1_1.add(txtKart);
 		
-		JLabel lblKartVendido = new JLabel("Kart Vendido:");
+		JLabel lblKartVendido = new JLabel("Id Kart:");
 		lblKartVendido.setBounds(10, 16, 102, 24);
 		panel_1_1.add(lblKartVendido);
 		lblKartVendido.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -171,7 +180,7 @@ public class TelaVendas extends JFrame {
 		JPanel panel_1_2 = new JPanel();
 		panel_1_2.setLayout(null);
 		panel_1_2.setBackground(new Color(211, 211, 211));
-		panel_1_2.setBounds(1310, 31, 483, 55);
+		panel_1_2.setBounds(850, 31, 483, 55);
 		contentPane.add(panel_1_2);
 		
 		txtCliente = new JTextField();
@@ -179,15 +188,15 @@ public class TelaVendas extends JFrame {
 		txtCliente.setBounds(153, 16, 304, 28);
 		panel_1_2.add(txtCliente);
 		
-		JLabel lblComprador = new JLabel("Cliente:");
-		lblComprador.setBounds(10, 18, 86, 20);
+		JLabel lblComprador = new JLabel("Cliente CPF/CNPJ:");
+		lblComprador.setBounds(10, 18, 133, 20);
 		panel_1_2.add(lblComprador);
 		lblComprador.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		
 		JPanel panel_1_2_1 = new JPanel();
 		panel_1_2_1.setLayout(null);
 		panel_1_2_1.setBackground(new Color(211, 211, 211));
-		panel_1_2_1.setBounds(1310, 104, 483, 55);
+		panel_1_2_1.setBounds(850, 104, 483, 55);
 		contentPane.add(panel_1_2_1);
 		
 		txtPreco = new JTextField();
@@ -200,9 +209,32 @@ public class TelaVendas extends JFrame {
 		panel_1_2_1.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		
+<<<<<<< Updated upstream
 		JLabel lblFundoDeTela = new JLabel("");
 		lblFundoDeTela.setIcon(new ImageIcon(TelaVendas.class.getResource("/imgs/FundoDeTela.jpg")));
 		lblFundoDeTela.setBounds(0, 0, 1924, 1053);
 		contentPane.add(lblFundoDeTela);
+=======
+		JPanel panel_1_2_2 = new JPanel();
+		panel_1_2_2.setLayout(null);
+		panel_1_2_2.setBackground(new Color(211, 211, 211));
+		panel_1_2_2.setBounds(1362, 31, 507, 55);
+		contentPane.add(panel_1_2_2);
+		
+		txtMatricula = new JTextField();
+		txtMatricula.setColumns(10);
+		txtMatricula.setBounds(193, 16, 304, 28);
+		panel_1_2_2.add(txtMatricula);
+		
+		JLabel lblMatriculaFuncionario = new JLabel("Matricula Funcionario:");
+		lblMatriculaFuncionario.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblMatriculaFuncionario.setBounds(10, 18, 156, 20);
+		panel_1_2_2.add(lblMatriculaFuncionario);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon(TelaVendas.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblNewLabel_1.setBounds(0, 0, 1924, 1063);
+		contentPane.add(lblNewLabel_1);
+>>>>>>> Stashed changes
 	}
 }

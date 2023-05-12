@@ -33,7 +33,7 @@ public class TelaFornecedor extends JFrame {
 	private JTextField txtCNPJ;
 	private JTextField txtTelefone;
 	private JTextField txtNomeEmpresa;
-	private JTextField txtCPF;
+	private JTextField txtCEP;
 	private JTable table;
 	private FornecedorDAO dao;
 	private DefaultTableModel modelo;
@@ -98,12 +98,12 @@ public class TelaFornecedor extends JFrame {
 				
 				
 				 
-				 if (txtCPF.getText().trim().length() == 0) {
-					 JOptionPane.showMessageDialog(null, "CPF não preenchido!!");
+				 if (txtCEP.getText().trim().length() == 0) {
+					 JOptionPane.showMessageDialog(null, "CEP não preenchido!!");
 					 return;
 			        }
 				 else {
-				fornecedor.setTelefone(Long.valueOf(txtCPF.getText()));
+				fornecedor.setTelefone(Long.valueOf(txtCEP.getText()));
 				
 			}
 				 if (txtTelefone.getText().trim().length() == 0) {
@@ -221,13 +221,13 @@ public class TelaFornecedor extends JFrame {
 						panel_1_1_1.setBounds(1092, 12, 513, 46);
 						contentPane.add(panel_1_1_1);
 						
-								txtCPF = new JTextField();
-								txtCPF.setBounds(148, 11, 335, 28);
-								panel_1_1_1.add(txtCPF);
-								txtCPF.setColumns(10);
+								txtCEP = new JTextField();
+								txtCEP.setBounds(148, 11, 335, 28);
+								panel_1_1_1.add(txtCEP);
+								txtCEP.setColumns(10);
 								
-										JLabel lblCpf = new JLabel("CPF:");
-										lblCpf.setBounds(10, 11, 34, 28);
+										JLabel lblCpf = new JLabel("CEP:");
+										lblCpf.setBounds(10, 11, 71, 28);
 										panel_1_1_1.add(lblCpf);
 										lblCpf.setForeground(new Color(0, 0, 0));
 										lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 17));
@@ -266,7 +266,7 @@ public class TelaFornecedor extends JFrame {
 	    
 	    // Adiciona as pessoas como novas linhas da tabela
 		for (Fornecedor fornecedor : fornecedores) {
-	        Object[] linha = {fornecedor.getNomeEmpresa(), fornecedor.getCnpj(), fornecedor.getCpf(),  fornecedor.getTelefone()};
+	        Object[] linha = {fornecedor.getNomeEmpresa(), fornecedor.getCnpj(), fornecedor.getCep(),  fornecedor.getTelefone()};
 	        modelo.addRow(linha);
 		}
 		}

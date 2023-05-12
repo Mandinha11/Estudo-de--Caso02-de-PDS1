@@ -4,7 +4,7 @@ public class Fornecedor {
 	
 	private String NomeEmpresa;
 	private Long cnpj;
-	private Long cpf;
+	private Long cep;
 	private Long telefone;
 	
 	public Fornecedor(){
@@ -23,11 +23,11 @@ public class Fornecedor {
 	public void setCnpj(Long cnpj) {
 		this.cnpj = cnpj;
 	}
-	public Long getCpf() {
-		return cpf;
+	public Long getCep() {
+		return cep;
 	}
-	public void setCpf(Long cpf) {
-		this.cpf = cpf;
+	public void setCep(Long cep) {
+		this.cep = cep;
 	}
 	public Long getTelefone() {
 		return telefone;

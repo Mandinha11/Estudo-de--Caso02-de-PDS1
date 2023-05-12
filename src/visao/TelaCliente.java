@@ -153,11 +153,11 @@ public class TelaCliente extends JFrame {
 		panel_1.setToolTipText("");
 		panel_1.setBackground(new Color(211, 211, 211));
 		
-		JLabel lblCpf = new JLabel("CPF:");
+		JLabel lblCpf = new JLabel("CPF/ CNPJ:");
 		lblCpf.setForeground(Color.BLACK);
 		lblCpf.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		lblCpf.setBackground(Color.BLACK);
-		lblCpf.setBounds(75, 6, 64, 25);
+		lblCpf.setBounds(29, 6, 110, 25);
 		panel_1.add(lblCpf);
 		
 		textCPF = new JTextField();
