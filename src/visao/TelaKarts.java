@@ -227,12 +227,6 @@ public class TelaKarts extends JFrame {
 		contentPane.add(txtFornecedor);
 		txtFornecedor.setColumns(10);
 		
-		JLabel lblFornecedorCnpj = new JLabel("Fornecedor CNPJ:");
-		lblFornecedorCnpj.setBounds(10, 287, 174, 30);
-		contentPane.add(lblFornecedorCnpj);
-		lblFornecedorCnpj.setForeground(Color.BLACK);
-		lblFornecedorCnpj.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		
 		txtId = new JTextField();
 		txtId.setBounds(167, 363, 260, 30);
 		contentPane.add(txtId);
@@ -299,9 +293,20 @@ public class TelaKarts extends JFrame {
 		lblMarcaKarts.setForeground(new Color(0, 0, 0));
 		lblMarcaKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(26, 84, 424, 698);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblFornecedorCnpj = new JLabel("Fornecedor CNPJ:");
+		lblFornecedorCnpj.setBounds(10, 201, 174, 30);
+		panel_1.add(lblFornecedorCnpj);
+		lblFornecedorCnpj.setForeground(Color.BLACK);
+		lblFornecedorCnpj.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(TelaKarts.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblNewLabel.setBounds(0, 0, 1924, 1061);
+		lblNewLabel.setBounds(-14, 0, 1949, 1061);
 		contentPane.add(lblNewLabel);
 	}
 }

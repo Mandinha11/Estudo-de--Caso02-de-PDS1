@@ -171,15 +171,7 @@ public class TelaFornecedor extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		table = new JTable();
-		panel.setBackground(new Color(255, 255, 255));
-		contentPane.add(panel, "cell 0 4 6 8,grow");
-		panel.add(table);
 		
-		Object[] columns = {"Nome da Empresa", "CNPJ", "CPF", "Telefone"};
-
-		modelo = new javax.swing.table.DefaultTableModel(columns, 0);
-		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(211, 211, 211));
@@ -204,55 +196,66 @@ public class TelaFornecedor extends JFrame {
 		panel_1_1.setBounds(513, 78, 513, 46);
 		contentPane.add(panel_1_1);
 		
-				txtCNPJ = new JTextField();
-				txtCNPJ.setBounds(157, 11, 335, 28);
-				panel_1_1.add(txtCNPJ);
-				txtCNPJ.setColumns(10);
+		txtCNPJ = new JTextField();
+		txtCNPJ.setBounds(157, 11, 335, 28);
+		panel_1_1.add(txtCNPJ);
+		txtCNPJ.setColumns(10);
 				
-						JLabel lblCnpj = new JLabel("CNPJ:");
-						lblCnpj.setBounds(10, 7, 43, 31);
-						panel_1_1.add(lblCnpj);
-						lblCnpj.setForeground(new Color(0, 0, 0));
-						lblCnpj.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		JLabel lblCnpj = new JLabel("CNPJ:");
+		lblCnpj.setBounds(10, 7, 43, 31);
+		panel_1_1.add(lblCnpj);
+		lblCnpj.setForeground(new Color(0, 0, 0));
+		lblCnpj.setFont(new Font("Tahoma", Font.PLAIN, 17));
 						
-						JPanel panel_1_1_1 = new JPanel();
-						panel_1_1_1.setLayout(null);
-						panel_1_1_1.setBackground(new Color(211, 211, 211));
-						panel_1_1_1.setBounds(1092, 12, 513, 46);
-						contentPane.add(panel_1_1_1);
+		JPanel panel_1_1_1 = new JPanel();
+		panel_1_1_1.setLayout(null);
+		panel_1_1_1.setBackground(new Color(211, 211, 211));
+		panel_1_1_1.setBounds(1092, 12, 513, 46);
+		contentPane.add(panel_1_1_1);
 						
-								txtCEP = new JTextField();
-								txtCEP.setBounds(148, 11, 335, 28);
-								panel_1_1_1.add(txtCEP);
-								txtCEP.setColumns(10);
+		txtCEP = new JTextField();
+		txtCEP.setBounds(148, 11, 335, 28);
+		panel_1_1_1.add(txtCEP);
+		txtCEP.setColumns(10);
 								
-										JLabel lblCpf = new JLabel("CEP:");
-										lblCpf.setBounds(10, 11, 71, 28);
-										panel_1_1_1.add(lblCpf);
-										lblCpf.setForeground(new Color(0, 0, 0));
-										lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		JLabel lblCpf = new JLabel("CEP:");
+		lblCpf.setBounds(10, 11, 71, 28);
+		panel_1_1_1.add(lblCpf);
+		lblCpf.setForeground(new Color(0, 0, 0));
+		lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 17));
 										
-										JPanel panel_1_1_1_1 = new JPanel();
-										panel_1_1_1_1.setLayout(null);
-										panel_1_1_1_1.setBackground(new Color(211, 211, 211));
-										panel_1_1_1_1.setBounds(1090, 78, 513, 46);
-										contentPane.add(panel_1_1_1_1);
+		JPanel panel_1_1_1_1 = new JPanel();
+		panel_1_1_1_1.setLayout(null);
+		panel_1_1_1_1.setBackground(new Color(211, 211, 211));
+		panel_1_1_1_1.setBounds(1090, 78, 513, 46);
+		contentPane.add(panel_1_1_1_1);
 										
-												txtTelefone = new JTextField();
-												txtTelefone.setBounds(148, 11, 335, 27);
-												panel_1_1_1_1.add(txtTelefone);
-												txtTelefone.setColumns(10);
+		txtTelefone = new JTextField();
+		txtTelefone.setBounds(148, 11, 335, 27);
+		panel_1_1_1_1.add(txtTelefone);
+		txtTelefone.setColumns(10);
 												
-														JLabel lblTelefone = new JLabel("Telefone:");
-														lblTelefone.setBounds(10, 6, 70, 31);
-														panel_1_1_1_1.add(lblTelefone);
-														lblTelefone.setForeground(new Color(0, 0, 0));
-														lblTelefone.setFont(new Font("Tahoma", Font.PLAIN, 17));
-														
-														JLabel lblNewLabel = new JLabel("New label");
-														lblNewLabel.setIcon(new ImageIcon(TelaFornecedor.class.getResource("/imgs/FundoDeTela.jpg")));
-														lblNewLabel.setBounds(-17, -23, 1941, 1094);
-														contentPane.add(lblNewLabel);
+		JLabel lblTelefone = new JLabel("Telefone:");
+		lblTelefone.setBounds(10, 6, 70, 31);
+		panel_1_1_1_1.add(lblTelefone);
+		lblTelefone.setForeground(new Color(0, 0, 0));
+		lblTelefone.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		
+		table = new JTable();
+		panel.setBackground(new Color(255, 255, 255));
+		contentPane.add(panel, "cell 0 4 6 8,grow");
+		panel.add(table);
+		
+		Object[] columns = {"Nome da Empresa", "CNPJ", "CPF", "Telefone"};
+
+		modelo = new javax.swing.table.DefaultTableModel(columns, 0);
+		panel.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(TelaFornecedor.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblNewLabel.setBounds(0, 0, 1924, 1061);
+		contentPane.add(lblNewLabel);
+		
 		atualizarTabela();
 	}
 	
