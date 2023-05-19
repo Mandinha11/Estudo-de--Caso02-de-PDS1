@@ -73,23 +73,50 @@ public class TelaSelecao extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
-		JButton btnFornecedor = new JButton("Fornecedor");
-		btnFornecedor.setBounds(707, 502, 491, 35);
-		btnFornecedor.setBackground(UIManager.getColor("Button.background"));
-		btnFornecedor.addActionListener(new ActionListener() {
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				TelaInicial ti = new TelaInicial();
+				ti.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				ti.setVisible(true);
+			}
+		});
+		btnVoltar.setBounds(30, 36, 89, 23);
+		contentPane.add(btnVoltar);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(47, 176, 148));
+		panel_1.setBounds(594, 228, 308, 214);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JButton btnCliente = new JButton("Cliente");
+		btnCliente.setForeground(new Color(0, 0, 0));
+		btnCliente.setBounds(55, 91, 206, 46);
+		panel_1.add(btnCliente);
+		btnCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				dispose();
-				TelaFornecedor tf = new TelaFornecedor();
-				tf.setExtendedState(JFrame.MAXIMIZED_BOTH);
-				tf.setVisible(true);
+				TelaCliente tc = new TelaCliente();
+				tc.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				tc.setVisible(true);
 			}
 		});
-		btnFornecedor.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
+		btnCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
+		
+		JPanel panel_1_1 = new JPanel();
+		panel_1_1.setBackground(new Color(47, 176, 148));
+		panel_1_1.setLayout(null);
+		panel_1_1.setBounds(1006, 228, 308, 214);
+		contentPane.add(panel_1_1);
 		
 		JButton btnKarts = new JButton("Karts");
-		btnKarts.setBounds(707, 389, 491, 35);
+		btnKarts.setBounds(48, 88, 206, 46);
+		panel_1_1.add(btnKarts);
 		btnKarts.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -102,8 +129,15 @@ public class TelaSelecao extends JFrame {
 		});
 		btnKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
+		JPanel panel_1_2 = new JPanel();
+		panel_1_2.setBackground(new Color(47, 176, 148));
+		panel_1_2.setLayout(null);
+		panel_1_2.setBounds(594, 517, 308, 229);
+		contentPane.add(panel_1_2);
+		
 		JButton btnVendas = new JButton("Vendas");
-		btnVendas.setBounds(707, 559, 491, 35);
+		btnVendas.setBounds(48, 94, 206, 43);
+		panel_1_2.add(btnVendas);
 		btnVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -119,35 +153,26 @@ public class TelaSelecao extends JFrame {
 		});
 		btnVendas.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
-		JButton btnCliente = new JButton("Cliente");
-		btnCliente.setBounds(707, 446, 491, 35);
-		btnCliente.addActionListener(new ActionListener() {
+		JPanel panel_1_3 = new JPanel();
+		panel_1_3.setBackground(new Color(47, 176, 148));
+		panel_1_3.setLayout(null);
+		panel_1_3.setBounds(1006, 517, 308, 229);
+		contentPane.add(panel_1_3);
+		
+		JButton btnFornecedor = new JButton("Fornecedor");
+		btnFornecedor.setBounds(53, 93, 206, 47);
+		panel_1_3.add(btnFornecedor);
+		btnFornecedor.setBackground(UIManager.getColor("Button.background"));
+		btnFornecedor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				dispose();
-				TelaCliente tc = new TelaCliente();
-				tc.setExtendedState(JFrame.MAXIMIZED_BOTH);
-				tc.setVisible(true);
+				TelaFornecedor tf = new TelaFornecedor();
+				tf.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				tf.setVisible(true);
 			}
 		});
-		btnCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
-		contentPane.setLayout(null);
-		contentPane.add(btnVendas);
-		contentPane.add(btnFornecedor);
-		contentPane.add(btnCliente);
-		contentPane.add(btnKarts);
-		
-		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				TelaInicial ti = new TelaInicial();
-				ti.setExtendedState(JFrame.MAXIMIZED_BOTH);
-				ti.setVisible(true);
-			}
-		});
-		btnVoltar.setBounds(30, 36, 89, 23);
-		contentPane.add(btnVoltar);
+		btnFornecedor.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/FundoDeTela.jpg")));
