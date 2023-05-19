@@ -109,11 +109,6 @@ public class TelaCliente extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Listar");
-		btnNewButton_1.setBounds(61, 335, 242, 39);
-		btnNewButton_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		contentPane.add(btnNewButton_1);
-		
 		JButton btnNewButton_2 = new JButton("Voltar");
 		btnNewButton_2.setBounds(4, 9, 89, 23);
 		btnNewButton_2.addActionListener(new ActionListener() {
@@ -245,30 +240,23 @@ public class TelaCliente extends JFrame {
 		JComboBox cbAno = new JComboBox();
 		cbAno.setBounds(415, 11, 81, 25);
 		panel_2.add(cbAno);
+		cbAno.addItem("1990");
+		cbAno.addItem("1991");
+		cbAno.addItem("1992");
+		cbAno.addItem("1993");
+		cbAno.addItem("1994");
+		cbAno.addItem("1995");
+		cbAno.addItem("1996");
+		cbAno.addItem("1997");
+		cbAno.addItem("1998");
+		cbAno.addItem("1999");
 		cbAno.addItem("2000");
 		cbAno.addItem("2001");
 		cbAno.addItem("2002");
 		cbAno.addItem("2003");
 		cbAno.addItem("2004");
 		cbAno.addItem("2005");
-		cbAno.addItem("2006");
-		cbAno.addItem("2007");
-		cbAno.addItem("2008");
-		cbAno.addItem("2009");
-		cbAno.addItem("2010");
-		cbAno.addItem("2011");
-		cbAno.addItem("2012");
-		cbAno.addItem("2013");
-		cbAno.addItem("2014");
-		cbAno.addItem("2015");
-		cbAno.addItem("2016");
-		cbAno.addItem("2017");
-		cbAno.addItem("2018");
-		cbAno.addItem("2019");
-		cbAno.addItem("2020");
-		cbAno.addItem("2021");
-		cbAno.addItem("2022");
-		cbAno.addItem("2023");
+		
 		
 		
 		JLabel lblNewLabel_4 = new JLabel("Dia");
@@ -296,10 +284,11 @@ public class TelaCliente extends JFrame {
 		textTelefone.setColumns(10);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(380, 218, 1461, 772);
+		panel_3.setBounds(368, 218, 1461, 772);
 		contentPane.add(panel_3);
 		
 		table = new JTable();
+		table.setBackground(new Color(255, 255, 255));
 		panel_3.add(table);
 		
 		JLabel lblFundoDeTela = new JLabel("New label");
