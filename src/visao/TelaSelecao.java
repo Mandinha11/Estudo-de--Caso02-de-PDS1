@@ -88,14 +88,14 @@ public class TelaSelecao extends JFrame {
 		contentPane.add(btnVoltar);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(47, 176, 148));
-		panel_1.setBounds(594, 228, 308, 214);
+		panel_1.setBackground(new Color(211, 211, 211));
+		panel_1.setBounds(594, 177, 308, 265);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
 		JButton btnCliente = new JButton("Cliente");
 		btnCliente.setForeground(new Color(0, 0, 0));
-		btnCliente.setBounds(55, 91, 206, 46);
+		btnCliente.setBounds(52, 159, 206, 46);
 		panel_1.add(btnCliente);
 		btnCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -109,9 +109,9 @@ public class TelaSelecao extends JFrame {
 		btnCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
 		JPanel panel_1_1 = new JPanel();
-		panel_1_1.setBackground(new Color(47, 176, 148));
+		panel_1_1.setBackground(new Color(211, 211, 211));
 		panel_1_1.setLayout(null);
-		panel_1_1.setBounds(1006, 228, 308, 214);
+		panel_1_1.setBounds(1006, 177, 308, 265);
 		contentPane.add(panel_1_1);
 		
 		JButton btnKarts = new JButton("Karts");
@@ -130,13 +130,13 @@ public class TelaSelecao extends JFrame {
 		btnKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
 		JPanel panel_1_2 = new JPanel();
-		panel_1_2.setBackground(new Color(47, 176, 148));
+		panel_1_2.setBackground(new Color(211, 211, 211));
 		panel_1_2.setLayout(null);
-		panel_1_2.setBounds(594, 517, 308, 229);
+		panel_1_2.setBounds(594, 481, 308, 265);
 		contentPane.add(panel_1_2);
 		
 		JButton btnVendas = new JButton("Vendas");
-		btnVendas.setBounds(48, 94, 206, 43);
+		btnVendas.setBounds(55, 147, 206, 43);
 		panel_1_2.add(btnVendas);
 		btnVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -153,10 +153,16 @@ public class TelaSelecao extends JFrame {
 		});
 		btnVendas.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(42, 23, 206, 167);
+		panel_1_2.add(lblNewLabel);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/CarrinhoDeCompras.png")));
+		
 		JPanel panel_1_3 = new JPanel();
-		panel_1_3.setBackground(new Color(47, 176, 148));
+		panel_1_3.setBackground(new Color(211, 211, 211));
 		panel_1_3.setLayout(null);
-		panel_1_3.setBounds(1006, 517, 308, 229);
+		panel_1_3.setBounds(1006, 481, 308, 265);
 		contentPane.add(panel_1_3);
 		
 		JButton btnFornecedor = new JButton("Fornecedor");
@@ -173,10 +179,5 @@ public class TelaSelecao extends JFrame {
 			}
 		});
 		btnFornecedor.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblNewLabel.setBounds(0, 0, 1924, 1061);
-		contentPane.add(lblNewLabel);
 	}
 }
