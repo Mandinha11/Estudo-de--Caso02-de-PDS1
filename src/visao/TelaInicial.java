@@ -22,6 +22,7 @@ import net.miginfocom.swing.MigLayout;
 import java.awt.SystemColor;
 import javax.swing.JToolBar;
 import javax.swing.UIManager;
+import javax.swing.JPasswordField;
 
 public class TelaInicial extends JFrame {
 
@@ -29,8 +30,8 @@ public class TelaInicial extends JFrame {
 	protected static final JTextField Empty = null;
 	private JPanel contentPane;
 	private JTextField textLogin;
-	private JTextField textSenha;
 	private JLabel lblLogoPinkmanKart;
+	private JPasswordField textSenha;
 
 	/**
 	 * Launch the application.
@@ -61,12 +62,12 @@ public class TelaInicial extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[grow][53px][221px][grow]", "[grow][grow][24px][24px][23px,grow]"));
+		contentPane.setLayout(new MigLayout("", "[grow][53px][221px,grow][grow]", "[grow][grow][24px][24px][23px,grow]"));
 		
 		Icon logoPinkmanKart = new ImageIcon("imgs/PinkmanKartLogo.png");
 		JLabel lblLogoPinkmanKart = new JLabel("");
 		lblLogoPinkmanKart.setIcon(new ImageIcon(TelaInicial.class.getResource("/imgs/PinkmanKartLogo.png")));
-		contentPane.add(lblLogoPinkmanKart, "cell 2 1");
+		contentPane.add(lblLogoPinkmanKart, "cell 2 1,alignx center");
 
 		JLabel txtLog = new JLabel("Login:");
 		txtLog.setForeground(Color.WHITE);
@@ -76,18 +77,13 @@ public class TelaInicial extends JFrame {
 		JLabel txtSe = new JLabel("Senha:");
 		txtSe.setForeground(Color.WHITE);
 		txtSe.setFont(new Font("Segoe UI Semibold", Font.BOLD, 20));
-		contentPane.add(txtSe, "flowy,cell 1 3,alignx left,aligny top");
+		contentPane.add(txtSe, "flowy,cell 1 3,alignx trailing,aligny top");
 
 		textLogin = new JTextField();
 		textLogin.setForeground(new Color(0, 0, 0));
 		textLogin.setBackground(new Color(230, 242, 242));
 		contentPane.add(textLogin, "cell 2 2,growx,aligny bottom");
 		textLogin.setColumns(10);
-
-		textSenha = new JTextField();
-		textSenha.setBackground(new Color(230, 242, 242));
-		textSenha.setColumns(10);
-		contentPane.add(textSenha, "cell 2 3,growx,aligny bottom");
 
 		JButton btnEntrar = new JButton("Logar");
 		btnEntrar.setForeground(new Color(0, 0, 0));
@@ -122,6 +118,9 @@ public class TelaInicial extends JFrame {
 				return login.equals("usuario") && senha.equals("123");
 			}
 		});
+		
+		textSenha = new JPasswordField();
+		contentPane.add(textSenha, "cell 2 3,growx,aligny bottom");
 		contentPane.add(btnEntrar, "cell 2 4,growx,aligny top");
 	}
 }

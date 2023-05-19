@@ -23,20 +23,17 @@ import javax.swing.JTextField;
 import java.awt.Panel;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
+import javax.swing.JComboBox;
 
 public class TelaKarts extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtPreco;
-	private JTextField txtCor;
 	private JTextField txtMarca;
-	private JTextField txtAno;
-	private JTextField txtQuantidade;
 	private JTextField txtModelo;
 	private JTable table;
 	private JTextField txtMotor;
 	private JTextField txtId;
-	private JTextField txtData;
 	private JTextField txtFornecedor;
 
 	/**
@@ -84,7 +81,7 @@ public class TelaKarts extends JFrame {
 		contentPane.add(btnVoltar);
 		
 		Panel panel = new Panel();
-		panel.setBounds(473, 84, 1343, 873);
+		panel.setBounds(1027, 57, 789, 873);
 		panel.setBackground(new Color(255, 255, 255));
 		panel.setForeground(new Color(255, 255, 255));
 		contentPane.add(panel);
@@ -103,29 +100,8 @@ public class TelaKarts extends JFrame {
 				
 				KartsDAO kartsDao = KartsDAO.getinstancia();
 				
-				 if (txtCor.getText().trim().length() == 0) {
-					 JOptionPane.showMessageDialog(null, "Cor não preenchido!!");
-					 return;
-			        }
-				 else {
-					 karts.setcor(txtCor.getText());
-				 }
 				
-				 if (txtQuantidade.getText().trim().length() == 0) {
-					 JOptionPane.showMessageDialog(null, "Quantidade não preenchido!!");
-					 return;
-				 }
-				 else {
-				karts.setquantidade(Long.valueOf(txtQuantidade.getText()));
-				 }
-				 
-				 if (txtAno.getText().trim().length() == 0) {
-					 JOptionPane.showMessageDialog(null, "Ano não preenchido!!");
-					 return;
-				 }
-				 else {
-				karts.setano(Long.valueOf(txtAno.getText()));
-				 }
+			
 				
 				 if (txtPreco.getText().trim().length() == 0) {
 					 JOptionPane.showMessageDialog(null, "Preço não preenchido!!");
@@ -150,13 +126,7 @@ public class TelaKarts extends JFrame {
 				 else {
 				karts.setmodelo(String.valueOf(txtModelo.getText()));
 				 }
-				 if (txtData.getText().trim().length() == 0) {
-					 JOptionPane.showMessageDialog(null, "Data de Entrada não preenchido!!");
-					 return;
-				 }
-				 else {
-				karts.setdataEntrada(Long.valueOf(txtData.getText()));
-				 }
+				
 				 
 				 if (txtId.getText().trim().length() == 0) {
 					 JOptionPane.showMessageDialog(null, "Id Kart não preenchido!!");
@@ -185,7 +155,7 @@ public class TelaKarts extends JFrame {
 			}
 		});
 		
-		btnCadastrar.setBounds(26, 804, 424, 41);
+		btnCadastrar.setBounds(54, 612, 390, 41);
 		btnCadastrar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		contentPane.add(btnCadastrar);
 		
@@ -195,118 +165,195 @@ public class TelaKarts extends JFrame {
 		lblBuscarKarts.setForeground(new Color(0, 0, 0));
 		lblBuscarKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
-		txtCor = new JTextField();
-		txtCor.setBounds(165, 103, 262, 30);
-		contentPane.add(txtCor);
-		txtCor.setColumns(10);
-		
-		txtQuantidade = new JTextField();
-		txtQuantidade.setBounds(165, 164, 260, 30);
-		contentPane.add(txtQuantidade);
-		txtQuantidade.setColumns(10);
-		
 		JLabel lblQuantidade = new JLabel("Quantidade:");
-		lblQuantidade.setBounds(51, 161, 104, 30);
+		lblQuantidade.setBounds(480, 100, 104, 30);
 		contentPane.add(lblQuantidade);
 		lblQuantidade.setForeground(new Color(0, 0, 0));
 		lblQuantidade.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
 		txtMotor = new JTextField();
-		txtMotor.setBounds(167, 219, 260, 30);
+		txtMotor.setBounds(165, 169, 260, 30);
 		contentPane.add(txtMotor);
 		txtMotor.setColumns(10);
 		
 		JLabel lblMotor = new JLabel("Motor:");
-		lblMotor.setBounds(80, 216, 104, 30);
+		lblMotor.setBounds(80, 166, 104, 30);
 		contentPane.add(lblMotor);
 		lblMotor.setForeground(Color.BLACK);
 		lblMotor.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
 		txtFornecedor = new JTextField();
-		txtFornecedor.setBounds(165, 287, 260, 30);
+		txtFornecedor.setBounds(596, 169, 260, 30);
 		contentPane.add(txtFornecedor);
 		txtFornecedor.setColumns(10);
 		
 		txtId = new JTextField();
-		txtId.setBounds(167, 363, 260, 30);
+		txtId.setBounds(165, 253, 260, 30);
 		contentPane.add(txtId);
 		txtId.setColumns(10);
 		
 		JLabel lblIdKart = new JLabel("ID Kart:");
-		lblIdKart.setBounds(80, 363, 104, 30);
+		lblIdKart.setBounds(69, 250, 104, 30);
 		contentPane.add(lblIdKart);
 		lblIdKart.setForeground(Color.BLACK);
 		lblIdKart.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
-		txtAno = new JTextField();
-		txtAno.setBounds(166, 434, 261, 30);
-		contentPane.add(txtAno);
-		txtAno.setColumns(10);
-		
 		JLabel lblAno = new JLabel("Ano:");
-		lblAno.setBounds(100, 434, 59, 30);
+		lblAno.setBounds(525, 250, 59, 30);
 		contentPane.add(lblAno);
 		lblAno.setForeground(new Color(0, 0, 0));
 		lblAno.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
 		txtPreco = new JTextField();
-		txtPreco.setBounds(166, 503, 261, 30);
+		txtPreco.setBounds(164, 343, 261, 30);
 		contentPane.add(txtPreco);
 		txtPreco.setColumns(10);
 		
 		JLabel lblPreo = new JLabel("Preço:");
-		lblPreo.setBounds(80, 500, 67, 30);
+		lblPreo.setBounds(80, 340, 67, 30);
 		contentPane.add(lblPreo);
 		lblPreo.setForeground(new Color(0, 0, 0));
 		lblPreo.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
 		txtModelo = new JTextField();
-		txtModelo.setBounds(167, 578, 260, 30);
+		txtModelo.setBounds(596, 343, 260, 30);
 		contentPane.add(txtModelo);
 		txtModelo.setColumns(10);
 		
 		JLabel lblModelo = new JLabel("Modelo:");
-		lblModelo.setBounds(80, 575, 67, 30);
+		lblModelo.setBounds(505, 340, 67, 30);
 		contentPane.add(lblModelo);
 		lblModelo.setForeground(Color.BLACK);
 		lblModelo.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
-		txtData = new JTextField();
-		txtData.setBounds(167, 645, 260, 30);
-		contentPane.add(txtData);
-		txtData.setColumns(10);
-		
-		JLabel lblDataEntrada = new JLabel("Data Entrada:");
-		lblDataEntrada.setBounds(51, 642, 104, 30);
-		contentPane.add(lblDataEntrada);
-		lblDataEntrada.setForeground(Color.BLACK);
-		lblDataEntrada.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		
 		txtMarca = new JTextField();
-		txtMarca.setBounds(168, 715, 259, 30);
+		txtMarca.setBounds(597, 418, 259, 30);
 		contentPane.add(txtMarca);
 		txtMarca.setColumns(10);
 		
 		JLabel lblMarcaKarts = new JLabel("Marca:");
-		lblMarcaKarts.setBounds(88, 712, 67, 30);
+		lblMarcaKarts.setBounds(517, 415, 67, 30);
 		contentPane.add(lblMarcaKarts);
 		lblMarcaKarts.setForeground(new Color(0, 0, 0));
 		lblMarcaKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
+		JComboBox boxCor = new JComboBox();
+		boxCor.setBounds(165, 105, 262, 26);
+		contentPane.add(boxCor);
+		boxCor.addItem("Selecionar Cor");
+		boxCor.addItem("Amarelo");
+		boxCor.addItem("Vermelho");
+		boxCor.addItem("Azul");
+		boxCor.addItem("Verde");
+		boxCor.addItem("Rosa");
+		boxCor.addItem("Roxo");
+		boxCor.addItem("Preto");
+		boxCor.addItem("Branco");
+		boxCor.addItem("Cinza");
+		
+		
+		JComboBox boxQuantidade = new JComboBox();
+		boxQuantidade.setBounds(594, 104, 262, 29);
+		contentPane.add(boxQuantidade);
+		boxQuantidade.addItem("Selecinar Quantidade");
+		boxQuantidade.addItem("1");
+		boxQuantidade.addItem("2");
+		boxQuantidade.addItem("3");
+		boxQuantidade.addItem("4");
+		boxQuantidade.addItem("5");
+		boxQuantidade.addItem("6");
+		boxQuantidade.addItem("7");
+		boxQuantidade.addItem("8");
+		boxQuantidade.addItem("9");
+		boxQuantidade.addItem("10");
+		
+		JLabel lblNewLabel = new JLabel("Fornecedor:");
+		lblNewLabel.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		lblNewLabel.setBounds(480, 170, 100, 22);
+		contentPane.add(lblNewLabel);
+		
+		JComboBox boxAno = new JComboBox();
+		boxAno.setBounds(596, 257, 260, 22);
+		contentPane.add(boxAno);
+		
+		JComboBox boxDia = new JComboBox();
+		boxDia.setBounds(165, 422, 80, 22);
+		contentPane.add(boxDia);
+		boxDia.addItem("01");
+		boxDia.addItem("02");
+		boxDia.addItem("03");
+		boxDia.addItem("04");
+		boxDia.addItem("05");
+		boxDia.addItem("06");
+		boxDia.addItem("07");
+		boxDia.addItem("08");
+		boxDia.addItem("09");
+		boxDia.addItem("10");
+		boxDia.addItem("11");
+		boxDia.addItem("12");
+		boxDia.addItem("13");
+		boxDia.addItem("14");
+		boxDia.addItem("15");
+		boxDia.addItem("16");
+		boxDia.addItem("17");
+		boxDia.addItem("18");
+		boxDia.addItem("19");
+		boxDia.addItem("20");
+		boxDia.addItem("21");
+		boxDia.addItem("22");
+		boxDia.addItem("23");
+		boxDia.addItem("24");
+		boxDia.addItem("25");
+		boxDia.addItem("26");
+		boxDia.addItem("27");
+		boxDia.addItem("28");
+		boxDia.addItem("29");
+		boxDia.addItem("30");
+		boxDia.addItem("31");
+		
+		JComboBox boxMes = new JComboBox();
+		boxMes.setBounds(255, 422, 82, 22);
+		contentPane.add(boxMes);
+		boxMes.addItem("01");
+		boxMes.addItem("02");
+		boxMes.addItem("03");
+		boxMes.addItem("04");
+		boxMes.addItem("05");
+		boxMes.addItem("06");
+		boxMes.addItem("07");
+		boxMes.addItem("08");
+		boxMes.addItem("09");
+		boxMes.addItem("10");
+		boxMes.addItem("11");
+		boxMes.addItem("12");
+		
+		JComboBox boxANO = new JComboBox();
+		boxANO.setBounds(347, 422, 82, 22);
+		contentPane.add(boxANO);
+		
+		boxANO.addItem("2023");
+		
+		
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		btnExcluir.setBounds(524, 612, 386, 41);
+		contentPane.add(btnExcluir);
+		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(26, 84, 424, 698);
+		panel_1.setBackground(new Color(211, 211, 211));
+		panel_1.setBounds(20, 57, 903, 501);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblFornecedorCnpj = new JLabel("Fornecedor CNPJ:");
-		lblFornecedorCnpj.setBounds(10, 201, 174, 30);
-		panel_1.add(lblFornecedorCnpj);
-		lblFornecedorCnpj.setForeground(Color.BLACK);
-		lblFornecedorCnpj.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		JLabel lblDataEntrada = new JLabel("Data Entrada:");
+		lblDataEntrada.setBounds(27, 358, 104, 30);
+		panel_1.add(lblDataEntrada);
+		lblDataEntrada.setForeground(Color.BLACK);
+		lblDataEntrada.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(TelaKarts.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblNewLabel.setBounds(-14, 0, 1949, 1061);
-		contentPane.add(lblNewLabel);
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon(TelaKarts.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblNewLabel_1.setBounds(0, -11, 1924, 1072);
+		contentPane.add(lblNewLabel_1);
 	}
 }
