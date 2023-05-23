@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.MaskFormatter;
 
 import controle.ClienteDAO;
 import controle.KartsDAO;
@@ -14,6 +15,7 @@ import modelo.Karts;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -24,7 +26,11 @@ import java.awt.Panel;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.JComboBox;
+//<<<<<<< Updated upstream;
 import javax.swing.SwingConstants;
+//=======
+import javax.swing.JFormattedTextField;
+//>>>>>>> Stashed changes;
 
 public class TelaKarts extends JFrame {
 
@@ -205,6 +211,14 @@ public class TelaKarts extends JFrame {
 		lblAno.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
 		txtPreco = new JTextField();
+		MaskFormatter formatter = null;
+		try {
+			formatter = new MaskFormatter("R$ ###.###,##");
+		}catch(ParseException e2) {
+			e2.printStackTrace();
+		}
+		txtPreco = new JFormattedTextField(formatter);
+		
 		txtPreco.setBounds(164, 343, 261, 30);
 		contentPane.add(txtPreco);
 		txtPreco.setColumns(10);
