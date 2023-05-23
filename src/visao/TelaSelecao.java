@@ -73,9 +73,9 @@ public class TelaSelecao extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setBounds(30, 36, 89, 23);
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -84,12 +84,12 @@ public class TelaSelecao extends JFrame {
 				ti.setVisible(true);
 			}
 		});
-		btnVoltar.setBounds(30, 36, 89, 23);
+		contentPane.setLayout(null);
 		contentPane.add(btnVoltar);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(211, 211, 211));
 		panel_1.setBounds(594, 177, 308, 265);
+		panel_1.setBackground(new Color(211, 211, 211));
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -109,9 +109,9 @@ public class TelaSelecao extends JFrame {
 		btnCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
 		JPanel panel_1_1 = new JPanel();
+		panel_1_1.setBounds(1006, 177, 308, 265);
 		panel_1_1.setBackground(new Color(211, 211, 211));
 		panel_1_1.setLayout(null);
-		panel_1_1.setBounds(1006, 177, 308, 265);
 		contentPane.add(panel_1_1);
 		
 		JButton btnKarts = new JButton("Karts");
@@ -130,9 +130,9 @@ public class TelaSelecao extends JFrame {
 		btnKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
 		JPanel panel_1_2 = new JPanel();
+		panel_1_2.setBounds(594, 481, 308, 265);
 		panel_1_2.setBackground(new Color(211, 211, 211));
 		panel_1_2.setLayout(null);
-		panel_1_2.setBounds(594, 481, 308, 265);
 		contentPane.add(panel_1_2);
 		
 		JButton btnVendas = new JButton("Vendas");
@@ -160,9 +160,9 @@ public class TelaSelecao extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/CarrinhoDeCompras.png")));
 		
 		JPanel panel_1_3 = new JPanel();
+		panel_1_3.setBounds(1006, 481, 308, 265);
 		panel_1_3.setBackground(new Color(211, 211, 211));
 		panel_1_3.setLayout(null);
-		panel_1_3.setBounds(1006, 481, 308, 265);
 		contentPane.add(panel_1_3);
 		
 		JButton btnFornecedor = new JButton("Fornecedor");
