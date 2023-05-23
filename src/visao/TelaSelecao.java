@@ -108,6 +108,12 @@ public class TelaSelecao extends JFrame {
 		});
 		btnCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/Cliente.png")));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(71, 34, 154, 114);
+		panel_1.add(lblNewLabel_1);
+		
 		JPanel panel_1_1 = new JPanel();
 		panel_1_1.setBounds(1006, 177, 308, 265);
 		panel_1_1.setBackground(new Color(211, 211, 211));
@@ -115,7 +121,7 @@ public class TelaSelecao extends JFrame {
 		contentPane.add(panel_1_1);
 		
 		JButton btnKarts = new JButton("Karts");
-		btnKarts.setBounds(48, 88, 206, 46);
+		btnKarts.setBounds(46, 160, 206, 46);
 		panel_1_1.add(btnKarts);
 		btnKarts.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -128,6 +134,12 @@ public class TelaSelecao extends JFrame {
 			}
 		});
 		btnKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/kart1.2.png")));
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setBounds(77, 44, 149, 89);
+		panel_1_1.add(lblNewLabel_3);
 		
 		JPanel panel_1_2 = new JPanel();
 		panel_1_2.setBounds(594, 481, 308, 265);
@@ -166,7 +178,7 @@ public class TelaSelecao extends JFrame {
 		contentPane.add(panel_1_3);
 		
 		JButton btnFornecedor = new JButton("Fornecedor");
-		btnFornecedor.setBounds(53, 93, 206, 47);
+		btnFornecedor.setBounds(59, 145, 206, 47);
 		panel_1_3.add(btnFornecedor);
 		btnFornecedor.setBackground(UIManager.getColor("Button.background"));
 		btnFornecedor.addActionListener(new ActionListener() {
@@ -179,5 +191,16 @@ public class TelaSelecao extends JFrame {
 			}
 		});
 		btnFornecedor.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/Cliente.png")));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(64, 24, 172, 104);
+		panel_1_3.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblNewLabel_4.setBounds(0, 0, 1924, 1061);
+		contentPane.add(lblNewLabel_4);
 	}
 }

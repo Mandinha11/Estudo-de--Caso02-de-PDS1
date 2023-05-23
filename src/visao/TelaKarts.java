@@ -24,6 +24,7 @@ import java.awt.Panel;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.JComboBox;
+import javax.swing.SwingConstants;
 
 public class TelaKarts extends JFrame {
 
@@ -92,6 +93,7 @@ public class TelaKarts extends JFrame {
 		panel.add(table);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.setBounds(54, 612, 390, 41);
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -154,8 +156,6 @@ public class TelaKarts extends JFrame {
 				 
 			}
 		});
-		
-		btnCadastrar.setBounds(54, 612, 390, 41);
 		btnCadastrar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		contentPane.add(btnCadastrar);
 		
@@ -268,8 +268,8 @@ public class TelaKarts extends JFrame {
 		boxQuantidade.addItem("10");
 		
 		JLabel lblNewLabel = new JLabel("Fornecedor:");
-		lblNewLabel.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		lblNewLabel.setBounds(480, 170, 100, 22);
+		lblNewLabel.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		contentPane.add(lblNewLabel);
 		
 		JComboBox boxAno = new JComboBox();
@@ -335,13 +335,13 @@ public class TelaKarts extends JFrame {
 		
 		
 		JButton btnExcluir = new JButton("Excluir");
-		btnExcluir.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		btnExcluir.setBounds(524, 612, 386, 41);
+		btnExcluir.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		contentPane.add(btnExcluir);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(211, 211, 211));
 		panel_1.setBounds(20, 57, 903, 501);
+		panel_1.setBackground(new Color(211, 211, 211));
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -351,9 +351,9 @@ public class TelaKarts extends JFrame {
 		lblDataEntrada.setForeground(Color.BLACK);
 		lblDataEntrada.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
+		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(TelaKarts.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblNewLabel_1.setBounds(0, -11, 1924, 1072);
+		lblNewLabel_1.setBounds(0, 0, 1924, 1061);
 		contentPane.add(lblNewLabel_1);
 	}
 }
