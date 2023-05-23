@@ -1,8 +1,8 @@
-package Controle;
+package controle;
 
 import java.util.ArrayList;
 
-import Modelo.Fornecedor;
+import modelo.Fornecedor;
 
 public class FornecedorDAO {
 

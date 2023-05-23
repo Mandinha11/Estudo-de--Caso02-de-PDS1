@@ -6,10 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Controle.ClienteDAO;
-import Controle.FornecedorDAO;
-import Modelo.Cliente;
-import Modelo.Fornecedor;
+import controle.ClienteDAO;
+import controle.FornecedorDAO;
+import modelo.Cliente;
+import modelo.Fornecedor;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;

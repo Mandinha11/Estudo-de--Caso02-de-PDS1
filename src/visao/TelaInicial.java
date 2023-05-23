@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import Modelo.Fornecedor;
+import modelo.Fornecedor;
 import net.miginfocom.swing.MigLayout;
 import java.awt.SystemColor;
 import javax.swing.JToolBar;

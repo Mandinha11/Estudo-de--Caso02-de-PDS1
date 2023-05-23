@@ -6,10 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Controle.ClienteDAO;
-import Controle.KartsDAO;
-import Modelo.Cliente;
-import Modelo.Karts;
+import controle.ClienteDAO;
+import controle.KartsDAO;
+import modelo.Cliente;
+import modelo.Karts;
 
 import java.awt.Color;
 import javax.swing.JButton;

@@ -8,8 +8,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
 
-import Controle.FornecedorDAO;
-import Modelo.Fornecedor;
+import controle.FornecedorDAO;
+import modelo.Fornecedor;
 
 import java.awt.Color;
 import javax.swing.JLabel;

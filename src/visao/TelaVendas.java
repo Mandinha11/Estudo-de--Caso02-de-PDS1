@@ -6,12 +6,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Controle.ClienteDAO;
-import Controle.KartsDAO;
-import Controle.VendasDAO;
-import Modelo.Cliente;
-import Modelo.Karts;
-import Modelo.Vendas;
+import controle.ClienteDAO;
+import controle.KartsDAO;
+import controle.VendasDAO;
+import modelo.Cliente;
+import modelo.Karts;
+import modelo.Vendas;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;

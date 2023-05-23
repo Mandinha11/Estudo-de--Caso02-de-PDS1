@@ -1,8 +1,8 @@
-package Controle;
+package controle;
 
 import java.util.ArrayList;
 
-import Modelo.Karts;
+import modelo.Karts;
 
 
 public class KartsDAO {
