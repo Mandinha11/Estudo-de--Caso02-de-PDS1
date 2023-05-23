@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 
 import Controle.FornecedorDAO;
 import Modelo.Fornecedor;
@@ -20,8 +21,10 @@ import java.awt.GridLayout;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import net.miginfocom.swing.MigLayout;
@@ -59,6 +62,8 @@ public class TelaFornecedor extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	/* CONSTRUTOR */
 	public TelaFornecedor() {
 		dao = FornecedorDAO.getinstancia();
 		setTitle("Fornecedor");
@@ -196,7 +201,14 @@ public class TelaFornecedor extends JFrame {
 		panel_1_1.setBounds(513, 78, 513, 46);
 		contentPane.add(panel_1_1);
 		
-		txtCNPJ = new JTextField();
+		MaskFormatter mascaraCNPJ = null;
+		try {
+			mascaraCNPJ = new MaskFormatter("##.###.###/000#-##");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		txtCNPJ = new JFormattedTextField(mascaraCNPJ);
 		txtCNPJ.setBounds(157, 11, 335, 28);
 		panel_1_1.add(txtCNPJ);
 		txtCNPJ.setColumns(10);
@@ -212,8 +224,15 @@ public class TelaFornecedor extends JFrame {
 		panel_1_1_1.setBackground(new Color(211, 211, 211));
 		panel_1_1_1.setBounds(1092, 12, 513, 46);
 		contentPane.add(panel_1_1_1);
+		
+		MaskFormatter mascaraCEP = null;
+		try {
+			mascaraCEP = new MaskFormatter("#####-###");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 						
-		txtCEP = new JTextField();
+		txtCEP = new JFormattedTextField(mascaraCEP);
 		txtCEP.setBounds(148, 11, 335, 28);
 		panel_1_1_1.add(txtCEP);
 		txtCEP.setColumns(10);
@@ -229,8 +248,15 @@ public class TelaFornecedor extends JFrame {
 		panel_1_1_1_1.setBackground(new Color(211, 211, 211));
 		panel_1_1_1_1.setBounds(1090, 78, 513, 46);
 		contentPane.add(panel_1_1_1_1);
+		
+		MaskFormatter mascaraTel = null;
+		try {
+			mascaraTel = new MaskFormatter("(##) #####-####");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 										
-		txtTelefone = new JTextField();
+		txtTelefone = new JFormattedTextField(mascaraTel);
 		txtTelefone.setBounds(148, 11, 335, 27);
 		panel_1_1_1_1.add(txtTelefone);
 		txtTelefone.setColumns(10);
