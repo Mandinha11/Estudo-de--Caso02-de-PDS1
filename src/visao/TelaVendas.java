@@ -21,9 +21,13 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.JTable;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.UIManager;
 
 public class TelaVendas extends JFrame {
 
@@ -32,8 +36,9 @@ public class TelaVendas extends JFrame {
 	private JTextField txtKart;
 	private JTextField txtCliente;
 	private JTextField txtPreco;
-	private JTable table;
+	private JTable TabelaKarts;
 	private JTextField txtMatricula;
+	private Vendas vendasSelecionada;
 
 	/**
 	 * Launch the application.
@@ -70,11 +75,18 @@ public class TelaVendas extends JFrame {
 		panel.setBounds(281, 187, 1588, 807);
 		contentPane.add(panel);
 		
-		table = new JTable();
-		table.setToolTipText("");
-		table.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		table.setBackground(new Color(0, 0, 0));
-		panel.add(table);
+		TabelaKarts = new JTable();
+		TabelaKarts.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				int posicaoVendas = TabelaKarts.getSelectedRow();
+				vendasSelecionada = listaVendas.get(posicaoVendas);
+				txtNome.setText(pessoaSelecionada.getNome());
+				txtCPF.setText(pessoaSelecionada.getCpf());
+			}
+		});
+		scrollPane.setViewportView(table);
+		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] { "Nome", "CPF" }));
+
 		
 		JButton btnCadastra = new JButton("Cadastrar");
 		btnCadastra.addActionListener(new ActionListener() {
