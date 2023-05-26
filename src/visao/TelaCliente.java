@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.MaskFormatter;
 
 import controle.ClienteDAO;
 import controle.FornecedorDAO;
@@ -14,11 +15,13 @@ import modelo.Fornecedor;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.ImageIcon;
@@ -148,14 +151,23 @@ public class TelaCliente extends JFrame {
 		panel_1.setToolTipText("");
 		panel_1.setBackground(new Color(211, 211, 211));
 		
-		JLabel lblCpf = new JLabel("CPF/ CNPJ:");
+		JLabel lblCpf = new JLabel("CPF:");
 		lblCpf.setForeground(Color.BLACK);
 		lblCpf.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		lblCpf.setBackground(Color.BLACK);
 		lblCpf.setBounds(29, 6, 110, 25);
 		panel_1.add(lblCpf);
 		
-		textCPF = new JTextField();
+		MaskFormatter mascaraCPF = null;
+		try {
+			mascaraCPF = new MaskFormatter("###.###.###-##");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		textCPF = new JFormattedTextField(mascaraCPF);
+		
+
 		textCPF.setBounds(179, 9, 317, 25);
 		panel_1.add(textCPF);
 		textCPF.setColumns(10);
@@ -278,7 +290,15 @@ public class TelaCliente extends JFrame {
 		lblNewLabel_3.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		lblNewLabel_3.setForeground(new Color(0, 0, 0));
 		
-		textTelefone = new JTextField();
+		MaskFormatter mascaraTel = null;
+		try {
+			mascaraTel = new MaskFormatter("(##) #####-####");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+										
+		textTelefone = new JFormattedTextField(mascaraTel);
+		
 		textTelefone.setBounds(179, 11, 317, 23);
 		panel_1_1.add(textTelefone);
 		textTelefone.setColumns(10);

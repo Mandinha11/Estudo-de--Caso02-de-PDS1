@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.MaskFormatter;
 
 import controle.ClienteDAO;
 import controle.KartsDAO;
@@ -20,7 +21,10 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.JTable;
@@ -183,12 +187,21 @@ public class TelaVendas extends JFrame {
 		panel_1_2.setBounds(850, 31, 483, 55);
 		contentPane.add(panel_1_2);
 		
-		txtCliente = new JTextField();
+		MaskFormatter mascaraCPF = null;
+		try {
+			mascaraCPF = new MaskFormatter("###.###.###-##");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		txtCliente = new JFormattedTextField(mascaraCPF);
+		
+		
 		txtCliente.setColumns(10);
 		txtCliente.setBounds(153, 16, 304, 28);
 		panel_1_2.add(txtCliente);
 		
-		JLabel lblComprador = new JLabel("Cliente CPF/CNPJ:");
+		JLabel lblComprador = new JLabel("Cliente CPF:");
 		lblComprador.setBounds(10, 18, 133, 20);
 		panel_1_2.add(lblComprador);
 		lblComprador.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -208,12 +221,6 @@ public class TelaVendas extends JFrame {
 		lblNewLabel.setBounds(10, 16, 121, 24);
 		panel_1_2_1.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		
-
-		JLabel lblFundoDeTela = new JLabel("");
-		lblFundoDeTela.setIcon(new ImageIcon(TelaVendas.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblFundoDeTela.setBounds(0, 0, 1924, 1053);
-		contentPane.add(lblFundoDeTela);
 
 		JPanel panel_1_2_2 = new JPanel();
 		panel_1_2_2.setLayout(null);

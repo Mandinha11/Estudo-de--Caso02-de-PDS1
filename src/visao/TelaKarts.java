@@ -188,6 +188,15 @@ public class TelaKarts extends JFrame {
 		lblMotor.setForeground(Color.BLACK);
 		lblMotor.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
+		MaskFormatter mascaraCNPJ = null;
+		try {
+			mascaraCNPJ = new MaskFormatter("##.###.###/000#-##");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		txtFornecedor = new JFormattedTextField(mascaraCNPJ);
+		
 		txtFornecedor = new JTextField();
 		txtFornecedor.setBounds(596, 169, 260, 30);
 		contentPane.add(txtFornecedor);
