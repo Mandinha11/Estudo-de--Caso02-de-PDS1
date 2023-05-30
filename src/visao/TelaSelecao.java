@@ -178,6 +178,12 @@ public class TelaSelecao extends JFrame {
 		panel_1_3.setLayout(null);
 		contentPane.add(panel_1_3);
 		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/Cliente.png")));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(65, 24, 172, 104);
+		panel_1_3.add(lblNewLabel_2);
+		
 		JButton btnFornecedor = new JButton("Fornecedor");
 		btnFornecedor.setBounds(59, 145, 206, 47);
 		panel_1_3.add(btnFornecedor);
@@ -193,34 +199,27 @@ public class TelaSelecao extends JFrame {
 		});
 		btnFornecedor.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		
-		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/Cliente.png")));
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(65, 24, 172, 104);
-		panel_1_3.add(lblNewLabel_2);
-		
 		JPanel panel_1_3_1 = new JPanel();
-		panel_1_3_1.setLayout(null);
 		panel_1_3_1.setBackground(new Color(211, 211, 211));
 		panel_1_3_1.setBounds(1213, 481, 308, 265);
 		contentPane.add(panel_1_3_1);
-		
-		JButton btnFuncionario = new JButton("Funcionario");
-		btnFuncionario.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
-		btnFuncionario.setBackground(SystemColor.menu);
-		btnFuncionario.setBounds(59, 145, 206, 47);
-		panel_1_3_1.add(btnFuncionario);
+		panel_1_3_1.setLayout(null);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("");
-		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2_1.setBounds(64, 24, 172, 104);
+		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1_3_1.add(lblNewLabel_2_1);
 		
 		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setBounds(81, 24, 172, 110);
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/Funcionario2.png")));
-		lblNewLabel_4.setBounds(81, 24, 172, 110);
 		panel_1_3_1.add(lblNewLabel_4);
+		
+		JButton btnNewButton = new JButton("Funcionario");
+		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
+		btnNewButton.setBounds(61, 145, 206, 47);
+		panel_1_3_1.add(btnNewButton);
 		
 		JLabel lblNewLabel_5 = new JLabel("");
 		lblNewLabel_5.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/FundoDeTela.jpg")));

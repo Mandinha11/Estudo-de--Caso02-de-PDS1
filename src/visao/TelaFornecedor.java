@@ -92,6 +92,7 @@ public class TelaFornecedor extends JFrame {
 		contentPane.add(btnVoltar);
 
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		btnCadastrar.setBounds(1687, 293, 210, 42);
 		btnCadastrar.setBackground(new Color(255, 255, 255));
 		btnCadastrar.addActionListener(new ActionListener() {
@@ -167,6 +168,11 @@ public class TelaFornecedor extends JFrame {
 		contentPane.add(btnAtualizar);
 
 		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		btnExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnExcluir.setBounds(1689, 213, 208, 42);
 		btnExcluir.setBackground(new Color(255, 255, 255));
 		contentPane.add(btnExcluir);
@@ -277,6 +283,11 @@ public class TelaFornecedor extends JFrame {
 
 		modelo = new javax.swing.table.DefaultTableModel(columns, 0);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(TelaFornecedor.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblNewLabel.setBounds(0, 0, 1924, 1061);
+		contentPane.add(lblNewLabel);
 		
 		atualizarTabela();
 	}
