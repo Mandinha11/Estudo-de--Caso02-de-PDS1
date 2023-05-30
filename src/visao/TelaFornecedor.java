@@ -156,6 +156,7 @@ public class TelaFornecedor extends JFrame {
 		contentPane.add(btnCadastrar);
 
 		JButton btnAtualizar = new JButton("Atualizar");
+		btnAtualizar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		btnAtualizar.setBounds(1687, 135, 210, 42);
 		btnAtualizar.setBackground(new Color(255, 255, 255));
 		btnAtualizar.addActionListener(new ActionListener() {
@@ -276,11 +277,6 @@ public class TelaFornecedor extends JFrame {
 
 		modelo = new javax.swing.table.DefaultTableModel(columns, 0);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(TelaFornecedor.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblNewLabel.setBounds(0, 0, 1924, 1061);
-		contentPane.add(lblNewLabel);
 		
 		atualizarTabela();
 	}

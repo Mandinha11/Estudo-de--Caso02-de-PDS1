@@ -36,12 +36,13 @@ public class TelaKarts extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtPreco;
+	private JTextField txtPreco_1;
 	private JTextField txtMarca;
 	private JTextField txtModelo;
 	private JTable table;
-	private JTextField txtMotor;
 	private JTextField txtId;
 	private JTextField txtFornecedor;
+	private JTextField txtFornecedor_1;
 
 	/**
 	 * Launch the application.
@@ -86,17 +87,6 @@ public class TelaKarts extends JFrame {
 		});
 		contentPane.setLayout(null);
 		contentPane.add(btnVoltar);
-		
-		Panel panel = new Panel();
-		panel.setBounds(1027, 57, 789, 873);
-		panel.setBackground(new Color(255, 255, 255));
-		panel.setForeground(new Color(255, 255, 255));
-		contentPane.add(panel);
-		panel.setLayout(null);
-		
-		table = new JTable();
-		table.setBounds(368, 161, 1, 1);
-		panel.add(table);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.setBounds(54, 612, 390, 41);
@@ -152,41 +142,12 @@ public class TelaKarts extends JFrame {
 				karts.setforneCNPJ(Long.valueOf(txtFornecedor.getText()));
 				 }
 				 
-				 if (txtMotor.getText().trim().length() == 0) {
-					 JOptionPane.showMessageDialog(null, "Motor não preenchido!!");
-					 return;
-				 }
-				 else {
-				karts.setmotor(String.valueOf(txtMotor.getText()));
-				 }
+				 
 				 
 			}
 		});
 		btnCadastrar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		contentPane.add(btnCadastrar);
-		
-		JLabel lblBuscarKarts = new JLabel("Cor:");
-		lblBuscarKarts.setBounds(100, 100, 67, 30);
-		contentPane.add(lblBuscarKarts);
-		lblBuscarKarts.setForeground(new Color(0, 0, 0));
-		lblBuscarKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		
-		JLabel lblQuantidade = new JLabel("Quantidade:");
-		lblQuantidade.setBounds(480, 100, 104, 30);
-		contentPane.add(lblQuantidade);
-		lblQuantidade.setForeground(new Color(0, 0, 0));
-		lblQuantidade.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		
-		txtMotor = new JTextField();
-		txtMotor.setBounds(165, 169, 260, 30);
-		contentPane.add(txtMotor);
-		txtMotor.setColumns(10);
-		
-		JLabel lblMotor = new JLabel("Motor:");
-		lblMotor.setBounds(80, 166, 104, 30);
-		contentPane.add(lblMotor);
-		lblMotor.setForeground(Color.BLACK);
-		lblMotor.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
 		MaskFormatter mascaraCNPJ = null;
 		try {
@@ -197,28 +158,6 @@ public class TelaKarts extends JFrame {
 		
 		txtFornecedor = new JFormattedTextField(mascaraCNPJ);
 		
-		txtFornecedor = new JTextField();
-		txtFornecedor.setBounds(596, 169, 260, 30);
-		contentPane.add(txtFornecedor);
-		txtFornecedor.setColumns(10);
-		
-		txtId = new JTextField();
-		txtId.setBounds(165, 253, 260, 30);
-		contentPane.add(txtId);
-		txtId.setColumns(10);
-		
-		JLabel lblIdKart = new JLabel("ID Kart:");
-		lblIdKart.setBounds(69, 250, 104, 30);
-		contentPane.add(lblIdKart);
-		lblIdKart.setForeground(Color.BLACK);
-		lblIdKart.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		
-		JLabel lblAno = new JLabel("Ano:");
-		lblAno.setBounds(525, 250, 59, 30);
-		contentPane.add(lblAno);
-		lblAno.setForeground(new Color(0, 0, 0));
-		lblAno.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		
 		txtPreco = new JTextField();
 		MaskFormatter formatter = null;
 		try {
@@ -226,82 +165,50 @@ public class TelaKarts extends JFrame {
 		}catch(ParseException e2) {
 			e2.printStackTrace();
 		}
-		txtPreco = new JFormattedTextField(formatter);
-		
-		txtPreco.setBounds(164, 343, 261, 30);
-		contentPane.add(txtPreco);
-		txtPreco.setColumns(10);
-		
-		JLabel lblPreo = new JLabel("Preço:");
-		lblPreo.setBounds(80, 340, 67, 30);
-		contentPane.add(lblPreo);
-		lblPreo.setForeground(new Color(0, 0, 0));
-		lblPreo.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		
-		txtModelo = new JTextField();
-		txtModelo.setBounds(596, 343, 260, 30);
-		contentPane.add(txtModelo);
-		txtModelo.setColumns(10);
-		
-		JLabel lblModelo = new JLabel("Modelo:");
-		lblModelo.setBounds(505, 340, 67, 30);
-		contentPane.add(lblModelo);
-		lblModelo.setForeground(Color.BLACK);
-		lblModelo.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		
-		txtMarca = new JTextField();
-		txtMarca.setBounds(597, 418, 259, 30);
-		contentPane.add(txtMarca);
-		txtMarca.setColumns(10);
-		
-		JLabel lblMarcaKarts = new JLabel("Marca:");
-		lblMarcaKarts.setBounds(517, 415, 67, 30);
-		contentPane.add(lblMarcaKarts);
-		lblMarcaKarts.setForeground(new Color(0, 0, 0));
-		lblMarcaKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		
-		JComboBox boxCor = new JComboBox();
-		boxCor.setBounds(165, 105, 262, 26);
-		contentPane.add(boxCor);
-		boxCor.addItem("Selecionar Cor");
-		boxCor.addItem("Amarelo");
-		boxCor.addItem("Vermelho");
-		boxCor.addItem("Azul");
-		boxCor.addItem("Verde");
-		boxCor.addItem("Rosa");
-		boxCor.addItem("Roxo");
-		boxCor.addItem("Preto");
-		boxCor.addItem("Branco");
-		boxCor.addItem("Cinza");
 		
 		
-		JComboBox boxQuantidade = new JComboBox();
-		boxQuantidade.setBounds(594, 104, 262, 29);
-		contentPane.add(boxQuantidade);
-		boxQuantidade.addItem("Selecinar Quantidade");
-		boxQuantidade.addItem("1");
-		boxQuantidade.addItem("2");
-		boxQuantidade.addItem("3");
-		boxQuantidade.addItem("4");
-		boxQuantidade.addItem("5");
-		boxQuantidade.addItem("6");
-		boxQuantidade.addItem("7");
-		boxQuantidade.addItem("8");
-		boxQuantidade.addItem("9");
-		boxQuantidade.addItem("10");
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setBounds(524, 612, 386, 41);
+		btnExcluir.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		contentPane.add(btnExcluir);
 		
-		JLabel lblNewLabel = new JLabel("Fornecedor:");
-		lblNewLabel.setBounds(480, 170, 100, 22);
-		lblNewLabel.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		contentPane.add(lblNewLabel);
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(20, 124, 903, 429);
+		panel_1.setBackground(new Color(211, 211, 211));
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
 		
-		JComboBox boxAno = new JComboBox();
-		boxAno.setBounds(596, 257, 260, 22);
-		contentPane.add(boxAno);
+		JLabel lblDataEntrada = new JLabel("Data Entrada:");
+		lblDataEntrada.setBounds(40, 259, 104, 30);
+		panel_1.add(lblDataEntrada);
+		lblDataEntrada.setForeground(Color.BLACK);
+		lblDataEntrada.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		
+		JComboBox boxANO = new JComboBox();
+		boxANO.setBounds(330, 259, 82, 22);
+		panel_1.add(boxANO);
+		
+		boxANO.addItem("2023");
+		
+		JComboBox boxMes = new JComboBox();
+		boxMes.setBounds(244, 259, 82, 22);
+		panel_1.add(boxMes);
+		boxMes.addItem("01");
+		boxMes.addItem("02");
+		boxMes.addItem("03");
+		boxMes.addItem("04");
+		boxMes.addItem("05");
+		boxMes.addItem("06");
+		boxMes.addItem("07");
+		boxMes.addItem("08");
+		boxMes.addItem("09");
+		boxMes.addItem("10");
+		boxMes.addItem("11");
+		boxMes.addItem("12");
 		
 		JComboBox boxDia = new JComboBox();
-		boxDia.setBounds(165, 422, 80, 22);
-		contentPane.add(boxDia);
+		boxDia.setBounds(154, 259, 80, 22);
+		panel_1.add(boxDia);
 		boxDia.addItem("01");
 		boxDia.addItem("02");
 		boxDia.addItem("03");
@@ -333,48 +240,136 @@ public class TelaKarts extends JFrame {
 		boxDia.addItem("29");
 		boxDia.addItem("30");
 		boxDia.addItem("31");
+		txtPreco_1 = new JFormattedTextField(formatter);
+		txtPreco_1.setBounds(151, 199, 261, 30);
+		panel_1.add(txtPreco_1);
+		txtPreco_1.setColumns(10);
 		
-		JComboBox boxMes = new JComboBox();
-		boxMes.setBounds(255, 422, 82, 22);
-		contentPane.add(boxMes);
-		boxMes.addItem("01");
-		boxMes.addItem("02");
-		boxMes.addItem("03");
-		boxMes.addItem("04");
-		boxMes.addItem("05");
-		boxMes.addItem("06");
-		boxMes.addItem("07");
-		boxMes.addItem("08");
-		boxMes.addItem("09");
-		boxMes.addItem("10");
-		boxMes.addItem("11");
-		boxMes.addItem("12");
+		JLabel lblPreo = new JLabel("Preço:");
+		lblPreo.setBounds(74, 196, 67, 30);
+		panel_1.add(lblPreo);
+		lblPreo.setForeground(new Color(0, 0, 0));
+		lblPreo.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
-		JComboBox boxANO = new JComboBox();
-		boxANO.setBounds(347, 422, 82, 22);
-		contentPane.add(boxANO);
+		txtId = new JTextField();
+		txtId.setBounds(151, 71, 260, 30);
+		panel_1.add(txtId);
+		txtId.setColumns(10);
 		
-		boxANO.addItem("2023");
+		JLabel lblIdKart = new JLabel("ID Kart:");
+		lblIdKart.setBounds(74, 71, 104, 30);
+		panel_1.add(lblIdKart);
+		lblIdKart.setForeground(Color.BLACK);
+		lblIdKart.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		
+		JComboBox boxCor = new JComboBox();
+		boxCor.setBounds(150, 138, 262, 26);
+		panel_1.add(boxCor);
+		boxCor.addItem("Selecionar Cor");
+		boxCor.addItem("Amarelo");
+		boxCor.addItem("Vermelho");
+		boxCor.addItem("Azul");
+		boxCor.addItem("Verde");
+		boxCor.addItem("Rosa");
+		boxCor.addItem("Roxo");
+		boxCor.addItem("Preto");
+		boxCor.addItem("Branco");
+		boxCor.addItem("Cinza");
+		
+		JLabel lblBuscarKarts = new JLabel("Cor:");
+		lblBuscarKarts.setBounds(91, 138, 67, 30);
+		panel_1.add(lblBuscarKarts);
+		lblBuscarKarts.setForeground(new Color(0, 0, 0));
+		lblBuscarKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		
+		txtMarca = new JTextField();
+		txtMarca.setBounds(151, 318, 259, 30);
+		panel_1.add(txtMarca);
+		txtMarca.setColumns(10);
+		
+		JLabel lblMarcaKarts = new JLabel("Marca:");
+		lblMarcaKarts.setBounds(74, 315, 67, 30);
+		panel_1.add(lblMarcaKarts);
+		lblMarcaKarts.setForeground(new Color(0, 0, 0));
+		lblMarcaKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		
+		txtModelo = new JTextField();
+		txtModelo.setBounds(590, 262, 260, 30);
+		panel_1.add(txtModelo);
+		txtModelo.setColumns(10);
+		
+		JLabel lblModelo = new JLabel("Modelo:");
+		lblModelo.setBounds(513, 259, 67, 30);
+		panel_1.add(lblModelo);
+		lblModelo.setForeground(Color.BLACK);
+		lblModelo.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		
+		JComboBox boxAno = new JComboBox();
+		boxAno.setBounds(589, 199, 260, 30);
+		panel_1.add(boxAno);
+		
+		JLabel lblAno = new JLabel("Ano:");
+		lblAno.setBounds(521, 196, 59, 30);
+		panel_1.add(lblAno);
+		lblAno.setForeground(new Color(0, 0, 0));
+		lblAno.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		
+		txtFornecedor_1 = new JTextField();
+		txtFornecedor_1.setBounds(589, 136, 260, 30);
+		panel_1.add(txtFornecedor_1);
+		txtFornecedor_1.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("Fornecedor CNPJ:");
+		lblNewLabel.setBounds(436, 137, 144, 22);
+		panel_1.add(lblNewLabel);
+		lblNewLabel.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
 		
-		JButton btnExcluir = new JButton("Excluir");
-		btnExcluir.setBounds(524, 612, 386, 41);
-		btnExcluir.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		contentPane.add(btnExcluir);
+		JComboBox boxQuantidade = new JComboBox();
+		boxQuantidade.setBounds(590, 72, 262, 29);
+		panel_1.add(boxQuantidade);
+		boxQuantidade.addItem("Selecinar Quantidade");
+		boxQuantidade.addItem("1");
+		boxQuantidade.addItem("2");
+		boxQuantidade.addItem("3");
+		boxQuantidade.addItem("4");
+		boxQuantidade.addItem("5");
+		boxQuantidade.addItem("6");
+		boxQuantidade.addItem("7");
+		boxQuantidade.addItem("8");
+		boxQuantidade.addItem("9");
+		boxQuantidade.addItem("10");
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(20, 57, 903, 501);
-		panel_1.setBackground(new Color(211, 211, 211));
-		contentPane.add(panel_1);
-		panel_1.setLayout(null);
+		JLabel lblQuantidade = new JLabel("Quantidade:");
+		lblQuantidade.setBounds(486, 71, 104, 30);
+		panel_1.add(lblQuantidade);
+		lblQuantidade.setForeground(new Color(0, 0, 0));
+		lblQuantidade.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
-		JLabel lblDataEntrada = new JLabel("Data Entrada:");
-		lblDataEntrada.setBounds(27, 358, 104, 30);
-		panel_1.add(lblDataEntrada);
-		lblDataEntrada.setForeground(Color.BLACK);
-		lblDataEntrada.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(new Color(0, 128, 128));
+		panel_3.setBounds(20, 550, 903, 131);
+		contentPane.add(panel_3);
+		panel_3.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
+		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(new Color(211, 211, 211));
+		panel_4.setBounds(996, 54, 857, 939);
+		contentPane.add(panel_4);
+		panel_4.setLayout(null);
+		
+		Panel panel = new Panel();
+		panel.setBounds(10, 10, 837, 919);
+		panel_4.add(panel);
+		panel.setBackground(new Color(255, 255, 255));
+		panel.setForeground(new Color(255, 255, 255));
+		panel.setLayout(null);
+		
+		table = new JTable();
+		table.setBounds(368, 161, 1, 1);
+		panel.add(table);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setIcon(new ImageIcon(TelaKarts.class.getResource("/imgs/FundoDeTela.jpg")));
 		lblNewLabel_1.setBounds(0, 0, 1924, 1061);
 		contentPane.add(lblNewLabel_1);
