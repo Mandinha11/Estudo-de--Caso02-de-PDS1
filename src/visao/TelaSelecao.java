@@ -32,6 +32,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SpringLayout;
 import java.awt.Panel;
 import java.awt.Label;
+import java.awt.SystemColor;
 
 public class TelaSelecao extends JFrame {
 
@@ -142,7 +143,7 @@ public class TelaSelecao extends JFrame {
 		panel_1_1.add(lblNewLabel_3);
 		
 		JPanel panel_1_2 = new JPanel();
-		panel_1_2.setBounds(594, 481, 308, 265);
+		panel_1_2.setBounds(429, 481, 308, 265);
 		panel_1_2.setBackground(new Color(211, 211, 211));
 		panel_1_2.setLayout(null);
 		contentPane.add(panel_1_2);
@@ -172,7 +173,7 @@ public class TelaSelecao extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/CarrinhoDeCompras.png")));
 		
 		JPanel panel_1_3 = new JPanel();
-		panel_1_3.setBounds(1006, 481, 308, 265);
+		panel_1_3.setBounds(816, 481, 308, 265);
 		panel_1_3.setBackground(new Color(211, 211, 211));
 		panel_1_3.setLayout(null);
 		contentPane.add(panel_1_3);
@@ -195,12 +196,35 @@ public class TelaSelecao extends JFrame {
 		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/Cliente.png")));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(64, 24, 172, 104);
+		lblNewLabel_2.setBounds(65, 24, 172, 104);
 		panel_1_3.add(lblNewLabel_2);
 		
+		JPanel panel_1_3_1 = new JPanel();
+		panel_1_3_1.setLayout(null);
+		panel_1_3_1.setBackground(new Color(211, 211, 211));
+		panel_1_3_1.setBounds(1213, 481, 308, 265);
+		contentPane.add(panel_1_3_1);
+		
+		JButton btnFuncionario = new JButton("Funcionario");
+		btnFuncionario.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
+		btnFuncionario.setBackground(SystemColor.menu);
+		btnFuncionario.setBounds(59, 145, 206, 47);
+		panel_1_3_1.add(btnFuncionario);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("");
+		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2_1.setBounds(64, 24, 172, 104);
+		panel_1_3_1.add(lblNewLabel_2_1);
+		
 		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblNewLabel_4.setBounds(0, 0, 1924, 1061);
-		contentPane.add(lblNewLabel_4);
+		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_4.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/Funcionario2.png")));
+		lblNewLabel_4.setBounds(81, 24, 172, 110);
+		panel_1_3_1.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setIcon(new ImageIcon(TelaSelecao.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblNewLabel_5.setBounds(0, 0, 1924, 1061);
+		contentPane.add(lblNewLabel_5);
 	}
 }
