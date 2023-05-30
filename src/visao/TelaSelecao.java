@@ -217,6 +217,15 @@ public class TelaSelecao extends JFrame {
 		panel_1_3_1.add(lblNewLabel_4);
 		
 		JButton btnNewButton = new JButton("Funcionario");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				dispose();
+				TelaFuncionari tf = new TelaFuncionari();
+				tf.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				tf.setVisible(true);
+			}
+		});
 		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		btnNewButton.setBounds(61, 145, 206, 47);
 		panel_1_3_1.add(btnNewButton);
