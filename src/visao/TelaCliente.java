@@ -25,6 +25,7 @@ import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
 
 public class TelaCliente extends JFrame {
 
@@ -66,7 +67,7 @@ public class TelaCliente extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton btnNewButton = new JButton("Cadastrar");
-		btnNewButton.setBounds(61, 272, 242, 39);
+		btnNewButton.setBounds(51, 218, 242, 57);
 		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -311,9 +312,26 @@ public class TelaCliente extends JFrame {
 		table.setBackground(new Color(255, 255, 255));
 		panel_3.add(table);
 		
-		JLabel lblFundoDeTela = new JLabel("New label");
-		lblFundoDeTela.setIcon(new ImageIcon(TelaCliente.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblFundoDeTela.setBounds(0, 0, 1924, 1061);
-		contentPane.add(lblFundoDeTela);
+		JButton btnListar = new JButton("Listar");
+		btnListar.setBounds(51, 319, 242, 57);
+		btnListar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		contentPane.add(btnListar);
+		
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setBounds(51, 424, 242, 57);
+		btnExcluir.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
+		contentPane.add(btnExcluir);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setForeground(Color.BLACK);
+		lblNewLabel_1.setBounds(1600, 35, 141, 115);
+		lblNewLabel_1.setIcon(new ImageIcon(TelaCliente.class.getResource("/imgs/Cliente2.png")));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_7 = new JLabel("");
+		lblNewLabel_7.setIcon(new ImageIcon(TelaCliente.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblNewLabel_7.setBounds(0, 0, 1924, 1061);
+		contentPane.add(lblNewLabel_7);
 	}
 }

@@ -28,6 +28,7 @@ import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.JTable;
+import javax.swing.SwingConstants;
 
 public class TelaVendas extends JFrame {
 
@@ -133,7 +134,7 @@ public class TelaVendas extends JFrame {
 				 
 			}
 		});
-		btnCadastra.setBounds(51, 187, 167, 49);
+		btnCadastra.setBounds(36, 187, 187, 49);
 		contentPane.add(btnCadastra);
 		
 		JButton btnNewButton_2 = new JButton("Voltar");
@@ -238,10 +239,24 @@ public class TelaVendas extends JFrame {
 		lblMatriculaFuncionario.setBounds(10, 18, 156, 20);
 		panel_1_2_2.add(lblMatriculaFuncionario);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon(TelaVendas.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblNewLabel_1.setBounds(0, 0, 1924, 1063);
+		JButton btnListar = new JButton("Listar");
+		btnListar.setBounds(36, 274, 187, 49);
+		contentPane.add(btnListar);
+		
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setBounds(36, 363, 187, 49);
+		contentPane.add(btnExcluir);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setIcon(new ImageIcon(TelaVendas.class.getResource("/imgs/CarrinhoDeCompras.png")));
+		lblNewLabel_1.setBounds(42, 814, 181, 180);
 		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(TelaVendas.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblNewLabel_2.setBounds(0, 0, 1924, 1053);
+		contentPane.add(lblNewLabel_2);
 
 	}
 }

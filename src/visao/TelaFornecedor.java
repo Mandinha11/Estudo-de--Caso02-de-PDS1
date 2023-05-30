@@ -92,7 +92,7 @@ public class TelaFornecedor extends JFrame {
 		contentPane.add(btnVoltar);
 
 		JButton btnCadastrar = new JButton("Cadastrar");
-		btnCadastrar.setBounds(1687, 273, 210, 42);
+		btnCadastrar.setBounds(1687, 293, 210, 42);
 		btnCadastrar.setBackground(new Color(255, 255, 255));
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -166,7 +166,7 @@ public class TelaFornecedor extends JFrame {
 		contentPane.add(btnAtualizar);
 
 		JButton btnExcluir = new JButton("Excluir");
-		btnExcluir.setBounds(1687, 204, 208, 42);
+		btnExcluir.setBounds(1689, 213, 208, 42);
 		btnExcluir.setBackground(new Color(255, 255, 255));
 		contentPane.add(btnExcluir);
 
