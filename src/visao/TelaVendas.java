@@ -29,11 +29,11 @@ import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
+import javax.swing.JComboBox;
 
 public class TelaVendas extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtData;
 	private JTextField txtKart;
 	private JTextField txtCliente;
 	private JTextField txtPreco;
@@ -98,13 +98,8 @@ public class TelaVendas extends JFrame {
 					 vendas.setcliente(txtCliente.getText());
 				 }
 				
-				 if (txtData.getText().trim().length() == 0) {
-					 JOptionPane.showMessageDialog(null, "Data não preenchido!!");
-					 return;
-				 }
-				 else {
-				vendas.setdata(Long.valueOf(txtData.getText()));
-				 }
+				
+				 
 				 
 				 if (txtPreco.getText().trim().length() == 0) {
 					 JOptionPane.showMessageDialog(null, "Preço não preenchido!!");
@@ -156,15 +151,80 @@ public class TelaVendas extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		txtData = new JTextField();
-		txtData.setBounds(153, 16, 304, 28);
-		panel_1.add(txtData);
-		txtData.setColumns(10);
-		
 		JLabel lblData = new JLabel("Data:");
 		lblData.setBounds(10, 16, 48, 24);
 		panel_1.add(lblData);
 		lblData.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		
+		JComboBox boxDia = new JComboBox();
+		boxDia.setBounds(108, 19, 72, 22);
+		panel_1.add(boxDia);
+		boxDia.addItem("01");
+		boxDia.addItem("02");
+		boxDia.addItem("03");
+		boxDia.addItem("04");
+		boxDia.addItem("05");
+		boxDia.addItem("06");
+		boxDia.addItem("07");
+		boxDia.addItem("08");
+		boxDia.addItem("09");
+		boxDia.addItem("10");
+		boxDia.addItem("11");
+		boxDia.addItem("12");
+		boxDia.addItem("13");
+		boxDia.addItem("14");
+		boxDia.addItem("15");
+		boxDia.addItem("16");
+		boxDia.addItem("17");
+		boxDia.addItem("18");
+		boxDia.addItem("19");
+		boxDia.addItem("20");
+		boxDia.addItem("21");
+		boxDia.addItem("22");
+		boxDia.addItem("23");
+		boxDia.addItem("24");
+		boxDia.addItem("25");
+		boxDia.addItem("26");
+		boxDia.addItem("27");
+		boxDia.addItem("28");
+		boxDia.addItem("29");
+		boxDia.addItem("30");
+		boxDia.addItem("31");
+		
+		JComboBox boxMes = new JComboBox();
+		boxMes.setBounds(243, 19, 72, 22);
+		panel_1.add(boxMes);
+		boxMes.addItem("01");
+		boxMes.addItem("02");
+		boxMes.addItem("03");
+		boxMes.addItem("04");
+		boxMes.addItem("05");
+		boxMes.addItem("06");
+		boxMes.addItem("07");
+		boxMes.addItem("08");
+		boxMes.addItem("09");
+		boxMes.addItem("10");
+		boxMes.addItem("11");
+		boxMes.addItem("12");
+		
+		JComboBox boxAno = new JComboBox();
+		boxAno.setBounds(375, 19, 72, 22);
+		panel_1.add(boxAno);
+		
+		JLabel lblNewLabel_3 = new JLabel("Dia");
+		lblNewLabel_3.setBounds(70, 14, 28, 28);
+		panel_1.add(lblNewLabel_3);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		
+		JLabel lblNewLabel_2 = new JLabel("Mês");
+		lblNewLabel_2.setBounds(199, 21, 34, 14);
+		panel_1.add(lblNewLabel_2);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		
+		JLabel lblNewLabel_4 = new JLabel("Ano");
+		lblNewLabel_4.setBounds(329, 21, 36, 14);
+		panel_1.add(lblNewLabel_4);
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		
 		JPanel panel_1_1 = new JPanel();
 		panel_1_1.setLayout(null);
@@ -253,10 +313,10 @@ public class TelaVendas extends JFrame {
 		lblNewLabel_1.setBounds(42, 814, 181, 180);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon(TelaVendas.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblNewLabel_2.setBounds(0, 0, 1924, 1053);
-		contentPane.add(lblNewLabel_2);
+		JLabel lblNewLabel_5 = new JLabel("New label");
+		lblNewLabel_5.setIcon(new ImageIcon(TelaVendas.class.getResource("/imgs/FundoDeTela.jpg")));
+		lblNewLabel_5.setBounds(-13, 0, 1948, 1053);
+		contentPane.add(lblNewLabel_5);
 
 	}
 }

@@ -95,17 +95,61 @@ public class TelaFuncionari extends JFrame {
 		lblNewLabel_3.setBounds(204, 14, 20, 26);
 		PnDataDeNascimento.add(lblNewLabel_3);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(234, 14, 47, 26);
-		PnDataDeNascimento.add(comboBox);
+		JComboBox boxDia = new JComboBox();
+		boxDia.setBounds(234, 14, 47, 26);
+		PnDataDeNascimento.add(boxDia);
+		boxDia.addItem("01");
+		boxDia.addItem("02");
+		boxDia.addItem("03");
+		boxDia.addItem("04");
+		boxDia.addItem("05");
+		boxDia.addItem("06");
+		boxDia.addItem("07");
+		boxDia.addItem("08");
+		boxDia.addItem("09");
+		boxDia.addItem("10");
+		boxDia.addItem("11");
+		boxDia.addItem("12");
+		boxDia.addItem("13");
+		boxDia.addItem("14");
+		boxDia.addItem("15");
+		boxDia.addItem("16");
+		boxDia.addItem("17");
+		boxDia.addItem("18");
+		boxDia.addItem("19");
+		boxDia.addItem("20");
+		boxDia.addItem("21");
+		boxDia.addItem("22");
+		boxDia.addItem("23");
+		boxDia.addItem("24");
+		boxDia.addItem("25");
+		boxDia.addItem("26");
+		boxDia.addItem("27");
+		boxDia.addItem("28");
+		boxDia.addItem("29");
+		boxDia.addItem("30");
+		boxDia.addItem("31");
 		
 		JLabel lblNewLabel_4 = new JLabel("Mês");
 		lblNewLabel_4.setBounds(298, 14, 20, 26);
 		PnDataDeNascimento.add(lblNewLabel_4);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(328, 14, 47, 26);
-		PnDataDeNascimento.add(comboBox_1);
+		JComboBox boxMes = new JComboBox();
+		boxMes.setBounds(328, 14, 47, 26);
+		PnDataDeNascimento.add(boxMes);
+		
+		boxMes.addItem("01");
+		boxMes.addItem("02");
+		boxMes.addItem("03");
+		boxMes.addItem("04");
+		boxMes.addItem("05");
+		boxMes.addItem("06");
+		boxMes.addItem("07");
+		boxMes.addItem("08");
+		boxMes.addItem("09");
+		boxMes.addItem("10");
+		boxMes.addItem("11");
+		boxMes.addItem("12");
 		
 		JLabel lblNewLabel_5 = new JLabel("Ano");
 		lblNewLabel_5.setBounds(392, 13, 20, 28);
@@ -125,9 +169,10 @@ public class TelaFuncionari extends JFrame {
 		lblNewLabel_1_1.setBounds(90, 10, 51, 28);
 		PnCargo.add(lblNewLabel_1_1);
 		
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setBounds(151, 10, 338, 28);
-		PnCargo.add(comboBox_3);
+		JComboBox boxCargo = new JComboBox();
+		boxCargo.setBounds(151, 10, 338, 28);
+		PnCargo.add(boxCargo);
+		boxCargo.addItem("Selecionar Cargo");
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(new Color(255, 255, 255));
