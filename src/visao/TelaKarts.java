@@ -307,6 +307,9 @@ public class TelaKarts extends JFrame {
 		JComboBox boxAno = new JComboBox();
 		boxAno.setBounds(589, 199, 260, 30);
 		panel_1.add(boxAno);
+		for(int i =1923; i<=2023; i++) {
+			boxAno.addItem(i);
+		}
 		
 		JLabel lblAno = new JLabel("Ano:");
 		lblAno.setBounds(521, 196, 59, 30);
@@ -345,12 +348,6 @@ public class TelaKarts extends JFrame {
 		panel_1.add(lblQuantidade);
 		lblQuantidade.setForeground(new Color(0, 0, 0));
 		lblQuantidade.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(0, 128, 128));
-		panel_3.setBounds(20, 550, 903, 131);
-		contentPane.add(panel_3);
-		panel_3.setLayout(null);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(new Color(211, 211, 211));

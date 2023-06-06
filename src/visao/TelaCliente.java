@@ -253,22 +253,10 @@ public class TelaCliente extends JFrame {
 		JComboBox boxAno = new JComboBox();
 		boxAno.setBounds(415, 11, 81, 25);
 		panel_2.add(boxAno);
-		boxAno.addItem("1990");
-		boxAno.addItem("1991");
-		boxAno.addItem("1992");
-		boxAno.addItem("1993");
-		boxAno.addItem("1994");
-		boxAno.addItem("1995");
-		boxAno.addItem("1996");
-		boxAno.addItem("1997");
-		boxAno.addItem("1998");
-		boxAno.addItem("1999");
-		boxAno.addItem("2000");
-		boxAno.addItem("2001");
-		boxAno.addItem("2002");
-		boxAno.addItem("2003");
-		boxAno.addItem("2004");
-		boxAno.addItem("2005");
+		
+		for(int i =1923; i<=2023; i++) {
+			boxAno.addItem(i);
+		}
 		
 		
 		

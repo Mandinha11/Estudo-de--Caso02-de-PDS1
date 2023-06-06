@@ -210,6 +210,9 @@ public class TelaVendas extends JFrame {
 		JComboBox boxAno = new JComboBox();
 		boxAno.setBounds(375, 19, 72, 22);
 		panel_1.add(boxAno);
+		for(int i =1923; i<=2023; i++) {
+			boxAno.addItem(i);
+		}
 		
 		JLabel lblNewLabel_3 = new JLabel("Dia");
 		lblNewLabel_3.setBounds(70, 14, 28, 28);
