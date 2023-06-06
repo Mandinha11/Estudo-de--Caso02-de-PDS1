@@ -4,7 +4,11 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import javax.swing.text.MaskFormatter;
 
 import controle.ClienteDAO;
@@ -28,6 +32,7 @@ import javax.swing.JTable;
 import javax.swing.JComboBox;
 //<<<<<<< Updated upstream;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 //=======
 import javax.swing.JFormattedTextField;
 //>>>>>>> Stashed changes;
@@ -43,6 +48,7 @@ public class TelaKarts extends JFrame {
 	private JTextField txtId;
 	private JTextField txtFornecedor;
 	private JTextField txtFornecedor_1;
+	private JTable tabelaKarts;
 
 	/**
 	 * Launch the application.
@@ -87,6 +93,38 @@ public class TelaKarts extends JFrame {
 		});
 		contentPane.setLayout(null);
 		contentPane.add(btnVoltar);
+		
+		tabelaKarts = new JTable();
+		tabelaKarts.setBorder(new EtchedBorder(EtchedBorder.LOWERED, UIManager.getColor("nimbusInfoBlue"),
+		        UIManager.getColor("nimbusFocus")));
+		tabelaKarts.setRowHeight(20);
+		tabelaKarts.setShowVerticalLines(true);
+		tabelaKarts.setModel(new DefaultTableModel(
+		        new Object[][] {
+		                { null, null, null, null, null, null, null, null, null },
+		                { null, null, null, null, null, null, null, null, null },
+		                { null, null, null, null, null, null, null, null, null },
+		                { null, null, null, null, null, null, null, null, null },
+		                { null, null, null, null, null, null, null, null, null },
+		                { null, null, null, null, null, null, null, null, null },
+		                { null, null, null, null, null, null, null, null, null },
+		                { null, null, null, null, null, null, null, null, null },
+		        },
+		        new String[] { "ID Kart", "Cor", "Quantidade", "Fornecedor", "Ano", "Preço", "Modelo", "Data Entrada",
+		                "Marca" }) {
+		    private static final long serialVersionUID = 1L;
+
+		    boolean[] columnEditables = new boolean[] { false, false, false, false, false, false, false };
+
+		    public boolean isCellEditable(int row, int column) {
+		        return columnEditables[column];
+		    }
+		});
+
+		JScrollPane scrollPane = new JScrollPane(tabelaKarts);
+		scrollPane.setViewportView(tabelaKarts);
+		scrollPane.setBounds(996, 54, 857, 939);
+		contentPane.add(scrollPane);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.setBounds(54, 612, 390, 41);
@@ -373,7 +411,7 @@ public class TelaKarts extends JFrame {
 		panel.add(table);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon(TelaKarts.class.getResource("/imgs/Bandeira.png")));
+
 		lblNewLabel_2.setBounds(343, 733, 301, 217);
 		contentPane.add(lblNewLabel_2);
 		
