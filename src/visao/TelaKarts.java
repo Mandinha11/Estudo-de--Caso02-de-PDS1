@@ -209,9 +209,7 @@ public class TelaKarts extends JFrame {
 		btnExcluir.setBounds(524, 612, 386, 41);
 		btnExcluir.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		contentPane.add(btnExcluir);
-		for(int i =1923; i<=2023; i++) {
-			boxAno.addItem(i);
-		}
+		
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(new Color(211, 211, 211));
@@ -312,7 +310,10 @@ public class TelaKarts extends JFrame {
 		boxANO.setBounds(293, 27, 82, 22);
 		panel_1_1.add(boxANO);
 		
-		boxANO.addItem("2023");
+		for(int i =1923; i<=2023; i++) {
+			boxANO.addItem(i);
+			}
+		
 		
 		JPanel panel_1_1_1 = new JPanel();
 		panel_1_1_1.setLayout(null);
@@ -397,24 +398,24 @@ public class TelaKarts extends JFrame {
 		lblQuantidade.setForeground(new Color(0, 0, 0));
 		lblQuantidade.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
-<<<<<<< Updated upstream
+
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(20, 550, 903, 131);
 		panel_3.setBackground(new Color(0, 128, 128));
 		contentPane.add(panel_3);
 		panel_3.setLayout(null);
 		
-		JPanel panel_4 = new JPanel();
+		//JPanel panel_4 = new JPanel();
 		panel_4.setBounds(996, 54, 857, 939);
 		panel_4.setBackground(new Color(211, 211, 211));
 		contentPane.add(panel_4);
 		panel_4.setLayout(null);
-=======
+
 		JPanel panel_1_4 = new JPanel();
 		panel_1_4.setLayout(null);
 		panel_1_4.setBounds(553, 279, 423, 61);
 		contentPane.add(panel_1_4);
->>>>>>> Stashed changes
+
 		
 		JLabel lblModelo = new JLabel("Modelo:");
 		lblModelo.setBounds(10, 20, 67, 30);
@@ -435,6 +436,9 @@ public class TelaKarts extends JFrame {
 		JComboBox boxAno = new JComboBox();
 		boxAno.setBounds(153, 20, 260, 30);
 		panel_1_5.add(boxAno);
+		for(int i =1923; i<=2023; i++) {
+			boxAno.addItem(i);
+			}
 		
 		JLabel lblAno = new JLabel("Ano:");
 		lblAno.setBounds(10, 17, 59, 30);

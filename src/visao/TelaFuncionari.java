@@ -16,12 +16,15 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
 
 public class TelaFuncionari extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JTable tableFunc;
 
 	/**
 	 * Launch the application.
@@ -182,10 +185,13 @@ public class TelaFuncionari extends JFrame {
 		boxCargo.addItem("Caixa");
 		boxCargo.addItem("Funcionario");
 		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(255, 255, 255));
-		panel_3.setBounds(396, 260, 1448, 732);
-		contentPane.add(panel_3);
+		tableFunc = new JTable();
+		
+		
+		JScrollPane scrollPane = new JScrollPane(tableFunc);
+		scrollPane.setViewportView(tableFunc);
+		scrollPane.setBounds(396, 260, 1448, 732);
+	
 		
 		JButton btnCadastratar = new JButton("Cadastrar");
 		btnCadastratar.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -227,5 +233,9 @@ public class TelaFuncionari extends JFrame {
 		lblNewLabel_6.setIcon(new ImageIcon(TelaFuncionari.class.getResource("/imgs/FundoDeTela.jpg")));
 		lblNewLabel_6.setBounds(0, 0, 1924, 1061);
 		contentPane.add(lblNewLabel_6);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(1654, 260, -1188, 790);
+		contentPane.add(scrollPane_1);
 	}
 }
