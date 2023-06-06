@@ -349,9 +349,15 @@ public class TelaKarts extends JFrame {
 		lblQuantidade.setForeground(new Color(0, 0, 0));
 		lblQuantidade.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBounds(20, 550, 903, 131);
+		panel_3.setBackground(new Color(0, 128, 128));
+		contentPane.add(panel_3);
+		panel_3.setLayout(null);
+		
 		JPanel panel_4 = new JPanel();
-		panel_4.setBackground(new Color(211, 211, 211));
 		panel_4.setBounds(996, 54, 857, 939);
+		panel_4.setBackground(new Color(211, 211, 211));
 		contentPane.add(panel_4);
 		panel_4.setLayout(null);
 		
@@ -366,7 +372,12 @@ public class TelaKarts extends JFrame {
 		table.setBounds(368, 161, 1, 1);
 		panel.add(table);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(TelaKarts.class.getResource("/imgs/Bandeira.png")));
+		lblNewLabel_2.setBounds(343, 733, 301, 217);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(TelaKarts.class.getResource("/imgs/FundoDeTela.jpg")));
 		lblNewLabel_1.setBounds(0, 0, 1924, 1061);
 		contentPane.add(lblNewLabel_1);
