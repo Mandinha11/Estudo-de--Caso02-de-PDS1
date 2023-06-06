@@ -15,6 +15,7 @@ import controle.KartsDAO;
 import modelo.Cliente;
 import modelo.Karts;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 
@@ -91,7 +92,7 @@ public class TelaKarts extends JFrame {
 				ts.setVisible(true);
 			}
 		});
-		contentPane.setLayout(null);
+		contentPane.setLayout(new BorderLayout());
 		contentPane.add(btnVoltar);
 
 		tabelaKarts = new JTable();
@@ -121,8 +122,13 @@ public class TelaKarts extends JFrame {
 		    }
 		});
 
-		JScrollPane scrollPane = new JScrollPane(tabelaKarts);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setViewportView(tabelaKarts);
+		scrollPane.setBounds(1000, 57, 840, 900); // Ajuste as coordenadas e as dimensões conforme necessário
 		contentPane.add(scrollPane);
+		
+		// Adiciona 50 registros em branco na tabela
+		addEmptyRows(50);
 
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.setBounds(54, 612, 390, 41);
@@ -378,5 +384,12 @@ public class TelaKarts extends JFrame {
 		lblNewLabel_1.setIcon(new ImageIcon(TelaKarts.class.getResource("/imgs/FundoDeTela.jpg")));
 		lblNewLabel_1.setBounds(0, 0, 1924, 1061);
 		contentPane.add(lblNewLabel_1);
+	}
+	
+	private void addEmptyRows(int numRows) {
+	    DefaultTableModel tableModel = (DefaultTableModel) tabelaKarts.getModel();
+	    for (int i = 0; i < numRows; i++) {
+	        tableModel.addRow(new Object[]{null, null, null, null, null, null, null, null, null});
+	    }
 	}
 }
