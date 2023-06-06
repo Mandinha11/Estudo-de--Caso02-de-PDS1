@@ -19,3 +19,4 @@ Trabalho em grupo de PDS1
 -  /assets/images/Diagrama de Caso de Uso.drawio.png
 
 + Diagrama de Classes:
++ /assets/images/Diagrama de Classes.jpg
