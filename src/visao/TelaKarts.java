@@ -44,7 +44,6 @@ public class TelaKarts extends JFrame {
 	private JTextField txtPreco_1;
 	private JTextField txtMarca;
 	private JTextField txtModelo;
-	private JTable table;
 	private JTextField txtId;
 	private JTextField txtFornecedor;
 	private JTextField txtFornecedor_1;
@@ -209,24 +208,6 @@ public class TelaKarts extends JFrame {
 		btnExcluir.setBounds(524, 612, 386, 41);
 		btnExcluir.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		contentPane.add(btnExcluir);
-		
-		
-		JPanel panel_4 = new JPanel();
-		panel_4.setBackground(new Color(211, 211, 211));
-		panel_4.setBounds(996, 54, 857, 939);
-		contentPane.add(panel_4);
-		panel_4.setLayout(null);
-		
-		Panel panel = new Panel();
-		panel.setBounds(10, 10, 837, 919);
-		panel_4.add(panel);
-		panel.setBackground(new Color(255, 255, 255));
-		panel.setForeground(new Color(255, 255, 255));
-		panel.setLayout(null);
-		
-		table = new JTable();
-		table.setBounds(368, 161, 1, 1);
-		panel.add(table);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(98, 113, 423, 61);
@@ -404,12 +385,6 @@ public class TelaKarts extends JFrame {
 		panel_3.setBackground(new Color(0, 128, 128));
 		contentPane.add(panel_3);
 		panel_3.setLayout(null);
-		
-		//JPanel panel_4 = new JPanel();
-		panel_4.setBounds(996, 54, 857, 939);
-		panel_4.setBackground(new Color(211, 211, 211));
-		contentPane.add(panel_4);
-		panel_4.setLayout(null);
 
 		JPanel panel_1_4 = new JPanel();
 		panel_1_4.setLayout(null);

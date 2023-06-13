@@ -5,13 +5,22 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.TableColumn;
+import javax.swing.text.MaskFormatter;
+
+import modelo.Funcionario;
+
 import javax.swing.JButton;
 import net.miginfocom.swing.MigLayout;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
@@ -21,9 +30,10 @@ import javax.swing.JScrollPane;
 
 public class TelaFuncionari extends JFrame {
 
+	private static final TableColumn Nome = null;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtCpf;
+	private JTextField txtNome;
 	private JTable tableFunc;
 
 	/**
@@ -75,10 +85,18 @@ public class TelaFuncionari extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(149, 11, 339, 26);
-		panel.add(textField);
-		textField.setColumns(10);
+		MaskFormatter mascaraCpf = null;
+		try {
+			mascaraCpf = new MaskFormatter("###.###.###-##");
+		}catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		txtCpf = new JFormattedTextField(mascaraCpf);
+		
+		txtCpf.setBounds(149, 11, 339, 26);
+		panel.add(txtCpf);
+		txtCpf.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("CPF:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
@@ -197,6 +215,51 @@ public class TelaFuncionari extends JFrame {
 		btnCadastratar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnCadastratar.setBounds(66, 260, 276, 53);
 		contentPane.add(btnCadastratar);
+		btnCadastratar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				boolean validar = true;
+				
+				String Cpf = txtCpf.getText();
+				String Nome = txtNome.getText();
+				int Dia = boxDia.getSelectedIndex();
+				int Mes = boxMes.getSelectedIndex();
+				int Ano = BoxAno.getSelectedIndex();
+				String Cargo = (String) boxCargo.getSelectedItem();
+				
+				Funcionario func = new Funcionario();
+				
+				
+				try {
+					if(Nome != null && !Nome.isEmpty()) {
+						if (containsNumber(Nome)) {
+							JOptionPane.showMessageDialog(null, "O campo nome não pode conter numeros");
+							return;
+						} else {
+							func.setNome(Nome);
+						}
+					}else {
+						validar = false;
+						JOptionPane.showMessageDialog(null, "O campo NOME precisa ser preenchido");
+						txtNome.requestFocus();
+						return;
+					}
+				}catch (Exception e2) {
+					e2.printStackTrace();
+				}
+				try {
+					if(Cpf !=null && !Cpf.isEmpty()) {
+						if (Cpf.equalsIgnoreCase("   .   .   -  ")) {
+							JOptionPane.showMessageDialog(null, "O campo CPF precisa ser preenchido");
+							txtCpf.requestFocus();
+							return;
+						}
+					}
+				} catch (Exception e2) {
+					
+				}
+			}
+		});
 		
 		JButton btnListar = new JButton("Listar");
 		btnListar.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -213,10 +276,10 @@ public class TelaFuncionari extends JFrame {
 		PnNomeCompleto.setBounds(1095, 22, 518, 48);
 		contentPane.add(PnNomeCompleto);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(149, 11, 339, 26);
-		PnNomeCompleto.add(textField_1);
+		txtNome = new JTextField();
+		txtNome.setColumns(10);
+		txtNome.setBounds(149, 11, 339, 26);
+		PnNomeCompleto.add(txtNome);
 		
 		JLabel lblNomeCompleto = new JLabel("Nome Completo:");
 		lblNomeCompleto.setFont(new Font("Tahoma", Font.PLAIN, 17));
@@ -231,11 +294,16 @@ public class TelaFuncionari extends JFrame {
 		
 		JLabel lblNewLabel_6 = new JLabel("");
 		lblNewLabel_6.setIcon(new ImageIcon(TelaFuncionari.class.getResource("/imgs/FundoDeTela.jpg")));
-		lblNewLabel_6.setBounds(0, 0, 1924, 1061);
+		lblNewLabel_6.setBounds(0, -11, 1924, 1061);
 		contentPane.add(lblNewLabel_6);
 		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(1654, 260, -1188, 790);
-		contentPane.add(scrollPane_1);
+		
+		JTable tabela = new JTable();
+		tabela.setBounds(391, 971, 1428, -752);
+		contentPane.add(tabela);
+		
+	}
+	public boolean containsNumber(String text) {
+		return text.matches(".*\\d.*");
 	}
 }
