@@ -215,19 +215,22 @@ public class TelaVendas extends JFrame {
 		}
 		
 		JLabel lblNewLabel_3 = new JLabel("Dia");
+		lblNewLabel_3.setForeground(new Color(0, 139, 139));
 		lblNewLabel_3.setBounds(70, 14, 28, 28);
 		panel_1.add(lblNewLabel_3);
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 15));
 		
 		JLabel lblNewLabel_2 = new JLabel("Mês");
+		lblNewLabel_2.setForeground(new Color(0, 128, 128));
 		lblNewLabel_2.setBounds(199, 21, 34, 14);
 		panel_1.add(lblNewLabel_2);
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 15));
 		
 		JLabel lblNewLabel_4 = new JLabel("Ano");
+		lblNewLabel_4.setForeground(new Color(0, 128, 128));
 		lblNewLabel_4.setBounds(329, 21, 36, 14);
 		panel_1.add(lblNewLabel_4);
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 15));
 		
 		JPanel panel_1_1 = new JPanel();
 		panel_1_1.setLayout(null);

@@ -5,13 +5,17 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.MaskFormatter;
 import javax.swing.JButton;
 import net.miginfocom.swing.MigLayout;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
@@ -22,7 +26,7 @@ import javax.swing.JScrollPane;
 public class TelaFuncionari extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField textCPF;
 	private JTextField textField_1;
 	private JTable tableFunc;
 
@@ -71,14 +75,23 @@ public class TelaFuncionari extends JFrame {
 		contentPane.add(btnVoltar);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(211, 211, 211));
 		panel.setBounds(464, 22, 516, 48);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(149, 11, 339, 26);
-		panel.add(textField);
-		textField.setColumns(10);
+		MaskFormatter mascaraCPF = null;
+		try {
+			mascaraCPF = new MaskFormatter("###.###.###-##");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		textCPF = new JFormattedTextField(mascaraCPF);
+		
+		textCPF.setBounds(149, 11, 339, 26);
+		panel.add(textCPF);
+		textCPF.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("CPF:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
@@ -86,6 +99,7 @@ public class TelaFuncionari extends JFrame {
 		panel.add(lblNewLabel);
 		
 		JPanel PnDataDeNascimento = new JPanel();
+		PnDataDeNascimento.setBackground(new Color(211, 211, 211));
 		PnDataDeNascimento.setLayout(null);
 		PnDataDeNascimento.setBounds(464, 127, 516, 48);
 		contentPane.add(PnDataDeNascimento);
@@ -167,6 +181,7 @@ public class TelaFuncionari extends JFrame {
 		}
 		
 		JPanel PnCargo = new JPanel();
+		PnCargo.setBackground(new Color(211, 211, 211));
 		PnCargo.setLayout(null);
 		PnCargo.setBounds(1095, 127, 518, 48);
 		contentPane.add(PnCargo);
@@ -209,6 +224,7 @@ public class TelaFuncionari extends JFrame {
 		contentPane.add(btnExcluir);
 		
 		JPanel PnNomeCompleto = new JPanel();
+		PnNomeCompleto.setBackground(new Color(211, 211, 211));
 		PnNomeCompleto.setLayout(null);
 		PnNomeCompleto.setBounds(1095, 22, 518, 48);
 		contentPane.add(PnNomeCompleto);
