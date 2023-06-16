@@ -6,6 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
+
+import controle.FornecedorDAO;
+import modelo.Fornecedor;
+
 import javax.swing.JButton;
 import net.miginfocom.swing.MigLayout;
 import java.awt.event.ActionListener;
@@ -29,6 +33,7 @@ public class TelaFuncionari extends JFrame {
 	private JTextField textCPF;
 	private JTextField textField_1;
 	private JTable tableFunc;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -250,8 +255,15 @@ public class TelaFuncionari extends JFrame {
 		lblNewLabel_6.setBounds(0, 0, 1924, 1061);
 		contentPane.add(lblNewLabel_6);
 		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(1654, 260, -1188, 790);
-		contentPane.add(scrollPane_1);
+		JScrollPane scrollPane_2 = new JScrollPane();
+		scrollPane_2.setBounds(1017, 232, -621, 773);
+		scrollPane_2.setOpaque(false);
+		scrollPane_2.getViewport().setOpaque(false);
+		contentPane.add(scrollPane_2);
+		
+		table = new JTable();
+		table.setBounds(0, 0, 1924, 1061);
+		Funcio fdao = new FornecedorDAO();
+		scrollPane_2.setViewportView(table);
 	}
 }
