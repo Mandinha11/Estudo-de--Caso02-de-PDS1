@@ -322,12 +322,25 @@ public class TelaCliente extends JFrame {
 		atualizarTabela();
 
 		JButton btnListar = new JButton("Alterar");
-		btnListar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			
-			}
-							
-		});
+        btnListar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+        int selectedRow = table.getSelectedRow();
+        if (selectedRow >= 0) {
+            String nomeEmpresa = (String) table.getValueAt(selectedRow, 0);
+            String cpf = (String) table.getValueAt(selectedRow, 1);
+            String dataNasc = (String) table.getValueAt(selectedRow, 2);
+            String telefone = (String) table.getValueAt(selectedRow, 3);
+
+            System.out.println("Valores da linha selecionada:");
+            System.out.println("Nome da Empresa: " + nomeEmpresa);
+            System.out.println("CPF: " + cpf);
+            System.out.println("Data de Nascimento: " + dataNasc);
+            System.out.println("Telefone: " + telefone);
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhuma linha selecionada!");
+        }
+    }
+});
 		btnListar.setBounds(51, 319, 242, 57);
 		btnListar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		contentPane.add(btnListar);
