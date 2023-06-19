@@ -2,6 +2,7 @@ package controle;
 
 import java.util.ArrayList;
 
+import modelo.Cliente;
 import modelo.Fornecedor;
 
 public class FornecedorDAO {
@@ -26,11 +27,15 @@ public class FornecedorDAO {
 		return false;
 	}
 
-	public Boolean Alterar(Fornecedor f) {
-		return false;
-	}
+	//public Boolean Alterar(Fornecedor f) {
+		
+	//}
 
 	public Boolean Deletar(Fornecedor f) {
+		if (f != null) {
+			listaFornecedores.remove(f);
+			return true;
+		}
 		return false;
 	}
 

@@ -1,5 +1,6 @@
 package visao;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -16,6 +17,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -75,8 +77,6 @@ public class TelaCliente extends JFrame {
 
 				Cliente cliente = new Cliente();
 
-				ClienteDAO clienteDao = ClienteDAO.getinstancia();
-
 				if (textNomeCompleto.getText().trim().length() == 0) {
 					JOptionPane.showMessageDialog(null, "Nome não preenchido!!");
 					return;
@@ -88,20 +88,25 @@ public class TelaCliente extends JFrame {
 					JOptionPane.showMessageDialog(null, "CPF não preenchido!!");
 					return;
 				} else {
-					cliente.setCpf(Long.valueOf(textCPF.getText()));
+					String semMask = textCPF.getText();
+					semMask = semMask.replace("-", "");
+					semMask = semMask.replace(".", "");
+					semMask = semMask.trim();
+					cliente.setCpf(Long.valueOf(semMask));
 				}
 
 				if (textTelefone.getText().trim().length() == 0) {
 					JOptionPane.showMessageDialog(null, "Telefone não preenchido!!");
 					return;
 				} else {
-					cliente.setTelefone(Long.valueOf(textTelefone.getText()));
-				}
+					String semMask = textTelefone.getText();
+					semMask = semMask.replace("(", "");
+					semMask = semMask.replace(")", "");
+					semMask = semMask.replace("-", "");
+					semMask = semMask.replace(" ", "");
+					semMask = semMask.trim();
 
-				if (clienteDao.Inserir(cliente) == true) {
-					JOptionPane.showMessageDialog(null, "Boa");
-				} else {
-					JOptionPane.showMessageDialog(null, "Deu não");
+					cliente.setTelefone(Long.valueOf(semMask));
 				}
 
 				clienteDAO = ClienteDAO.getinstancia();
@@ -109,6 +114,10 @@ public class TelaCliente extends JFrame {
 				if (info == true) {
 					atualizarTabela();
 					JOptionPane.showMessageDialog(null, "Cadatrado com sucesso!");
+
+					// limpar os campos
+					textCPF.setText("");
+
 				} else {
 					JOptionPane.showMessageDialog(null, "Erro ao cadastrar!");
 				}
@@ -302,7 +311,8 @@ public class TelaCliente extends JFrame {
 		 */
 		table = new JTable();
 		table.setBackground(new Color(255, 255, 255));
-		panel_3.add(table);
+		panel_3.setLayout(new BorderLayout());
+		panel_3.add(new JScrollPane(table), BorderLayout.CENTER);
 
 		modelo = new DefaultTableModel(new Object[][] {},
 				new String[] { "Nome da Empresa", "CPF", "Data Nasc", "Telefone" });
@@ -316,6 +326,15 @@ public class TelaCliente extends JFrame {
 		contentPane.add(btnListar);
 
 		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir?");
+				// pega o cliente selcionado e remove usando o dao
+				clienteDAO = ClienteDAO.getinstancia();
+				clienteDAO.Deletar(null);
+			}
+		});
 		btnExcluir.setBounds(51, 424, 242, 57);
 		btnExcluir.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		contentPane.add(btnExcluir);

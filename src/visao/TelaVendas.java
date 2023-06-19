@@ -156,7 +156,7 @@ public class TelaVendas extends JFrame {
 		panel_1.add(lblData);
 		lblData.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		
-		JComboBox boxDia = new JComboBox();
+		JComboBox<String> boxDia = new JComboBox<>();
 		boxDia.setBounds(108, 19, 72, 22);
 		panel_1.add(boxDia);
 		boxDia.addItem("01");
@@ -191,7 +191,7 @@ public class TelaVendas extends JFrame {
 		boxDia.addItem("30");
 		boxDia.addItem("31");
 		
-		JComboBox boxMes = new JComboBox();
+		JComboBox<String> boxMes = new JComboBox<>();
 		boxMes.setBounds(243, 19, 72, 22);
 		panel_1.add(boxMes);
 		boxMes.addItem("01");
@@ -207,7 +207,7 @@ public class TelaVendas extends JFrame {
 		boxMes.addItem("11");
 		boxMes.addItem("12");
 		
-		JComboBox boxAno = new JComboBox();
+		JComboBox<Integer> boxAno = new JComboBox<>();
 		boxAno.setBounds(375, 19, 72, 22);
 		panel_1.add(boxAno);
 		for(int i =1923; i<=2023; i++) {

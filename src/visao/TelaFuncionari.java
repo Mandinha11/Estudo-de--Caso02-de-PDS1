@@ -118,7 +118,7 @@ public class TelaFuncionari extends JFrame {
 		lblNewLabel_3.setBounds(193, 14, 31, 26);
 		PnDataDeNascimento.add(lblNewLabel_3);
 		
-		JComboBox boxDia = new JComboBox();
+		JComboBox<String> boxDia = new JComboBox<>();
 		boxDia.setBounds(234, 14, 47, 26);
 		PnDataDeNascimento.add(boxDia);
 		boxDia.addItem("01");
@@ -157,7 +157,7 @@ public class TelaFuncionari extends JFrame {
 		lblNewLabel_4.setBounds(291, 14, 27, 26);
 		PnDataDeNascimento.add(lblNewLabel_4);
 		
-		JComboBox boxMes = new JComboBox();
+		JComboBox<String> boxMes = new JComboBox<>();
 		boxMes.setBounds(328, 14, 47, 26);
 		PnDataDeNascimento.add(boxMes);
 		
@@ -178,7 +178,7 @@ public class TelaFuncionari extends JFrame {
 		lblNewLabel_5.setBounds(385, 13, 27, 28);
 		PnDataDeNascimento.add(lblNewLabel_5);
 		
-		JComboBox BoxAno = new JComboBox();
+		JComboBox<Integer> BoxAno = new JComboBox<>();
 		BoxAno.setBounds(422, 14, 68, 26);
 		PnDataDeNascimento.add(BoxAno);
 		for(int i =1923; i<=2023; i++) {
@@ -196,7 +196,7 @@ public class TelaFuncionari extends JFrame {
 		lblNewLabel_1_1.setBounds(90, 10, 51, 28);
 		PnCargo.add(lblNewLabel_1_1);
 		
-		JComboBox boxCargo = new JComboBox();
+		JComboBox<String> boxCargo = new JComboBox<>();
 		boxCargo.setBounds(151, 10, 338, 28);
 		PnCargo.add(boxCargo);
 		boxCargo.addItem("Selecionar Cargo");
