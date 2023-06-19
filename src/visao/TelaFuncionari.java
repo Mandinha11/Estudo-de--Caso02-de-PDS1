@@ -261,9 +261,6 @@ public class TelaFuncionari extends JFrame {
 		scrollPane_2.getViewport().setOpaque(false);
 		contentPane.add(scrollPane_2);
 		
-		table = new JTable();
-		table.setBounds(0, 0, 1924, 1061);
-		Funcio fdao = new FornecedorDAO();
-		scrollPane_2.setViewportView(table);
+		
 	}
 }
