@@ -104,6 +104,15 @@ public class TelaCliente extends JFrame {
 					JOptionPane.showMessageDialog(null, "Deu não");
 				}
 
+				clienteDAO = ClienteDAO.getinstancia();
+				boolean info = clienteDAO.Inserir(cliente);
+				if (info == true) {
+					atualizarTabela();
+					JOptionPane.showMessageDialog(null, "Cadatrado com sucesso!");
+				} else {
+					JOptionPane.showMessageDialog(null, "Erro ao cadastrar!");
+				}
+
 			}
 		});
 		contentPane.setLayout(null);
