@@ -37,6 +37,7 @@ public class TelaCliente extends JFrame {
 	private JTable table;
 	private ClienteDAO clienteDAO;
 	private DefaultTableModel modelo;
+	
 
 	/**
 	 * Launch the application.
@@ -320,7 +321,13 @@ public class TelaCliente extends JFrame {
 
 		atualizarTabela();
 
-		JButton btnListar = new JButton("Listar");
+		JButton btnListar = new JButton("Alterar");
+		btnListar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+			}
+							
+		});
 		btnListar.setBounds(51, 319, 242, 57);
 		btnListar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		contentPane.add(btnListar);
