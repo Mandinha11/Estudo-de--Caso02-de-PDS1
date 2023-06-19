@@ -3,10 +3,9 @@ package controle;
 import java.util.ArrayList;
 
 import modelo.Cliente;
-import modelo.Fornecedor;
 
 public class ClienteDAO {
-	
+
 	private static ClienteDAO instancia;
 	private static ArrayList<Cliente> listaCliente;
 
@@ -20,7 +19,7 @@ public class ClienteDAO {
 	}
 
 	public Boolean Inserir(Cliente c) {
-		if(c!=null) {
+		if (c != null) {
 			listaCliente.add(c);
 			return true;
 		}
@@ -28,10 +27,21 @@ public class ClienteDAO {
 	}
 
 	public Boolean Alterar(Cliente c) {
+		for (Cliente cliente : listaCliente) {
+			if (c.getCpf() == cliente.getCpf()) {
+				cliente.setNomeEmpressa(c.getNomeEmpresa());
+				cliente.setTelefone(c.getTelefone());
+				return true;
+			}
+		}
 		return false;
 	}
 
 	public Boolean Deletar(Cliente c) {
+		if (c != null) {
+			listaCliente.remove(c);
+			return true;
+		}
 		return false;
 	}
 
@@ -39,5 +49,3 @@ public class ClienteDAO {
 		return listaCliente;
 	}
 }
-
-
