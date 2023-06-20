@@ -355,6 +355,8 @@ public class TelaCliente extends JFrame {
 		btnExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
+				clienteDAO = ClienteDAO.getinstancia();
+				
 				JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir?");
 				// pega o cliente selcionado e remove usando o dao
 				

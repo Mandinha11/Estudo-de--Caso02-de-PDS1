@@ -44,8 +44,11 @@ public class ClienteDAO {
 		}
 		return false;
 	}
-
+	
 	public ArrayList<Cliente> Listar() {
+		return listaCliente;
+	}
+	public static ArrayList<Cliente> listarCliente() {
 		return listaCliente;
 	}
 }
