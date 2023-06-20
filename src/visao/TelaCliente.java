@@ -353,24 +353,17 @@ public class TelaCliente extends JFrame {
 		//Amanda
 		JButton btnExcluir = new JButton("Excluir");
 		btnExcluir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir?");
-				// pega o cliente selcionado e remove usando o dao
-				
-				clienteDAO = ClienteDAO.getinstancia();
-				clienteDAO.Deletar(null);
-				
-				if (clienteDAO != null) {
-					listaCliente.remove(clienteDAO);
-					atualizarTabela();
-					limparCampos();
-					
-					
-				}
-			}	
-			
-		});
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int selectedRow = table.getSelectedRow();
+                if (selectedRow != -1) {
+                    // Remove a linha selecionada
+                    DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
+                    tableModel.removeRow(selectedRow);
+                    JOptionPane.showMessageDialog(null, "Linha excluída com sucesso!");
+                }
+            }
+        });
 		
 		btnExcluir.setBounds(120, 42, 89, 23);
 		contentPane.add(btnExcluir);
