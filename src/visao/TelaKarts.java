@@ -257,7 +257,7 @@ public class TelaKarts extends JFrame {
 		lblDataEntrada.setForeground(Color.BLACK);
 		lblDataEntrada.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
-		JComboBox boxDia = new JComboBox();
+		JComboBox<String> boxDia = new JComboBox<>();
 		boxDia.setBounds(111, 27, 80, 22);
 		panel_1_1.add(boxDia);
 		boxDia.addItem("01");
@@ -292,7 +292,7 @@ public class TelaKarts extends JFrame {
 		boxDia.addItem("30");
 		boxDia.addItem("31");
 		
-		JComboBox boxMes = new JComboBox();
+		JComboBox<String> boxMes = new JComboBox<>();
 		boxMes.setBounds(201, 27, 82, 22);
 		panel_1_1.add(boxMes);
 		boxMes.addItem("01");
@@ -308,7 +308,7 @@ public class TelaKarts extends JFrame {
 		boxMes.addItem("11");
 		boxMes.addItem("12");
 		
-		JComboBox boxANO = new JComboBox();
+		JComboBox<Integer> boxANO = new JComboBox<>();
 		boxANO.setBounds(293, 27, 82, 22);
 		panel_1_1.add(boxANO);
 		
@@ -370,7 +370,7 @@ public class TelaKarts extends JFrame {
 		lblBuscarKarts.setForeground(new Color(0, 0, 0));
 		lblBuscarKarts.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		
-		JComboBox boxCor = new JComboBox();
+		JComboBox<String> boxCor = new JComboBox<>();
 		boxCor.setBounds(151, 16, 262, 26);
 		panel_1_2.add(boxCor);
 		boxCor.addItem("Selecionar Cor");
@@ -391,7 +391,7 @@ public class TelaKarts extends JFrame {
 		contentPane.add(panel_1_3);
 		
 		
-		JComboBox boxQuantidade = new JComboBox();
+		JComboBox<String> boxQuantidade = new JComboBox<>();
 		boxQuantidade.setBounds(151, 21, 262, 29);
 		panel_1_3.add(boxQuantidade);
 		boxQuantidade.addItem("Selecinar Quantidade");
@@ -449,7 +449,7 @@ public class TelaKarts extends JFrame {
 		panel_1_5.setBounds(553, 367, 423, 61);
 		contentPane.add(panel_1_5);
 		
-		JComboBox boxAno = new JComboBox();
+		JComboBox<Integer> boxAno = new JComboBox<>();
 		boxAno.setBounds(153, 20, 260, 30);
 		panel_1_5.add(boxAno);
 		for(int i =1923; i<=2023; i++) {

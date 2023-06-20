@@ -61,10 +61,6 @@ public class TelaSelecao extends JFrame {
 	 */
 	public TelaSelecao() {
 		
-		//Icon FundoDeTela = new ImageIcon("imgs/FundoDeTela.jpg");
-		//JLabel lblFundoDeTela = new JLabel("");
-		//lblFundoDeTela.setIcon(FundoDeTela);
-		//contentPane.add(lblFundoDeTela, "cell 2 1");
 		
 		setTitle("Seleção");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

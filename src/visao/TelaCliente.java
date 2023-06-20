@@ -37,6 +37,8 @@ public class TelaCliente extends JFrame {
 	private JTable table;
 	private ClienteDAO clienteDAO;
 	private DefaultTableModel modelo;
+	private ArrayList<ClienteDAO> listaCliente = new ArrayList<ClienteDAO>();
+	
 	
 
 	/**
@@ -118,6 +120,8 @@ public class TelaCliente extends JFrame {
 
 					// limpar os campos
 					textCPF.setText("");
+					textNomeCompleto.setText("");
+					textTelefone.setText("");
 
 				} else {
 					JOptionPane.showMessageDialog(null, "Erro ao cadastrar!");
@@ -316,7 +320,7 @@ public class TelaCliente extends JFrame {
 		panel_3.add(new JScrollPane(table), BorderLayout.CENTER);
 
 		modelo = new DefaultTableModel(new Object[][] {},
-				new String[] { "Nome da Empresa", "CPF", "Data Nasc", "Telefone" });
+				new String[] { "Nome Completo", "CPF", "Data Nasc", "Telefone" });
 		table.setModel(modelo);
 
 		atualizarTabela();
@@ -345,16 +349,33 @@ public class TelaCliente extends JFrame {
 		btnListar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		contentPane.add(btnListar);
 
+		
+		//Amanda
 		JButton btnExcluir = new JButton("Excluir");
 		btnExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir?");
 				// pega o cliente selcionado e remove usando o dao
+				
 				clienteDAO = ClienteDAO.getinstancia();
 				clienteDAO.Deletar(null);
-			}
+				
+				if (clienteDAO != null) {
+					listaCliente.remove(clienteDAO);
+					atualizarTabela();
+					limparCampos();
+					
+					
+				}
+			}	
+			
 		});
+		
+		btnExcluir.setBounds(120, 42, 89, 23);
+		contentPane.add(btnExcluir);
+		
+		
 		btnExcluir.setBounds(51, 424, 242, 57);
 		btnExcluir.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
 		contentPane.add(btnExcluir);
@@ -372,6 +393,13 @@ public class TelaCliente extends JFrame {
 		contentPane.add(lblNewLabel_7);
 
 	}
+	
+	protected void limparCampos() {
+		textNomeCompleto.setText("");
+		textCPF.setText("");
+		textTelefone.setText("");
+		
+	}
 
 	public void atualizarTabela() {
 
@@ -379,7 +407,7 @@ public class TelaCliente extends JFrame {
 		ArrayList<Cliente> clientes = clienteDAO.Listar();
 
 		modelo = new DefaultTableModel(new Object[][] {},
-				new String[] { "Nome da Empresa", "CPF", "Data Nasc", "Telefone" });
+				new String[] { "Nome Completo", "CPF", "Data Nasc", "Telefone" });
 		table.setModel(modelo);
 
 		for (Cliente cliente : clientes) {
