@@ -1,5 +1,5 @@
-# Estudo-de-Caso02-de-PDS1
-Trabalho em grupo de PDS1
+# PI2
+Trabalho em grupo PI2
 
 - Descrição textual das funcionalidades: O sistema do pPinkman Kart tem o objetivo de otimizar os processos envolvidos para consulta e vendas automobilísticas, e serviços de controle de estoque. O funcionário pode logar no sistema, fazer alterações como cadastrar novos, finalizar compras, atualizar dados dos clientes e dos fornecedores.
 
